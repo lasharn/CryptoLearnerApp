@@ -1,5 +1,6 @@
 package com.cryptolearner.mobile.cryptolearner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -48,5 +49,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void caesar(View view) {
+        Intent intent = new Intent(this, CaesarMenu.class);
+        startActivity(intent);
     }
 }

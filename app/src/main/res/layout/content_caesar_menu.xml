@@ -10,44 +10,24 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="40dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.cryptolearner.mobile.cryptolearner.MainActivity"
-    tools:showIn="@layout/activity_main">
-
+    tools:context=".CaesarMenu"
+    tools:showIn="@layout/activity_caesar_menu">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/caeser_btn"
+        android:text="Challenge 1: Intro"
         android:id="@+id/Challenge1Btn"
         android:layout_gravity="center_horizontal"
-        android:width="200dp"
-        android:onClick="caesar"/>
+        android:width="200dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/substitution_btn"
+        android:text="Challenge 2: Something"
         android:id="@+id/Challenge2Btn"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
-        android:width="200dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/vigenere_btn"
-        android:id="@+id/Challenge3Btn"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
-        android:width="200dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/about_btn"
-        android:id="@+id/AboutBtn"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
         android:width="200dp" />
 
 </LinearLayout>
