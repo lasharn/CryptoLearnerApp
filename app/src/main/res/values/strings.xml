@@ -7,4 +7,5 @@
     <string name="vigenere_btn">Vigenere Cipher</string>
     <string name="about_btn">About</string>
     <string name="title_activity_challenge1_menu">Challenge1Menu</string>
+    <string name="title_activity_dummy">DummyActivity</string>
 </resources>
