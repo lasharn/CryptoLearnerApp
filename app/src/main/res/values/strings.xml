@@ -6,6 +6,18 @@
     <string name="substitution_btn">Substitution Cipher</string>
     <string name="vigenere_btn">Vigenere Cipher</string>
     <string name="about_btn">About</string>
-    <string name="title_activity_challenge1_menu">Challenge1Menu</string>
     <string name="title_activity_dummy">DummyActivity</string>
+
+    <string name="caeser_lvl1_btn">Intro</string>
+    <string name="caeser_lvl2_btn">Encrypt</string>
+    <string name="caeser_lvl3_btn">Decrypt</string>
+    <string name="caeser_lvl4_btn">Hard</string>
+
+    <string name="substitution_lvl1_btn">Intro</string>
+    <string name="substitution_lvl2_btn">Encryption</string>
+    <string name="substitution_lvl3_btn">Decryption</string>
+
+    <string name="vigenere_lvl1_btn">Intro</string>
+    <string name="vigenere_lvl2_btn">Easy</string>
+    <string name="vigenere_lvl3_btn">Hard</string>
 </resources>

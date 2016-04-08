@@ -4,8 +4,8 @@
         android:radius="0dp"
         />
     <solid
-        android:color="#4EC74A"
-        />
+        android:color="#FA6900"
+        /><!-- FA6900  F38630-->
     <size
         android:width="270dp"
         android:height="60dp"

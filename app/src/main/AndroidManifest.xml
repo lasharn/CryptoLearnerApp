@@ -11,7 +11,8 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,13 +20,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CaesarMenu"
-            android:label="@string/title_activity_challenge1_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".DummyActivity"
             android:label="@string/title_activity_dummy"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
