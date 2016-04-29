@@ -9,22 +9,16 @@
     tools:context="com.cryptolearner.mobile.cryptolearner.DummyActivity"
     tools:showIn="@layout/activity_dummy">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dummy screen for testing"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
-
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
 
     <View
         android:layout_width="300dip"
         android:layout_height="300dip"
         android:layout_centerInParent="true"
-        android:background="@drawable/caesar_icon" />
+        android:background="@drawable/cipher_circle_back" />
 
     <com.cryptolearner.mobile.cryptolearner.RotaryDialerView
         android:id="@+id/rotary_dialer"
@@ -32,11 +26,19 @@
         android:layout_height="300dip"
         android:layout_centerInParent="true" />
 
-    <View
+    <!--<View
         android:layout_width="300dip"
         android:layout_height="300dip"
         android:layout_centerInParent="true"
-        android:background="@drawable/top" />
+        android:background="@drawable/cipher_wheel_inner" />-->
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dummy message to encrypt"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"/>
 
 </LinearLayout>

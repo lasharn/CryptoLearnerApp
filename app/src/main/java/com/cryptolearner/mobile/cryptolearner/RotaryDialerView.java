@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
+import android.widget.RelativeLayout;
 
 
 /**
@@ -18,7 +19,7 @@ public class RotaryDialerView extends View {
     private float rotorAngle;
     private final Drawable rotorDrawable;
     private final int r1 = 50;
-    private final int r2 = 230;
+    private final int r2 = 400;
     private double lastFi;
 
     public RotaryDialerView(Context context) {
@@ -31,7 +32,7 @@ public class RotaryDialerView extends View {
 
     public RotaryDialerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        rotorDrawable = context.getResources().getDrawable(R.drawable.dialer);
+        rotorDrawable = context.getResources().getDrawable(R.drawable.cipher_circle_front);
     }
 
     private void fireDialListenerEvent(int number) {
@@ -49,8 +50,14 @@ public class RotaryDialerView extends View {
 
         canvas.save();
 
-        rotorDrawable.setBounds(0, 0, rotorDrawable.getIntrinsicWidth(),
-                rotorDrawable.getIntrinsicHeight());
+        int imageWidth = (availableWidth/100)*81;
+        int imageHeight = (availableHeight/100)*81;
+        int left = (availableWidth-imageWidth)/2;
+        int top = (availableHeight-imageHeight)/2;
+
+        rotorDrawable.setBounds(left, top, availableWidth-left,//rotorDrawable.getIntrinsicWidth(),
+                availableHeight-top);//rotorDrawable.getIntrinsicHeight());
+
 
         if (rotorAngle != 0) {
             canvas.rotate(rotorAngle, x, y);
@@ -59,6 +66,8 @@ public class RotaryDialerView extends View {
         rotorDrawable.draw(canvas);
 
         canvas.restore();
+
+
     }
 
     @Override
@@ -72,6 +81,8 @@ public class RotaryDialerView extends View {
         double r = Math.sqrt(x * x + y * y);
         double sinfi = y / r;
         double fi = Math.toDegrees(Math.asin(sinfi));
+
+
 
         if (x1 > x0 && y0 > y1) {
             fi = 180 - fi;
@@ -101,6 +112,21 @@ public class RotaryDialerView extends View {
                 return true;
 
             case MotionEvent.ACTION_UP:
+
+                //fi = 14.4*(Math.round(fi/14.4));
+                if (r > r1 && r < r2) {
+                    if (fi<lastFi) {
+                        rotorAngle -= Math.abs(fi - lastFi) + 0.25f;
+                    } else {
+                        rotorAngle += Math.abs(fi - lastFi) + 0.25f;
+                    }
+                    double devision = 13.8461538462;
+                    rotorAngle = (float) devision*(Math.round(rotorAngle/devision));
+                    rotorAngle %= 360;
+                    lastFi = fi;
+                    invalidate();
+                    return true;
+                }
 //                final float angle = rotorAngle % 360;
 //                int number = Math.round(angle - 20) / 30;
 //
