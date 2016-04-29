@@ -37,7 +37,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dummy message to encrypt"
+        android:text="@string/dummy_encryption_message"
         android:layout_gravity="center_horizontal"
         android:textSize="20sp"/>
 
