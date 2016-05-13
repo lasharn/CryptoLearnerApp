@@ -9,28 +9,63 @@
     tools:context="com.cryptolearner.mobile.cryptolearner.DummyActivity"
     tools:showIn="@layout/activity_dummy">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Encrypt with a key of 7" />
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp">
 
-    <View
-        android:layout_width="300dip"
-        android:layout_height="300dip"
-        android:layout_centerInParent="true"
-        android:background="@drawable/cipher_circle_back" />
+        <View
+            android:layout_width="200dip"
+            android:layout_height="200dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/cipher_circle_back" />
 
-    <com.cryptolearner.mobile.cryptolearner.RotaryDialerView
-        android:id="@+id/rotary_dialer"
-        android:layout_width="300dip"
-        android:layout_height="300dip"
-        android:layout_centerInParent="true" />
+        <com.cryptolearner.mobile.cryptolearner.RotaryDialerView
+            android:id="@+id/rotary_dialer"
+            android:layout_width="200dip"
+            android:layout_height="200dip"
+            android:layout_centerInParent="true" />
 
-    <!--<View
-        android:layout_width="300dip"
-        android:layout_height="300dip"
-        android:layout_centerInParent="true"
-        android:background="@drawable/cipher_wheel_inner" />-->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Key:\n0"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="90dp"
+            android:gravity="center"
+            android:text="Cipher Text"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:rotation="55"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="220dp"
+            android:gravity="center"
+            android:text="Plain Text"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:rotation="55"/>
+
     </RelativeLayout>
 
     <TextView
@@ -40,5 +75,78 @@
         android:text="@string/dummy_encryption_message"
         android:layout_gravity="center_horizontal"
         android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="_ _ _ _ _ _ _"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal" /><!--TLZZHNL-->
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="A"
+                android:id="@+id/button1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="T"
+                android:id="@+id/button2" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="H"
+                android:id="@+id/button3" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="L"
+                android:id="@+id/button4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="Z"
+                android:id="@+id/button5" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="P"
+                android:id="@+id/button6" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="N"
+                android:id="@+id/button7" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="S"
+                android:id="@+id/button8" />
+        </TableRow>
+    </TableLayout>
 
 </LinearLayout>

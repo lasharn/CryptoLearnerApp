@@ -8,7 +8,7 @@
     <string name="about_btn">About</string>
 
     <string name="title_activity_dummy">DummyActivity</string>
-    <string name="dummy_encryption_message">Dummy message to encrypt</string>
+    <string name="dummy_encryption_message">MESSAGE</string>
 
     <string name="caeser_lvl1_btn">Intro</string>
     <string name="caeser_lvl2_btn">Encrypt</string>
