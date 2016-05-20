@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.cryptolearner.mobile.cryptolearner.DummyActivity"
-    tools:showIn="@layout/activity_dummy">
+    tools:context=".CaesarLvlActivity"
+    tools:showIn="@layout/activity_caesar_lvl">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/InstructionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -18,49 +18,54 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginBottom="10dp">
 
-        <View
-            android:layout_width="200dip"
-            android:layout_height="200dip"
-            android:layout_centerInParent="true"
-            android:background="@drawable/cipher_circle_back" />
 
-        <com.cryptolearner.mobile.cryptolearner.RotaryDialerView
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/cipher_circle_back"
+                android:adjustViewBounds="true"
+                />
+
+        <com.cryptolearner.mobile.cryptolearner.CaesarWheelView
             android:id="@+id/rotary_dialer"
-            android:layout_width="200dip"
-            android:layout_height="200dip"
-            android:layout_centerInParent="true" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/KeyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Key:\n0"
+            android:text="@string/zero_key"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/CipherText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="90dp"
             android:gravity="center"
-            android:text="Cipher Text"
+            android:text="@string/cipher_text"
             android:textSize="12sp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:rotation="55"/>
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/PlainText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="220dp"
             android:gravity="center"
-            android:text="Plain Text"
+            android:text="@string/plain_text"
             android:textSize="12sp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
@@ -69,7 +74,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/TargetText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dummy_encryption_message"
@@ -77,17 +82,18 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/AnswerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="_ _ _ _ _ _ _"
         android:textSize="20sp"
-        android:layout_gravity="center_horizontal" /><!--TLZZHNL-->
+        android:layout_gravity="center_horizontal" />
 
     <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
         android:layout_gravity="center">
 
         <TableRow
@@ -95,28 +101,31 @@
             android:layout_height="match_parent">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:text="A"
-                android:id="@+id/button1" />
+                android:layout_weight="1"
+                android:id="@+id/LetterBtn1" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:layout_weight="1"
                 android:text="T"
-                android:id="@+id/button2" />
+                android:id="@+id/LetterBtn2" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:layout_weight="1"
                 android:text="H"
-                android:id="@+id/button3" />
+                android:id="@+id/LetterBtn3" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:layout_weight="1"
                 android:text="L"
-                android:id="@+id/button4" />
+                android:id="@+id/LetterBtn4" />
         </TableRow>
 
         <TableRow
@@ -124,28 +133,32 @@
             android:layout_height="match_parent" >
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:layout_weight="1"
                 android:text="Z"
-                android:id="@+id/button5" />
+                android:id="@+id/LetterBtn5" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:layout_weight="1"
                 android:text="P"
-                android:id="@+id/button6" />
+                android:id="@+id/LetterBtn6" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:layout_weight="1"
                 android:text="N"
-                android:id="@+id/button7" />
+                android:id="@+id/LetterBtn7" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:layout_weight="1"
                 android:text="S"
-                android:id="@+id/button8" />
+                android:id="@+id/LetterBtn8" />
         </TableRow>
     </TableLayout>
 

@@ -20,8 +20,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DummyActivity"
-            android:label="@string/title_activity_dummy"
+            android:name=".CaesarLvlActivity"
+            android:label="@string/title_activity_caesar_lvl"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"></activity>
     </application>

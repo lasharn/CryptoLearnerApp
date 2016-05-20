@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickChallenge(View view) {
-        Intent intent = new Intent(this, DummyActivity.class);
+        Intent intent = new Intent(this, CaesarLvlActivity.class);
         startActivity(intent);
     }
 

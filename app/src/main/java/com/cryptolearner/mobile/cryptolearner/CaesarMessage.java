@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class CaesarMessage {
 
+    private final String emptyAnswerLetter = "_ ";
+
     private String[] plainTextLetters;
     private String[] selectedCipherLetters;
     private String[] solutionText;
@@ -12,7 +14,7 @@ public class CaesarMessage {
     public CaesarMessage(String plainTextMessage, int key) {
         plainTextLetters = plainTextMessage.split("(?!^)"); // regex for everything that is not start of string
         selectedCipherLetters = new String[plainTextLetters.length];
-        Arrays.fill(selectedCipherLetters, "_ ");
+        Arrays.fill(selectedCipherLetters, emptyAnswerLetter);
         solutionText = solveCipher(plainTextMessage, key).split("(?!^)");
     }
 
@@ -36,7 +38,7 @@ public class CaesarMessage {
         int positionOfLetter = -1;
         for (int i = 0; i<selectedCipherLetters.length; i++) {
             String s = selectedCipherLetters[i];
-            if (s == null || s.isEmpty() || s.equals("_ ")) {
+            if (s == null || s.isEmpty() || s.equals(emptyAnswerLetter)) {
                 positionOfLetter = i;
                 break;
             }
@@ -51,6 +53,15 @@ public class CaesarMessage {
         for (int i = 0; i<selectedCipherLetters.length; i++) {
             if (plainTextLetters[i].equals(plainTextLetter)) {
                 selectedCipherLetters[i] = letter;
+            }
+        }
+    }
+
+    public void removeLetter(String letter) {
+        for (int i = 0; i<selectedCipherLetters.length; i++) {
+            String s = selectedCipherLetters[i];
+            if (s.equals(letter)) {
+                selectedCipherLetters[i] = emptyAnswerLetter;
             }
         }
     }
