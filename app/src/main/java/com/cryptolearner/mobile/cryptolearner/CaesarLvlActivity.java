@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -29,9 +27,9 @@ public class CaesarLvlActivity extends AppCompatActivity {
         cipherMessage = new CaesarMessage(message.getText().toString(), 7);
 
         keyText = (TextView) findViewById(R.id.KeyText);
-        CaesarWheelView caesarWheelView = (CaesarWheelView) findViewById(R.id.rotary_dialer);
-        assert caesarWheelView != null;
-        caesarWheelView.addDialListener(new CaesarWheelView.DialListener() {
+        CipherWheelView cipherWheelView = (CipherWheelView) findViewById(R.id.cipher_wheel);
+        assert cipherWheelView != null;
+        cipherWheelView.addDialListener(new CipherWheelView.DialListener() {
             public void onDial(int number) {
                 keyText.setText(String.format(Locale.ENGLISH, "Key:\n%d", number));
             }

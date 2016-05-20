@@ -14,22 +14,22 @@ import java.util.List;
 /**
  * Adapted from a tutorial at http://www.ssaurel.com/blog/how-to-create-a-rotary-dialer-application-for-android/
  */
-public class CaesarWheelView extends View {
+public class CipherWheelView extends View {
     private float wheelAngle;
     private final Drawable wheelDrawable;
     private final int r1 = 50;
     private final int r2 = 400;
     private double lastFi;
 
-    public CaesarWheelView(Context context) {
+    public CipherWheelView(Context context) {
         this(context, null);
     }
 
-    public CaesarWheelView(Context context, AttributeSet attrs) {
+    public CipherWheelView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CaesarWheelView(Context context, AttributeSet attrs, int defStyle) {
+    public CipherWheelView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         wheelDrawable = context.getResources().getDrawable(R.drawable.cipher_circle_front);
     }

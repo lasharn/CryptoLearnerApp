@@ -28,11 +28,10 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:background="@drawable/cipher_circle_back"
-                android:adjustViewBounds="true"
-                />
+                android:adjustViewBounds="true" />
 
-        <com.cryptolearner.mobile.cryptolearner.CaesarWheelView
-            android:id="@+id/rotary_dialer"
+        <com.cryptolearner.mobile.cryptolearner.CipherWheelView
+            android:id="@+id/cipher_wheel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
