@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 public class CaesarLvlActivity extends AppCompatActivity {
 
@@ -23,8 +25,13 @@ public class CaesarLvlActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Random r = new Random();
+        int key = r.nextInt(23) + 3;
+        TextView task = (TextView) findViewById(R.id.InstructionText);
+        task.setText(task.getText()  + " " + key);
+
         TextView message = (TextView) findViewById(R.id.TargetText);
-        cipherMessage = new CaesarMessage(message.getText().toString(), 7);
+        cipherMessage = new CaesarMessage(message.getText().toString(), key);
 
         keyText = (TextView) findViewById(R.id.KeyText);
         CipherWheelView cipherWheelView = (CipherWheelView) findViewById(R.id.cipher_wheel);
@@ -39,6 +46,10 @@ public class CaesarLvlActivity extends AppCompatActivity {
         setBtnListener();
 
         // TODO initialize game (instructions, target message, letter buttons)
+        KeyboardLetterGenerator klg = new KeyboardLetterGenerator();
+        setLetterButtons(klg.getKeyboardLetters(cipherMessage.getCorrectAnswer()));
+        //answer.setText(klg.getKeyboardLetters(cipherMessage.getCorrectAnswer()).toString());
+        //message.setText(cipherMessage.getCorrectAnswer());
     }
 
     private void setBtnListener() {
@@ -84,5 +95,28 @@ public class CaesarLvlActivity extends AppCompatActivity {
     private boolean letterBtnIsActive(Button letterBtn) {
         return letterBtn.getCurrentTextColor() != Color.GRAY;
     }
+
+    private void setLetterButtons(List<String> letters) {
+
+        int btnNo = R.id.LetterBtn1;
+        Button btn;
+        btn = (Button) findViewById(R.id.LetterBtn1);
+        btn.setText(letters.get(0));
+        btn = (Button) findViewById(R.id.LetterBtn2);
+        btn.setText(letters.get(1));
+        btn = (Button) findViewById(R.id.LetterBtn3);
+        btn.setText(letters.get(2));
+        btn = (Button) findViewById(R.id.LetterBtn4);
+        btn.setText(letters.get(3));
+        btn = (Button) findViewById(R.id.LetterBtn5);
+        btn.setText(letters.get(4));
+        btn = (Button) findViewById(R.id.LetterBtn6);
+        btn.setText(letters.get(5));
+        btn = (Button) findViewById(R.id.LetterBtn7);
+        btn.setText(letters.get(6));
+        btn = (Button) findViewById(R.id.LetterBtn8);
+        btn.setText(letters.get(7));
+    }
+
 
 }

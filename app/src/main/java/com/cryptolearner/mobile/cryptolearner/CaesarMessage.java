@@ -10,12 +10,14 @@ public class CaesarMessage {
     private String[] plainTextLetters;
     private String[] selectedCipherLetters;
     private String[] solutionText;
+    private int key;
 
     public CaesarMessage(String plainTextMessage, int key) {
-        plainTextLetters = plainTextMessage.split("(?!^)"); // regex for everything that is not start of string
+        this.key = key;
+        plainTextLetters = plainTextMessage.toUpperCase().split("(?!^)"); // regex for everything that is not start of string
         selectedCipherLetters = new String[plainTextLetters.length];
         Arrays.fill(selectedCipherLetters, emptyAnswerLetter);
-        solutionText = solveCipher(plainTextMessage, key).split("(?!^)");
+        solutionText = solveCipher().split("(?!^)");
     }
 
     public String plainTextString() {
@@ -66,10 +68,9 @@ public class CaesarMessage {
         }
     }
 
-    private String solveCipher(String plainTextMessage, int key) {
-        plainTextMessage = plainTextMessage.toUpperCase();
+    private String solveCipher() {
         StringBuilder b = new StringBuilder();
-        for (int i = 0; i<plainTextMessage.length(); i++) {
+        for (int i = 0; i<plainTextLetters.length; i++) {
             char c = (char) (plainTextLetters[i].charAt(0) + key);
             if (c > 'Z') {
                 c -= 26;
@@ -80,12 +81,16 @@ public class CaesarMessage {
         return b.toString();
     }
 
-    public boolean isCorrect() {
-        if (Arrays.equals(selectedCipherLetters, solutionText)) {
-            // you got it. yay
-            return true;
+    public String getCorrectAnswer() {
+        StringBuilder b = new StringBuilder();
+        for (int i = 0; i<solutionText.length; i++) {
+            b.append(solutionText[i]);
         }
-        return false;
+        return b.toString();
+    }
+
+    public boolean isCorrect() {
+        return Arrays.equals(selectedCipherLetters, solutionText);
     }
 
 }

@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Encrypt with a key of 7" />
+        android:text="@string/caesar_lvl1_inst1" />
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -23,18 +23,20 @@
         android:layout_marginBottom="10dp">
 
 
-            <View
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:background="@drawable/cipher_circle_back"
+                android:src="@drawable/cipher_circle_back"
+                android:scaleType="fitCenter"
                 android:adjustViewBounds="true" />
 
         <com.cryptolearner.mobile.cryptolearner.CipherWheelView
             android:id="@+id/cipher_wheel"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
             android:adjustViewBounds="true" />
 
         <TextView

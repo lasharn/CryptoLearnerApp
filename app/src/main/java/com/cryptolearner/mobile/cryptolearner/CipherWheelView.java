@@ -48,8 +48,9 @@ public class CipherWheelView extends View {
         //sets the size of the inner wheel image in relation to the outer wheel
         int imageWidth = (availableWidth/100)*81; // inner wheel is 81% size of outer
         int imageHeight = (availableHeight/100)*81;
-        int left = (availableWidth-imageWidth)/2;
+        int left = (availableWidth-imageHeight)/2;
         int top = (availableHeight-imageHeight)/2;
+        //left = top;
 
         wheelDrawable.setBounds(left, top, availableWidth-left,
                 availableHeight-top);
@@ -98,6 +99,7 @@ public class CipherWheelView extends View {
                     wheelAngle %= 360;
                     lastFi = fi;
                     invalidate();
+                    fireDialListenerEvent(wheelAngle);
                     return true;
                 }
 

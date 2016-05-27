@@ -29,7 +29,7 @@
     <string name="zero_key">Key:\n0</string>
 
 
-    <string name="caesar_lvl1_inst1">Encrypt the word below with a key of 7</string>
+    <string name="caesar_lvl1_inst1">Encrypt the word below with a key of</string>
     <string name="caesar_lvl1_inst2">Decrypt the word below with a key of 7</string>
     <string name="caesar_lvl1_target1">MESSAGE</string>
     <string name="caesar_lvl1_target2">TLZZHNL</string>
