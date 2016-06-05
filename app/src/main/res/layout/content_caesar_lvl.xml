@@ -90,7 +90,32 @@
         android:textSize="20sp"
         android:layout_gravity="center_horizontal" />
 
+    <LinearLayout
+        android:id="@+id/SuccessMessage"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/SuccessText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stage_win_message"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/CompleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_word"/>
+
+    </LinearLayout>
     <TableLayout
+        android:id="@+id/KeyboardTable"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

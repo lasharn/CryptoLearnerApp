@@ -1,5 +1,6 @@
 package com.cryptolearner.mobile.cryptolearner;
 
+import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,13 +26,29 @@ public class CaesarLvlActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        setupGame();
+
+        setKeyboardBtnListeners();
+
+        findViewById(R.id.CompleteButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO register that one stage is complete
+                setupGame();
+            }
+        });
+    }
+
+    private void setupGame() {
+        // display keyboard
+        findViewById(R.id.KeyboardTable).setVisibility(View.VISIBLE);
+        findViewById(R.id.SuccessMessage).setVisibility(View.GONE);
+
+        // set key
         Random r = new Random();
-        int key = r.nextInt(23) + 3;
+        int key = r.nextInt(21) + 3; // doesn't allow keys close to 0
         TextView task = (TextView) findViewById(R.id.InstructionText);
         task.setText(task.getText()  + " " + key);
-
-        TextView message = (TextView) findViewById(R.id.TargetText);
-        cipherMessage = new CaesarMessage(message.getText().toString(), key);
 
         keyText = (TextView) findViewById(R.id.KeyText);
         CipherWheelView cipherWheelView = (CipherWheelView) findViewById(R.id.cipher_wheel);
@@ -42,17 +59,23 @@ public class CaesarLvlActivity extends AppCompatActivity {
             }
         });
 
-        answer = (TextView) findViewById(R.id.AnswerText);
-        setBtnListener();
+        // Set word to solve
+        WordGenerator generator = new WordGenerator(getApplicationContext().getAssets());
+        String targetWord = generator.getWord();
+        TextView message = (TextView) findViewById(R.id.TargetText);
+        message.setText(targetWord);
+        cipherMessage = new CaesarMessage(targetWord, key);
 
-        // TODO initialize game (instructions, target message, letter buttons)
+        // set answer string
+        answer = (TextView) findViewById(R.id.AnswerText);
+        answer.setText(cipherMessage.cipherTextString());
+
+        // set keyboard letters
         KeyboardLetterGenerator klg = new KeyboardLetterGenerator();
         setLetterButtons(klg.getKeyboardLetters(cipherMessage.getCorrectAnswer()));
-        //answer.setText(klg.getKeyboardLetters(cipherMessage.getCorrectAnswer()).toString());
-        //message.setText(cipherMessage.getCorrectAnswer());
     }
 
-    private void setBtnListener() {
+    private void setKeyboardBtnListeners() {
         View.OnClickListener listener = new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
@@ -80,9 +103,13 @@ public class CaesarLvlActivity extends AppCompatActivity {
         }
         answer.setText(cipherMessage.cipherTextString());
         if (cipherMessage.isCorrect()) {
-            TextView message = (TextView) findViewById(R.id.TargetText);
-            message.setText("Yay you encoded the message");
+            stageFinished();
         }
+    }
+
+    private void stageFinished() {
+        findViewById(R.id.KeyboardTable).setVisibility(View.GONE);
+        findViewById(R.id.SuccessMessage).setVisibility(View.VISIBLE);
     }
 
 
