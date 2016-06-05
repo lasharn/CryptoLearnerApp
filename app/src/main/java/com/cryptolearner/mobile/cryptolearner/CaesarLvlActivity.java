@@ -48,7 +48,7 @@ public class CaesarLvlActivity extends AppCompatActivity {
         Random r = new Random();
         int key = r.nextInt(21) + 3; // doesn't allow keys close to 0
         TextView task = (TextView) findViewById(R.id.InstructionText);
-        task.setText(task.getText()  + " " + key);
+        task.setText(getString(R.string.caesar_lvl1_instr)  + " " + key);
 
         keyText = (TextView) findViewById(R.id.KeyText);
         CipherWheelView cipherWheelView = (CipherWheelView) findViewById(R.id.cipher_wheel);
@@ -129,20 +129,28 @@ public class CaesarLvlActivity extends AppCompatActivity {
         Button btn;
         btn = (Button) findViewById(R.id.LetterBtn1);
         btn.setText(letters.get(0));
+        activateLetterBtn(btn);
         btn = (Button) findViewById(R.id.LetterBtn2);
         btn.setText(letters.get(1));
+        activateLetterBtn(btn);
         btn = (Button) findViewById(R.id.LetterBtn3);
         btn.setText(letters.get(2));
+        activateLetterBtn(btn);
         btn = (Button) findViewById(R.id.LetterBtn4);
         btn.setText(letters.get(3));
+        activateLetterBtn(btn);
         btn = (Button) findViewById(R.id.LetterBtn5);
         btn.setText(letters.get(4));
+        activateLetterBtn(btn);
         btn = (Button) findViewById(R.id.LetterBtn6);
         btn.setText(letters.get(5));
+        activateLetterBtn(btn);
         btn = (Button) findViewById(R.id.LetterBtn7);
         btn.setText(letters.get(6));
+        activateLetterBtn(btn);
         btn = (Button) findViewById(R.id.LetterBtn8);
         btn.setText(letters.get(7));
+        activateLetterBtn(btn);
     }
 
 
