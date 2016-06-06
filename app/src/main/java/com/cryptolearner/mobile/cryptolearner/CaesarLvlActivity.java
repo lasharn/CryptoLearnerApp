@@ -1,19 +1,26 @@
 package com.cryptolearner.mobile.cryptolearner;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-public class CaesarLvlActivity extends AppCompatActivity {
+public class CaesarLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
+
+    private int stage = 1;
 
     private TextView keyText;
     private TextView answer;
@@ -33,7 +40,6 @@ public class CaesarLvlActivity extends AppCompatActivity {
         findViewById(R.id.CompleteButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO register that one stage is complete
                 setupGame();
             }
         });
@@ -103,13 +109,23 @@ public class CaesarLvlActivity extends AppCompatActivity {
         }
         answer.setText(cipherMessage.cipherTextString());
         if (cipherMessage.isCorrect()) {
-            stageFinished();
+            stageComplete();
         }
     }
 
-    private void stageFinished() {
-        findViewById(R.id.KeyboardTable).setVisibility(View.GONE);
-        findViewById(R.id.SuccessMessage).setVisibility(View.VISIBLE);
+    private void stageComplete() {
+        stage++;
+        if (stage > 3) {
+            challengeComplete();
+        } else {
+            findViewById(R.id.KeyboardTable).setVisibility(View.GONE);
+            findViewById(R.id.SuccessMessage).setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void challengeComplete() {
+        DialogFragment newFragment = new CaesarCompleteDialogFragment();
+        newFragment.show(getSupportFragmentManager(), "congratulations");
     }
 
 
@@ -153,5 +169,9 @@ public class CaesarLvlActivity extends AppCompatActivity {
         activateLetterBtn(btn);
     }
 
+
+    public void onDialogContinueClick(DialogFragment dialog) {
+        finish();
+    }
 
 }
