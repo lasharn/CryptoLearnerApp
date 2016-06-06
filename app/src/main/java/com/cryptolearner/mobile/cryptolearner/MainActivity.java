@@ -1,7 +1,9 @@
 package com.cryptolearner.mobile.cryptolearner;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +11,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    ProgressDialog pd;
+    private ProgressDialog pd;
+    private SharedPreferences prefs;
+
+    private static final String cryptoPreferences = "CryptoPrefs";
+    private static final String lvlUnlockKey = "lvlUnlockKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        prefs = this.getSharedPreferences("com.cryptolearner.mobile.cryptolearner", Context.MODE_PRIVATE);
+        setupLvlUnlocks();
     }
 
     @Override
@@ -50,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         if (pd != null) {
             pd.dismiss();
         }
+        setupLvlUnlocks();
     }
 
     public void onClickCaesar(View view) {
@@ -81,10 +93,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickChallenge(View view) {
-        pd = ProgressDialog.show(this, "Loading",
-                "Please wait");
-        Intent intent = new Intent(this, CaesarLvlActivity.class);
-        startActivity(intent);
+        if (view.getId() == R.id.CaesarLvl1Btn) {
+            pd = ProgressDialog.show(this, "Loading",
+                    "Please wait");
+            Intent intent = new Intent(this, CaesarLvlActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Level not implemented", // change this to not unlocked
+                    Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 
@@ -144,4 +162,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private void setupLvlUnlocks() {
+        int currentUnlocks = prefs.getInt(lvlUnlockKey, 1);
+        if (currentUnlocks < 2) {
+            lockLevel(findViewById(R.id.CaesarLvl2Btn));
+        }
+        if (currentUnlocks < 3) {
+            lockLevel(findViewById(R.id.CaesarLvl3Btn));
+        }
+        if (currentUnlocks < 4) {
+            lockLevel(findViewById(R.id.CaesarLvl4Btn));
+        }
+    }
+
+    private void lockLevel(View view) {
+        ImageView iv = (ImageView) ((ViewGroup)view).getChildAt(1);
+        iv.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.locked_icon));
+    }
 }

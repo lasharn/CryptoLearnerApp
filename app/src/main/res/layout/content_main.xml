@@ -143,16 +143,39 @@
 
     </RelativeLayout>
 
-    <Button
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:text="@string/caesar_lvl4_btn"
         android:id="@+id/CaesarLvl4Btn"
-        android:layout_gravity="center_horizontal"
-        android:width="200dp"
         android:onClick="onClickChallenge"
         android:background="@drawable/wall_button"
-        android:visibility="gone"/>
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/anchor4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:contentDescription="@string/caesar_btn"
+            android:id="@+id/caesar_lvl4_image"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:src="@drawable/unlocked_icon"
+            android:layout_toLeftOf="@id/anchor4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:text="@string/caesar_lvl4_btn"
+            android:paddingLeft="5dp"
+            android:layout_toRightOf="@id/caesar_lvl4_image"/>
+
+    </RelativeLayout>
 
     <Button
         android:layout_width="match_parent"
