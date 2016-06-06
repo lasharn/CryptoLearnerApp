@@ -1,5 +1,6 @@
 package com.cryptolearner.mobile.cryptolearner;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+
+    ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (pd != null) {
+            pd.dismiss();
+        }
+    }
+
     public void onClickCaesar(View view) {
         findViewById(R.id.Background).setBackgroundColor(Color.parseColor("#FA6900"));
         View caesar1 = findViewById(R.id.CaesarLvl1Btn);
@@ -70,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickChallenge(View view) {
+        pd = ProgressDialog.show(this, "Loading",
+                "Please wait");
         Intent intent = new Intent(this, CaesarLvlActivity.class);
         startActivity(intent);
     }

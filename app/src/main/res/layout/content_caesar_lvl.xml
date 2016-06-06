@@ -12,6 +12,7 @@
 
     <TextView
         android:id="@+id/InstructionText"
+        android:textSize="15sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -21,7 +22,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginBottom="10dp">
+        android:layout_margin="10dp">
 
 
             <ImageView
@@ -96,7 +97,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight=".9"
         android:layout_margin="10dp"
         android:visibility="gone">
 
@@ -119,7 +120,7 @@
         android:id="@+id/KeyboardTable"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight=".9"
         android:layout_margin="10dp"
         android:layout_gravity="center">
 
