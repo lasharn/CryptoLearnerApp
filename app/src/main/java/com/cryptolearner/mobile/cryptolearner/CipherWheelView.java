@@ -39,15 +39,16 @@ public class CipherWheelView extends View {
         super.onDraw(canvas);
         int availableWidth = getRight() - getLeft();
         int availableHeight = getBottom() - getTop();
+        double availableHeightDouble = (double) availableHeight;
 
-        int x = availableWidth / 2;
-        int y = availableHeight / 2;
+        int x = (int) availableWidth / 2;
+        int y = (int) availableHeight / 2;
 
         canvas.save();
 
         //sets the size of the inner wheel image in relation to the outer wheel
-        int imageWidth = (availableWidth/100)*81; // inner wheel is 81% size of outer
-        int imageHeight = (availableHeight/100)*81;
+        int imageWidth = (availableWidth/100)*78; // inner wheel is 81% size of outer
+        int imageHeight = (int) ((availableHeightDouble/100.0)*78.0);
         int left = (availableWidth-imageHeight)/2;
         int top = (availableHeight-imageHeight)/2;
         //left = top;
