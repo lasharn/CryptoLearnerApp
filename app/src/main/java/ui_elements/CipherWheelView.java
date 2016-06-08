@@ -1,4 +1,4 @@
-package com.cryptolearner.mobile.cryptolearner;
+package ui_elements;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,6 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.cryptolearner.mobile.cryptolearner.R;
 
 import java.util.ArrayList;
 import java.util.List;

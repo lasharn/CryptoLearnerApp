@@ -1,9 +1,7 @@
-package com.cryptolearner.mobile.cryptolearner;
+package activities;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +13,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.cryptolearner.mobile.cryptolearner.R;
+
+import unpackaged.ChallengeType;
+import unpackaged.LevelUnlocks;
+
 public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog pd;
-    private SharedPreferences prefs;
 
-    private static final String cryptoPreferences = "CryptoPrefs";
-    private static final String lvlUnlockKey = "lvlUnlockKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        prefs = this.getSharedPreferences("com.cryptolearner.mobile.cryptolearner", Context.MODE_PRIVATE);
+
+        LevelUnlocks.initialize(this);
         setupLvlUnlocks();
     }
 
@@ -48,7 +49,14 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.reset_progress) {
+            LevelUnlocks.getInstance().resetProgress();
+            setupLvlUnlocks();
+            return true;
+        }
+        if (id == R.id.unlock_all) {
+            LevelUnlocks.getInstance().unlockAll();
+            setupLvlUnlocks();
             return true;
         }
 
@@ -93,14 +101,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickChallenge(View view) {
-        if (view.getId() == R.id.CaesarLvl1Btn) {
-            pd = ProgressDialog.show(this, "Loading",
-                    "Please wait");
-            Intent intent = new Intent(this, CaesarLvlActivity.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Level not implemented", // change this to not unlocked
+        boolean levelLocked = false;
+        Intent intent = new Intent(this, CaesarLvlActivity.class);
+        switch (view.getId()) {
+            case R.id.CaesarLvl1Btn:
+                intent = new Intent(this, CaesarLvlActivity.class);
+                break;
+            case R.id.CaesarLvl2Btn:
+                if (isLevelUnlocked(ChallengeType.CAESAR, 2)) {
+                    intent = new Intent(this, CaesarLvlActivity.class);
+                } else {
+                    levelLocked = true;
+                }
+                break;
+            case R.id.CaesarLvl3Btn:
+                if (isLevelUnlocked(ChallengeType.CAESAR, 3)) {
+                    intent = new Intent(this, CaesarLvlActivity.class);
+                } else {
+                    levelLocked = true;
+                }
+                break;
+            case R.id.CaesarLvl4Btn:
+                if (isLevelUnlocked(ChallengeType.CAESAR, 4)) {
+                    intent = new Intent(this, CaesarLvlActivity.class);
+                } else {
+                    levelLocked = true;
+                }
+                break;
+        }
+
+        if (levelLocked) {
+            Toast.makeText(this, "Level not unlocked",
                     Toast.LENGTH_SHORT).show();
+        } else {
+            pd = ProgressDialog.show(this, "Loading",
+                    "Please wait...");
+
+            startActivity(intent);
         }
 
     }
@@ -161,22 +198,37 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private boolean isLevelUnlocked(ChallengeType type, int challengeNo) {
+        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance();
+        return levelUnlocks.isUnlocked(type, challengeNo);
+    }
 
     private void setupLvlUnlocks() {
-        int currentUnlocks = prefs.getInt(lvlUnlockKey, 1);
-        if (currentUnlocks < 2) {
+        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance();
+        if (!levelUnlocks.isUnlocked(ChallengeType.CAESAR, 2)) {
             lockLevel(findViewById(R.id.CaesarLvl2Btn));
+        } else {
+            unlockLevel(findViewById(R.id.CaesarLvl2Btn));
         }
-        if (currentUnlocks < 3) {
+        if (!levelUnlocks.isUnlocked(ChallengeType.CAESAR, 3)) {
             lockLevel(findViewById(R.id.CaesarLvl3Btn));
+        } else {
+            unlockLevel(findViewById(R.id.CaesarLvl3Btn));
         }
-        if (currentUnlocks < 4) {
+        if (!levelUnlocks.isUnlocked(ChallengeType.CAESAR, 4)) {
             lockLevel(findViewById(R.id.CaesarLvl4Btn));
+        } else {
+            unlockLevel(findViewById(R.id.CaesarLvl4Btn));
         }
     }
 
     private void lockLevel(View view) {
         ImageView iv = (ImageView) ((ViewGroup)view).getChildAt(1);
         iv.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.locked_icon));
+    }
+
+    private void unlockLevel(View view) {
+        ImageView iv = (ImageView) ((ViewGroup)view).getChildAt(1);
+        iv.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.key_icon));
     }
 }

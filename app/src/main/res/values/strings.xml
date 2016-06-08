@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CryptoLearner</string>
-    <string name="action_settings">Settings</string>
+    <string name="unlock_all">Unlock All</string>
+    <string name="reset_progress">Delete Progress</string>
+    <string name="do_nothing">Do Nothing</string>
 
     <string name="caesar_btn">Caesar Cipher</string>
     <string name="substitution_btn">Substitution Cipher</string>

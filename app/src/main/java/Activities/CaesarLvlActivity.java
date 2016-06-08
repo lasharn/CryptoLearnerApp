@@ -1,18 +1,24 @@
-package com.cryptolearner.mobile.cryptolearner;
+package activities;
 
-import android.content.Context;
-import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.PopupWindow;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import ui_elements.CaesarCompleteDialogFragment;
+import caesar_encryption.CaesarMessage;
+import ui_elements.CipherWheelView;
+import caesar_encryption.KeyboardLetterGenerator;
+import com.cryptolearner.mobile.cryptolearner.R;
+import caesar_encryption.WordGenerator;
+import unpackaged.ChallengeType;
+import unpackaged.LevelUnlocks;
 
 import java.util.List;
 import java.util.Locale;
@@ -20,10 +26,12 @@ import java.util.Random;
 
 public class CaesarLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 
+    private final int challengeNo = 1;
+    private final ChallengeType challengeType = ChallengeType.CAESAR;
     private int stage = 1;
 
     private TextView keyText;
-    private TextView answer;
+//    private TextView answer;
     private CaesarMessage cipherMessage;
 
     @Override
@@ -68,17 +76,52 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
         // Set word to solve
         WordGenerator generator = new WordGenerator(getApplicationContext().getAssets());
         String targetWord = generator.getWord();
-        TextView message = (TextView) findViewById(R.id.TargetText);
-        message.setText(targetWord);
+//        TextView message = (TextView) findViewById(R.id.TargetText);
+//        message.setText(targetWord);
         cipherMessage = new CaesarMessage(targetWord, key);
 
+
+        LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
+        //findViewById(R.id.TargetText).setVisibility(View.GONE);
+        messageLayout.removeAllViews();
+        for (int i=0; i < targetWord.length(); i++) {
+            TextView letterView = new TextView(this);
+            letterView.setText(targetWord.charAt(i) + "");
+            letterView.setTextSize(20);
+            letterView.setWidth(50);
+            letterView.setGravity(Gravity.CENTER);
+            letterView.setBackgroundResource(R.drawable.letter_background);
+
+            messageLayout.addView(letterView);
+        }
+
+
         // set answer string
-        answer = (TextView) findViewById(R.id.AnswerText);
-        answer.setText(cipherMessage.cipherTextString());
+//        answer = (TextView) findViewById(R.id.AnswerText);
+//        answer.setText(cipherMessage.cipherTextString());
+
+        setupSolutionText(cipherMessage.cipherTextString());
+        //findViewById(R.id.AnswerText).setVisibility(View.GONE);
 
         // set keyboard letters
         KeyboardLetterGenerator klg = new KeyboardLetterGenerator();
         setLetterButtons(klg.getKeyboardLetters(cipherMessage.getCorrectAnswer()));
+    }
+
+    private void setupSolutionText(String word) {
+        LinearLayout messageLayout = (LinearLayout) findViewById(R.id.solution_layout);
+        messageLayout.removeAllViews();
+        //findViewById(R.id.AnswerText).setVisibility(View.GONE);
+        for (int i=0; i < word.length(); i++) {
+            TextView letterView = new TextView(this);
+            letterView.setText(word.charAt(i) + "");
+            letterView.setTextSize(20);
+            letterView.setWidth(50);
+            letterView.setGravity(Gravity.CENTER);
+            letterView.setBackgroundResource(R.drawable.letter_background);
+
+            messageLayout.addView(letterView);
+        }
     }
 
     private void setKeyboardBtnListeners() {
@@ -107,7 +150,8 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
             cipherMessage.removeLetter(btn.getText().toString());
             activateLetterBtn(btn);
         }
-        answer.setText(cipherMessage.cipherTextString());
+        //answer.setText(cipherMessage.cipherTextString());
+        setupSolutionText(cipherMessage.cipherTextString());
         if (cipherMessage.isCorrect()) {
             stageComplete();
         }
@@ -124,6 +168,9 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
     }
 
     private void challengeComplete() {
+        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance();
+        levelUnlocks.levelComplete(challengeType, challengeNo);
+
         DialogFragment newFragment = new CaesarCompleteDialogFragment();
         newFragment.show(getSupportFragmentManager(), "congratulations");
     }
