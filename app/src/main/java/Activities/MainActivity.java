@@ -2,7 +2,6 @@ package activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -224,11 +223,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void lockLevel(View view) {
         ImageView iv = (ImageView) ((ViewGroup)view).getChildAt(1);
-        iv.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.locked_icon));
+        iv.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.icon_locked));
     }
 
     private void unlockLevel(View view) {
         ImageView iv = (ImageView) ((ViewGroup)view).getChildAt(1);
-        iv.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.key_icon));
+        iv.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.icon_key));
     }
 }

@@ -4,8 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="grey">#AAAAAA</color>
     <color name="darkGrey">#777777</color>
+    <color name="veryDarkGrey">#444444</color>
+
     <color name="mainColour">#FA6900</color>
     <color name="secondaryColour">#69D2E7</color>
     <color name="colourMix">#E0E4CC</color>
+
+    <color name="darkerMain">#EA5900</color>
+    <color name="lighterMain">#FFAA44</color>
 </resources>

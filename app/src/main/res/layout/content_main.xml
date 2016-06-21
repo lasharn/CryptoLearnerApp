@@ -28,7 +28,7 @@
             android:adjustViewBounds="true"
             android:padding="10dp"
             android:layout_alignParentLeft="true"
-            android:src="@drawable/caesar_icon" />
+            android:src="@drawable/icon_caesar" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
             android:layout_height="fill_parent"
             android:adjustViewBounds="true"
             android:padding="10dp"
-            android:src="@drawable/key_icon"
+            android:src="@drawable/icon_key"
             android:layout_toLeftOf="@id/anchor1"/>
 
         <TextView
@@ -96,7 +96,7 @@
             android:layout_height="fill_parent"
             android:adjustViewBounds="true"
             android:padding="10dp"
-            android:src="@drawable/key_icon"
+            android:src="@drawable/icon_key"
             android:layout_toLeftOf="@id/anchor2"/>
 
         <TextView
@@ -130,7 +130,7 @@
             android:layout_height="fill_parent"
             android:adjustViewBounds="true"
             android:padding="10dp"
-            android:src="@drawable/key_icon"
+            android:src="@drawable/icon_key"
             android:layout_toLeftOf="@id/anchor3"/>
 
         <TextView
@@ -164,7 +164,7 @@
             android:layout_height="fill_parent"
             android:adjustViewBounds="true"
             android:padding="10dp"
-            android:src="@drawable/key_icon"
+            android:src="@drawable/icon_key"
             android:layout_toLeftOf="@id/anchor4"/>
 
         <TextView

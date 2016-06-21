@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/plain_text_label"
+            android:src="@drawable/cipher_plain_text_label"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"/>
 
@@ -148,67 +148,85 @@
 
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/LetterBtn1" />
+                android:id="@+id/LetterBtn1"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp"/>
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="T"
-                android:id="@+id/LetterBtn2" />
+                android:id="@+id/LetterBtn2"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="H"
-                android:id="@+id/LetterBtn3" />
+                android:id="@+id/LetterBtn3"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="L"
-                android:id="@+id/LetterBtn4" />
+                android:id="@+id/LetterBtn4"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Z"
-                android:id="@+id/LetterBtn5" />
+                android:id="@+id/LetterBtn5"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="P"
-                android:id="@+id/LetterBtn6" />
+                android:id="@+id/LetterBtn6"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="N"
-                android:id="@+id/LetterBtn7" />
+                android:id="@+id/LetterBtn7"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="S"
-                android:id="@+id/LetterBtn8" />
+                android:id="@+id/LetterBtn8"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
         </TableRow>
     </TableLayout>
 

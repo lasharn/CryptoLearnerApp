@@ -116,7 +116,7 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
             letterView.setTextSize(20);
             letterView.setWidth(50);
             letterView.setGravity(Gravity.CENTER);
-            letterView.setBackgroundResource(R.drawable.answer_letter_background);
+            letterView.setBackgroundResource(R.drawable.letter_answer_background);
 
             messageLayout.addView(letterView);
         }
