@@ -28,7 +28,9 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
 
     private final int challengeNo = 1;
     private final ChallengeType challengeType = ChallengeType.CAESAR;
+    private final int numberOfStages = 3;
     private int stage = 1;
+
 
     private TextView keyText;
 //    private TextView answer;
@@ -49,6 +51,8 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
             @Override
             public void onClick(View v) {
                 setupGame();
+                TextView stageDisplay = (TextView) findViewById(R.id.stageDisplay);
+                stageDisplay.setText(getStageDisplayString());
             }
         });
     }
@@ -62,7 +66,6 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
         Random r = new Random();
         int key = r.nextInt(21) + 3; // doesn't allow keys close to 0
         TextView task = (TextView) findViewById(R.id.InstructionText);
-        task.setText(getString(R.string.caesar_lvl1_instr)  + " " + key);
 
         keyText = (TextView) findViewById(R.id.KeyText);
         CipherWheelView cipherWheelView = (CipherWheelView) findViewById(R.id.cipher_wheel);
@@ -76,10 +79,10 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
         // Set word to solve
         WordGenerator generator = new WordGenerator(getApplicationContext().getAssets());
         String targetWord = generator.getWord();
-//        TextView message = (TextView) findViewById(R.id.TargetText);
-//        message.setText(targetWord);
         cipherMessage = new CaesarMessage(targetWord, key);
 
+        task.setText(getString(R.string.caesar_lvl1_instr_part1) + " " + targetWord + " " +
+                getString(R.string.caesar_lvl1_instr_part2) + " " + key);
 
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
         //findViewById(R.id.TargetText).setVisibility(View.GONE);
@@ -97,11 +100,7 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
 
 
         // set answer string
-//        answer = (TextView) findViewById(R.id.AnswerText);
-//        answer.setText(cipherMessage.cipherTextString());
-
         setupSolutionText(cipherMessage.cipherTextString());
-        //findViewById(R.id.AnswerText).setVisibility(View.GONE);
 
         // set keyboard letters
         KeyboardLetterGenerator klg = new KeyboardLetterGenerator();
@@ -111,7 +110,6 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
     private void setupSolutionText(String word) {
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.solution_layout);
         messageLayout.removeAllViews();
-        //findViewById(R.id.AnswerText).setVisibility(View.GONE);
         for (int i=0; i < word.length(); i++) {
             TextView letterView = new TextView(this);
             letterView.setText(word.charAt(i) + "");
@@ -150,7 +148,6 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
             cipherMessage.removeLetter(btn.getText().toString());
             activateLetterBtn(btn);
         }
-        //answer.setText(cipherMessage.cipherTextString());
         setupSolutionText(cipherMessage.cipherTextString());
         if (cipherMessage.isCorrect()) {
             stageComplete();
@@ -159,7 +156,7 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
 
     private void stageComplete() {
         stage++;
-        if (stage > 3) {
+        if (stage > numberOfStages) {
             challengeComplete();
         } else {
             findViewById(R.id.KeyboardTable).setVisibility(View.GONE);
@@ -219,6 +216,10 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
 
     public void onDialogContinueClick(DialogFragment dialog) {
         finish();
+    }
+
+    private String getStageDisplayString() {
+        return stage + "/" + numberOfStages;
     }
 
 }

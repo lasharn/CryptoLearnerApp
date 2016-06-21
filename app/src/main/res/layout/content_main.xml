@@ -9,7 +9,7 @@
     tools:context="activities.MainActivity"
     tools:showIn="@layout/activity_main"
     android:animateLayoutChanges="true"
-    android:background="#777777"
+    android:background="@color/mainColour"
     android:id="@+id/Background">
 
     <RelativeLayout
@@ -18,7 +18,7 @@
         android:layout_weight="1"
         android:id="@+id/CaesarMainBtn"
         android:onClick="onClickCaesar"
-        android:background="@drawable/wall_button" >
+        android:background="@color/mainColour" >
 
         <ImageView
             android:contentDescription="@string/caesar_btn"
@@ -46,7 +46,7 @@
         android:layout_height="50dp"
         android:id="@+id/CaesarLvl1Btn"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button"
+        android:background="@color/mainColour"
         android:visibility="gone">
 
         <View
@@ -80,7 +80,7 @@
         android:layout_height="50dp"
         android:id="@+id/CaesarLvl2Btn"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button"
+        android:background="@color/mainColour"
         android:visibility="gone">
 
         <View
@@ -114,7 +114,7 @@
         android:layout_height="50dp"
         android:id="@+id/CaesarLvl3Btn"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button"
+        android:background="@color/mainColour"
         android:visibility="gone">
 
         <View
@@ -148,7 +148,7 @@
         android:layout_height="50dp"
         android:id="@+id/CaesarLvl4Btn"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button"
+        android:background="@color/mainColour"
         android:visibility="gone">
 
         <View
@@ -187,7 +187,7 @@
         android:layout_gravity="center_horizontal"
         android:width="200dp"
         android:onClick="onClickSubstitution"
-        android:background="@drawable/wall_button_blue"
+        android:background="@color/colourMix"
         />
 
     <Button
@@ -198,7 +198,7 @@
         android:layout_gravity="center_horizontal"
         android:width="200dp"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button_blue"
+        android:background="@color/colourMix"
         android:visibility="gone"/>
 
     <Button
@@ -209,7 +209,7 @@
         android:layout_gravity="center_horizontal"
         android:width="200dp"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button_blue"
+        android:background="@color/colourMix"
         android:visibility="gone"/>
 
     <Button
@@ -220,7 +220,7 @@
         android:layout_gravity="center_horizontal"
         android:width="200dp"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button_blue"
+        android:background="@color/colourMix"
         android:visibility="gone"/>
 
     <Button
@@ -233,7 +233,7 @@
         android:layout_gravity="center_horizontal"
         android:width="200dp"
         android:onClick="onClickVigenere"
-        android:background="@drawable/wall_button_red" />
+        android:background="@color/secondaryColour" />
 
 
     <Button
@@ -244,7 +244,7 @@
         android:layout_gravity="center_horizontal"
         android:width="200dp"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button_red"
+        android:background="@color/secondaryColour"
         android:visibility="gone"/>
 
     <Button
@@ -255,7 +255,7 @@
         android:layout_gravity="center_horizontal"
         android:width="200dp"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button_red"
+        android:background="@color/secondaryColour"
         android:visibility="gone"/>
 
     <Button
@@ -266,7 +266,7 @@
         android:layout_gravity="center_horizontal"
         android:width="200dp"
         android:onClick="onClickChallenge"
-        android:background="@drawable/wall_button_red"
+        android:background="@color/secondaryColour"
         android:visibility="gone"/>
 
 

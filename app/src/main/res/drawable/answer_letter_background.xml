@@ -4,7 +4,7 @@
         android:width="1dp"
         android:color="@color/darkGrey" />
 
-    <solid android:color="@color/cipherTextColour" />
+    <solid android:color="@color/secondaryColour" />
 
     <padding
         android:left="1dp"

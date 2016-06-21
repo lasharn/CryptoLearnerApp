@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickCaesar(View view) {
-        findViewById(R.id.Background).setBackgroundColor(Color.parseColor("#FA6900"));
+        findViewById(R.id.Background).setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.mainColour));
         View caesar1 = findViewById(R.id.CaesarLvl1Btn);
         if (caesar1.getVisibility() == View.VISIBLE) {
             caesarGone(true);
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSubstitution(View view) {
-        findViewById(R.id.Background).setBackgroundColor(Color.parseColor("#E0E4CC"));
+        findViewById(R.id.Background).setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colourMix));
         if (findViewById(R.id.SubLvl1Btn).getVisibility() == View.VISIBLE) {
             subGone(true);
         } else {
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickVigenere(View view) {
-        findViewById(R.id.Background).setBackgroundColor(Color.parseColor("#69D2E7"));
+        findViewById(R.id.Background).setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.secondaryColour));
         if (findViewById(R.id.VigenereLvl1Btn).getVisibility() == View.VISIBLE) {
             vigenereGone(true);
         } else {
