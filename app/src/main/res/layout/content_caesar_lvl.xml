@@ -8,6 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="activities.CaesarLvlActivity"
     tools:showIn="@layout/activity_caesar_lvl"
+    android:background="@color/mix"
     android:id="@+id/main">
 
     <TextView
@@ -22,16 +23,35 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_margin="10dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/cipher_circle_back"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cipher_circle_back"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cipher_text_label"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/plain_text_label"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
 
         <ui_elements.CipherWheelView
             android:id="@+id/cipher_wheel"
@@ -40,6 +60,7 @@
             android:layout_centerInParent="true"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true" />
+
 
         <TextView
             android:id="@+id/KeyText"
@@ -51,28 +72,14 @@
             android:layout_centerHorizontal="true" />
 
         <TextView
-            android:id="@+id/CipherText"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="90dp"
-            android:gravity="center"
-            android:text="@string/cipher_text"
-            android:textSize="12sp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:rotation="55"/>
+            android:text="1/3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-        <TextView
-            android:id="@+id/PlainText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="220dp"
-            android:gravity="center"
-            android:text="@string/plain_text"
-            android:textSize="12sp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:rotation="55"/>
 
     </RelativeLayout>
 
@@ -102,7 +109,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginTop="2dp">
 
         <TextView
             android:id="@+id/AnswerText"

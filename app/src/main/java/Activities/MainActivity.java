@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        LevelUnlocks.initialize(this);
         setupLvlUnlocks();
     }
 
@@ -50,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.reset_progress) {
-            LevelUnlocks.getInstance().resetProgress();
+            LevelUnlocks.getInstance(this).resetProgress();
             setupLvlUnlocks();
             return true;
         }
         if (id == R.id.unlock_all) {
-            LevelUnlocks.getInstance().unlockAll();
+            LevelUnlocks.getInstance(this).unlockAll();
             setupLvlUnlocks();
             return true;
         }
@@ -199,12 +198,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isLevelUnlocked(ChallengeType type, int challengeNo) {
-        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance();
+        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance(this);
         return levelUnlocks.isUnlocked(type, challengeNo);
     }
 
     private void setupLvlUnlocks() {
-        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance();
+        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance(this);
         if (!levelUnlocks.isUnlocked(ChallengeType.CAESAR, 2)) {
             lockLevel(findViewById(R.id.CaesarLvl2Btn));
         } else {

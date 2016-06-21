@@ -19,7 +19,7 @@ public class LevelUnlocks {
         prefs = a.getSharedPreferences("com.cryptolearner.mobile.cryptolearner", Context.MODE_PRIVATE);
     }
 
-    public static void initialize(Activity a) {
+    private static void initialize(Activity a) {
         if (instance == null) {
             instance = new LevelUnlocks(a);
         }
@@ -57,7 +57,8 @@ public class LevelUnlocks {
         Log.d("Prefs", updatedUnlocks + "");
     }
 
-    public static LevelUnlocks getInstance() {
+    public static LevelUnlocks getInstance(Activity a) {
+        initialize(a);
         return instance;
     }
 

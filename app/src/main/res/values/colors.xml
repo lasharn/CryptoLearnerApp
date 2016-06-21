@@ -5,5 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="darkGrey">#777777</color>
-    <color name="lightGrey">#99CCAA</color>
+    <color name="cipherTextColour">#69D2E7</color>
+    <color name="plainTextColour">#FA6900</color>
+    <color name="mix">#E0E4CC</color>
 </resources>

@@ -118,7 +118,7 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
             letterView.setTextSize(20);
             letterView.setWidth(50);
             letterView.setGravity(Gravity.CENTER);
-            letterView.setBackgroundResource(R.drawable.letter_background);
+            letterView.setBackgroundResource(R.drawable.answer_letter_background);
 
             messageLayout.addView(letterView);
         }
@@ -168,7 +168,7 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
     }
 
     private void challengeComplete() {
-        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance();
+        LevelUnlocks levelUnlocks = LevelUnlocks.getInstance(this);
         levelUnlocks.levelComplete(challengeType, challengeNo);
 
         DialogFragment newFragment = new CaesarCompleteDialogFragment();
