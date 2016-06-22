@@ -101,28 +101,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickChallenge(View view) {
         boolean levelLocked = false;
-        Intent intent = new Intent(this, CaesarLvlActivity.class);
+        Intent intent = new Intent(this, CaesarLvl1Activity.class);
         switch (view.getId()) {
             case R.id.CaesarLvl1Btn:
-                intent = new Intent(this, CaesarLvlActivity.class);
+                intent = new Intent(this, CaesarLvl1Activity.class);
                 break;
             case R.id.CaesarLvl2Btn:
                 if (isLevelUnlocked(ChallengeType.CAESAR, 2)) {
-                    intent = new Intent(this, CaesarLvlActivity.class);
+                    intent = new Intent(this, CaesarLvl2Activity.class);
                 } else {
                     levelLocked = true;
                 }
                 break;
             case R.id.CaesarLvl3Btn:
                 if (isLevelUnlocked(ChallengeType.CAESAR, 3)) {
-                    intent = new Intent(this, CaesarLvlActivity.class);
+                    intent = new Intent(this, CaesarLvl2Activity.class);
                 } else {
                     levelLocked = true;
                 }
                 break;
             case R.id.CaesarLvl4Btn:
                 if (isLevelUnlocked(ChallengeType.CAESAR, 4)) {
-                    intent = new Intent(this, CaesarLvlActivity.class);
+                    intent = new Intent(this, CaesarLvl2Activity.class);
                 } else {
                     levelLocked = true;
                 }

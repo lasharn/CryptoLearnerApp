@@ -20,10 +20,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="activities.CaesarLvlActivity"
-            android:label="@string/title_activity_caesar_lvl"
+            android:name="activities.CaesarLvl1Activity"
+            android:label="@string/title_activity_caesar_lvl_1"
             android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="activities.CaesarLvl2Activity"
+            android:label="@string/title_activity_caesar_lvl_2"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

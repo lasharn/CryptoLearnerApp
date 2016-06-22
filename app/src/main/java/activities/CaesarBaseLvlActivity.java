@@ -24,9 +24,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-public class CaesarLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
+public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 
-    private final int challengeNo = 1;
+    int challengeNo = 1;
+    int layoutId = R.layout.activity_caesar_lvl;
+
     private final ChallengeType challengeType = ChallengeType.CAESAR;
     private final int numberOfStages = 3;
     private int stage = 1;
@@ -39,7 +41,10 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caesar_lvl);
+
+        setupFields();
+
+        setContentView(layoutId);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -56,6 +61,8 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
             }
         });
     }
+
+    abstract void setupFields();
 
     private void setupGame() {
         // display keyboard
@@ -79,7 +86,8 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
         // Set word to solve
         WordGenerator generator = new WordGenerator(getApplicationContext().getAssets());
         String targetWord = generator.getWord();
-        cipherMessage = new CaesarMessage(targetWord, key);
+        cipherMessage = createCaesarMessage(targetWord, key);
+        //cipherMessage = new CaesarMessage(targetWord, key);
 
         task.setText(getString(R.string.caesar_lvl1_instr_part1) + " " + targetWord + " " +
                 getString(R.string.caesar_lvl1_instr_part2) + " " + key);
@@ -106,6 +114,9 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
         KeyboardLetterGenerator klg = new KeyboardLetterGenerator();
         setLetterButtons(klg.getKeyboardLetters(cipherMessage.getCorrectAnswer()));
     }
+
+    abstract protected CaesarMessage createCaesarMessage(String targetWord, int key);
+
 
     private void setupSolutionText(String word) {
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.solution_layout);

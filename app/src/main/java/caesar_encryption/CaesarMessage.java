@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 public class CaesarMessage {
 
-    private final String emptyAnswerLetter = "_";
+    protected final String emptyAnswerLetter = "_";
 
-    private String[] plainTextLetters;
-    private String[] selectedCipherLetters;
-    private String[] solutionText;
+    protected String[] plainTextLetters;
+    protected String[] selectedCipherLetters;
+    protected String[] solutionText;
     private int key;
 
     public CaesarMessage(String plainTextMessage, int key) {
@@ -18,6 +18,10 @@ public class CaesarMessage {
         selectedCipherLetters = new String[plainTextLetters.length];
         Arrays.fill(selectedCipherLetters, emptyAnswerLetter);
         solutionText = solveCipher().split("(?!^)");
+    }
+
+    public CaesarMessage() {
+        this("Racecar", 7);
     }
 
     public String plainTextString() {
@@ -70,8 +74,8 @@ public class CaesarMessage {
 
     private String solveCipher() {
         StringBuilder b = new StringBuilder();
-        for (int i = 0; i<plainTextLetters.length; i++) {
-            char c = (char) (plainTextLetters[i].charAt(0) + key);
+        for (String plainTextLetter : plainTextLetters) {
+            char c = (char) (plainTextLetter.charAt(0) + key);
             if (c > 'Z') {
                 c -= 26;
             }
@@ -83,8 +87,8 @@ public class CaesarMessage {
 
     public String getCorrectAnswer() {
         StringBuilder b = new StringBuilder();
-        for (int i = 0; i<solutionText.length; i++) {
-            b.append(solutionText[i]);
+        for (String solutionTextLetter : solutionText) {
+            b.append(solutionTextLetter);
         }
         return b.toString();
     }
