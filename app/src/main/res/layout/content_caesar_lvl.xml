@@ -13,7 +13,7 @@
 
     <TextView
         android:id="@+id/InstructionText"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -119,7 +119,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".9"
+        android:layout_weight=".5"
         android:layout_margin="10dp"
         android:visibility="gone">
 
@@ -142,87 +142,101 @@
         android:id="@+id/KeyboardTable"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".9"
         android:layout_margin="10dp"
-        android:layout_gravity="center">
+        android:layout_weight=".5">
 
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
                 android:id="@+id/LetterBtn1"
                 android:background="@drawable/keyboard_button"
-                android:layout_margin="3dp"/>
+                android:layout_margin="3dp"
+                android:layout_gravity="center_vertical"/>
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
                 android:text="T"
                 android:id="@+id/LetterBtn2"
                 android:background="@drawable/keyboard_button"
-                android:layout_margin="3dp" />
+                android:layout_margin="3dp"
+                android:layout_gravity="center_vertical" />
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
                 android:text="H"
                 android:id="@+id/LetterBtn3"
                 android:background="@drawable/keyboard_button"
-                android:layout_margin="3dp" />
+                android:layout_margin="3dp"
+                android:layout_gravity="center_vertical"/>
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
                 android:text="L"
                 android:id="@+id/LetterBtn4"
                 android:background="@drawable/keyboard_button"
-                android:layout_margin="3dp" />
+                android:layout_margin="3dp"
+                android:longClickable="true"
+                android:layout_gravity="center_vertical" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
                 android:text="Z"
                 android:id="@+id/LetterBtn5"
                 android:background="@drawable/keyboard_button"
                 android:layout_margin="3dp" />
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
                 android:text="P"
                 android:id="@+id/LetterBtn6"
                 android:background="@drawable/keyboard_button"
                 android:layout_margin="3dp" />
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
                 android:text="N"
                 android:id="@+id/LetterBtn7"
                 android:background="@drawable/keyboard_button"
                 android:layout_margin="3dp" />
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
                 android:text="S"
                 android:id="@+id/LetterBtn8"
                 android:background="@drawable/keyboard_button"

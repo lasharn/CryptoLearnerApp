@@ -91,7 +91,7 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
             TextView letterView = new TextView(this);
             letterView.setText(targetWord.charAt(i) + "");
             letterView.setTextSize(20);
-            letterView.setWidth(50);
+            letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
             letterView.setGravity(Gravity.CENTER);
             letterView.setBackgroundResource(R.drawable.letter_background);
 
@@ -114,7 +114,7 @@ public class CaesarLvlActivity extends AppCompatActivity implements CaesarComple
             TextView letterView = new TextView(this);
             letterView.setText(word.charAt(i) + "");
             letterView.setTextSize(20);
-            letterView.setWidth(50);
+            letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
             letterView.setGravity(Gravity.CENTER);
             letterView.setBackgroundResource(R.drawable.letter_answer_background);
 
