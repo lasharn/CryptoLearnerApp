@@ -7,15 +7,15 @@ public class CaesarMessage {
 
     protected final String emptyAnswerLetter = "_";
 
-    protected String[] plainTextLetters;
+    protected String[] targetTextLetters;
     protected String[] selectedCipherLetters;
     protected String[] solutionText;
     private int key;
 
     public CaesarMessage(String plainTextMessage, int key) {
         this.key = key;
-        plainTextLetters = plainTextMessage.toUpperCase().split("(?!^)"); // regex for everything that is not start of string
-        selectedCipherLetters = new String[plainTextLetters.length];
+        targetTextLetters = plainTextMessage.toUpperCase().split("(?!^)"); // regex for everything that is not start of string
+        selectedCipherLetters = new String[targetTextLetters.length];
         Arrays.fill(selectedCipherLetters, emptyAnswerLetter);
         solutionText = solveCipher().split("(?!^)");
     }
@@ -26,7 +26,7 @@ public class CaesarMessage {
 
     public String plainTextString() {
         StringBuilder b = new StringBuilder();
-        for (String s : plainTextLetters) {
+        for (String s : targetTextLetters) {
             b.append(s);
         }
         return b.toString();
@@ -54,10 +54,10 @@ public class CaesarMessage {
             return;
         }
 
-        String plainTextLetter = plainTextLetters[positionOfLetter];
+        String plainTextLetter = targetTextLetters[positionOfLetter];
 
         for (int i = 0; i<selectedCipherLetters.length; i++) {
-            if (plainTextLetters[i].equals(plainTextLetter)) {
+            if (targetTextLetters[i].equals(plainTextLetter)) {
                 selectedCipherLetters[i] = letter;
             }
         }
@@ -74,7 +74,7 @@ public class CaesarMessage {
 
     private String solveCipher() {
         StringBuilder b = new StringBuilder();
-        for (String plainTextLetter : plainTextLetters) {
+        for (String plainTextLetter : targetTextLetters) {
             char c = (char) (plainTextLetter.charAt(0) + key);
             if (c > 'Z') {
                 c -= 26;

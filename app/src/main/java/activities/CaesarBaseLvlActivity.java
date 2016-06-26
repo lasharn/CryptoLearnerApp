@@ -26,8 +26,12 @@ import java.util.Random;
 
 public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 
-    int challengeNo = 1;
-    int layoutId = R.layout.activity_caesar_lvl;
+    protected int challengeNo = 1;
+    protected int layoutId = R.layout.activity_caesar_lvl;
+    protected int instructionPart1 = R.string.caesar_lvl1_instr_part1;
+    protected int instructionPart2 = R.string.caesar_lvl1_instr_part2;
+    protected int targetLetterBackground = R.drawable.background_cipher_letter;
+    protected int answerLetterBackground = R.drawable.background_plain_letter;
 
     private final ChallengeType challengeType = ChallengeType.CAESAR;
     private final int numberOfStages = 3;
@@ -35,7 +39,6 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
 
 
     private TextView keyText;
-//    private TextView answer;
     private CaesarMessage cipherMessage;
 
     @Override
@@ -71,7 +74,7 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
 
         // set key
         Random r = new Random();
-        int key = r.nextInt(21) + 3; // doesn't allow keys close to 0
+        int key = r.nextInt(21) + 3; // purposely doesn't allow keys close to 0
         TextView task = (TextView) findViewById(R.id.InstructionText);
 
         keyText = (TextView) findViewById(R.id.KeyText);
@@ -87,13 +90,12 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
         WordGenerator generator = new WordGenerator(getApplicationContext().getAssets());
         String targetWord = generator.getWord();
         cipherMessage = createCaesarMessage(targetWord, key);
-        //cipherMessage = new CaesarMessage(targetWord, key);
+        targetWord = cipherMessage.plainTextString();
 
-        task.setText(getString(R.string.caesar_lvl1_instr_part1) + " " + targetWord + " " +
-                getString(R.string.caesar_lvl1_instr_part2) + " " + key);
+        task.setText(getString(instructionPart1) + " " + targetWord + " " +
+                getString(instructionPart2) + " " + key);
 
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
-        //findViewById(R.id.TargetText).setVisibility(View.GONE);
         messageLayout.removeAllViews();
         for (int i=0; i < targetWord.length(); i++) {
             TextView letterView = new TextView(this);
@@ -101,7 +103,7 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
             letterView.setTextSize(20);
             letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
             letterView.setGravity(Gravity.CENTER);
-            letterView.setBackgroundResource(R.drawable.letter_background);
+            letterView.setBackgroundResource(targetLetterBackground);
 
             messageLayout.addView(letterView);
         }
@@ -127,7 +129,7 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
             letterView.setTextSize(20);
             letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
             letterView.setGravity(Gravity.CENTER);
-            letterView.setBackgroundResource(R.drawable.letter_answer_background);
+            letterView.setBackgroundResource(answerLetterBackground);
 
             messageLayout.addView(letterView);
         }
@@ -225,9 +227,7 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
     }
 
 
-    public void onDialogContinueClick(DialogFragment dialog) {
-        finish();
-    }
+    abstract public void onDialogContinueClick(DialogFragment dialog);
 
     private String getStageDisplayString() {
         return stage + "/" + numberOfStages;

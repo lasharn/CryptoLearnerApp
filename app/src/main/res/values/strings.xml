@@ -34,7 +34,9 @@
     <string name="stage_win_message">Congratulations you completed the stage</string>
 
 
-    <string name="caesar_lvl1_instr_part1">Encrypt</string>
+    <string name="caesar_lvl1_instr_part1">Decrypt</string>
     <string name="caesar_lvl1_instr_part2">with a key of</string>
+
+    <string name="caesar_lvl2_instr_part1">Encrypt</string>
 
 </resources>

@@ -1,6 +1,9 @@
 package activities;
 
 
+import android.content.Intent;
+import android.support.v4.app.DialogFragment;
+
 import com.cryptolearner.mobile.cryptolearner.R;
 
 import caesar_encryption.CaesarMessage;
@@ -16,11 +19,23 @@ public class CaesarLvl2Activity extends CaesarBaseLvlActivity {
     void setupFields() {
         challengeNo = 2;
         layoutId = R.layout.activity_caesar_lvl;
+        instructionPart1 = R.string.caesar_lvl2_instr_part1;
+        instructionPart2 = R.string.caesar_lvl1_instr_part2;
+        targetLetterBackground = R.drawable.background_plain_letter;
+        answerLetterBackground = R.drawable.background_cipher_letter;
     }
 
     @Override
     protected CaesarMessage createCaesarMessage(String targetWord, int key) {
         return new CaesarMessage(targetWord, key);
+    }
+
+    @Override
+    public void onDialogContinueClick(DialogFragment dialog) {
+
+        Intent intent = new Intent(this, CaesarLvl2Activity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

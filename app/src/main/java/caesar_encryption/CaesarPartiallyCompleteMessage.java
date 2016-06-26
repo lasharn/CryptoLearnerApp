@@ -18,6 +18,11 @@ public class CaesarPartiallyCompleteMessage extends CaesarMessage {
 
     protected void setupSelectedLetters() {
         System.arraycopy(solutionText, 0, selectedCipherLetters, 0, selectedCipherLetters.length);
+        System.arraycopy(targetTextLetters, 0, solutionText, 0, selectedCipherLetters.length);
+        System.arraycopy(selectedCipherLetters, 0, targetTextLetters, 0, selectedCipherLetters.length);
+
+
+        System.arraycopy(solutionText, 0, selectedCipherLetters, 0, selectedCipherLetters.length);
         for (int j=0; j<numLettersToComplete; j++) {
             int randomPosition = new Random().nextInt(selectedCipherLetters.length);
             while (selectedCipherLetters[randomPosition].equals(emptyAnswerLetter)) {
