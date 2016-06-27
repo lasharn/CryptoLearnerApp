@@ -22,6 +22,7 @@ import caesar_encryption.WordGenerator;
 import ui_elements.CaesarCompleteDialogFragment;
 import unpackaged.ChallengeType;
 import unpackaged.LevelUnlocks;
+import unpackaged.SubstitutionMappings;
 
 public class SubstitutionBaseLvlActivity extends AppCompatActivity {
 
@@ -79,6 +80,12 @@ public class SubstitutionBaseLvlActivity extends AppCompatActivity {
             messageLayout.addView(letterView);
         }
 
+
+
+        // setup mappings
+        String[] letters = {"Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M"};
+        SubstitutionMappings substitutionMappings = new SubstitutionMappings(letters);
+        setupMappings(substitutionMappings.getLetterArray());
     }
 
 
@@ -199,5 +206,62 @@ public class SubstitutionBaseLvlActivity extends AppCompatActivity {
         return stage + "/" + numberOfStages;
     }
 
+
+    private void setupMappings(String[] letters) {
+        TextView tv = (TextView) findViewById(R.id.substituteForA);
+        tv.setText(letters[0]);
+        tv = (TextView) findViewById(R.id.substituteForB);
+        tv.setText(letters[1]);
+        tv = (TextView) findViewById(R.id.substituteForC);
+        tv.setText(letters[2]);
+        tv = (TextView) findViewById(R.id.substituteForD);
+        tv.setText(letters[3]);
+        tv = (TextView) findViewById(R.id.substituteForE);
+        tv.setText(letters[4]);
+        tv = (TextView) findViewById(R.id.substituteForF);
+        tv.setText(letters[5]);
+        tv = (TextView) findViewById(R.id.substituteForG);
+        tv.setText(letters[6]);
+        tv = (TextView) findViewById(R.id.substituteForH);
+        tv.setText(letters[7]);
+        tv = (TextView) findViewById(R.id.substituteForI);
+        tv.setText(letters[8]);
+        tv = (TextView) findViewById(R.id.substituteForJ);
+        tv.setText(letters[9]);
+        tv = (TextView) findViewById(R.id.substituteForK);
+        tv.setText(letters[10]);
+        tv = (TextView) findViewById(R.id.substituteForL);
+        tv.setText(letters[11]);
+        tv = (TextView) findViewById(R.id.substituteForM);
+        tv.setText(letters[12]);
+        tv = (TextView) findViewById(R.id.substituteForN);
+        tv.setText(letters[13]);
+        tv = (TextView) findViewById(R.id.substituteForO);
+        tv.setText(letters[14]);
+        tv = (TextView) findViewById(R.id.substituteForP);
+        tv.setText(letters[15]);
+        tv = (TextView) findViewById(R.id.substituteForQ);
+        tv.setText(letters[16]);
+        tv = (TextView) findViewById(R.id.substituteForR);
+        tv.setText(letters[17]);
+        tv = (TextView) findViewById(R.id.substituteForS);
+        tv.setText(letters[18]);
+        tv = (TextView) findViewById(R.id.substituteForT);
+        tv.setText(letters[19]);
+        tv = (TextView) findViewById(R.id.substituteForU);
+        tv.setText(letters[20]);
+        tv = (TextView) findViewById(R.id.substituteForV);
+        tv.setText(letters[21]);
+        tv = (TextView) findViewById(R.id.substituteForW);
+        tv.setText(letters[22]);
+        tv = (TextView) findViewById(R.id.substituteForX);
+        tv.setText(letters[23]);
+        tv = (TextView) findViewById(R.id.substituteForY);
+        tv.setText(letters[24]);
+        tv = (TextView) findViewById(R.id.substituteForZ);
+        tv.setText(letters[25]);
+
+
+    }
 
 }

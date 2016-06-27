@@ -11,8 +11,7 @@ public class KeyboardLetterGenerator {
     public List<String> getKeyboardLetters(String word) {
         List<String> letters = new ArrayList<>();
         String[] lettersSplit = word.split("(?!^)");
-        for (int i = 0; i<lettersSplit.length; i++) {
-            String s = lettersSplit[i];
+        for (String s : lettersSplit) {
             if (!letters.contains(s)) {
                 letters.add(s);
             }
