@@ -11,6 +11,8 @@
 
     <string name="title_activity_caesar_lvl_1">Caesar Lvl 1</string>
     <string name="title_activity_caesar_lvl_2">Caesar Lvl 2</string>
+    <string name="title_activity_substitution_lvl_1">Substitution Lvl 2</string>
+
     <string name="dummy_encryption_message">MESSAGE</string>
 
     <string name="caesar_lvl1_btn">Intro</string>
@@ -38,5 +40,7 @@
     <string name="caesar_lvl1_instr_part2">with a key of</string>
 
     <string name="caesar_lvl2_instr_part1">Encrypt</string>
+
+    <string name="substitution_instr">Encrypt the message below with the given letter mappings</string>
 
 </resources>

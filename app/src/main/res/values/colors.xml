@@ -16,4 +16,7 @@
 
     <color name="darkerMain">#EA5900</color>
     <color name="lighterMain">#FFAA44</color>
+
+    <color name="orangeTint">#F7ECE4</color>
+    <color name="blueTint">#E6F6F7</color>
 </resources>
