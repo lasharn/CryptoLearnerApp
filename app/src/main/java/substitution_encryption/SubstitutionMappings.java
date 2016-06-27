@@ -1,4 +1,4 @@
-package unpackaged;
+package substitution_encryption;
 
 
 import java.util.HashMap;

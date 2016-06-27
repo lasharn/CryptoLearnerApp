@@ -1,10 +1,7 @@
 package activities;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,10 +16,11 @@ import com.cryptolearner.mobile.cryptolearner.R;
 import java.util.List;
 
 import caesar_encryption.WordGenerator;
+import substitution_encryption.RandomMappingGenerator;
 import ui_elements.CaesarCompleteDialogFragment;
 import unpackaged.ChallengeType;
 import unpackaged.LevelUnlocks;
-import unpackaged.SubstitutionMappings;
+import substitution_encryption.SubstitutionMappings;
 
 public class SubstitutionBaseLvlActivity extends AppCompatActivity {
 
@@ -83,7 +81,8 @@ public class SubstitutionBaseLvlActivity extends AppCompatActivity {
 
 
         // setup mappings
-        String[] letters = {"Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M"};
+        String[] letters = new RandomMappingGenerator().getRandomMappings();
+
         SubstitutionMappings substitutionMappings = new SubstitutionMappings(letters);
         setupMappings(substitutionMappings.getLetterArray());
     }
