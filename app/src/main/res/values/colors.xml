@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#FFFFFF</color>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -16,6 +18,7 @@
 
     <color name="darkerMain">#EA5900</color>
     <color name="lighterMain">#FFAA44</color>
+    <color name="lighterSecondary">#AAD9F7</color>
 
     <color name="orangeTint">#F7ECE4</color>
     <color name="blueTint">#E6F6F7</color>

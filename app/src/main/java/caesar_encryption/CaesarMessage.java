@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class CaesarMessage {
 
-    protected final String emptyAnswerLetter = "_";
+    public static final String emptyAnswerLetter = "_";
 
     protected String[] targetTextLetters;
     protected String[] selectedCipherLetters;

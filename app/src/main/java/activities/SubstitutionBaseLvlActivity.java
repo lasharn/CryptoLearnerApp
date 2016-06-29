@@ -15,21 +15,24 @@ import com.cryptolearner.mobile.cryptolearner.R;
 
 import java.util.List;
 
+import caesar_encryption.KeyboardLetterGenerator;
 import caesar_encryption.WordGenerator;
 import substitution_encryption.RandomMappingGenerator;
+import substitution_encryption.SubstitutionMessage;
 import ui_elements.CaesarCompleteDialogFragment;
 import unpackaged.ChallengeType;
 import unpackaged.LevelUnlocks;
 import substitution_encryption.SubstitutionMappings;
 
-public class SubstitutionBaseLvlActivity extends AppCompatActivity {
+public class SubstitutionBaseLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 
     private final ChallengeType challengeType = ChallengeType.SUBSTITUTION;
     private final int challengeNo = 1;
     private final int numberOfStages = 3;
     private int stage = 1;
-    protected int targetLetterBackground = R.drawable.background_cipher_letter;
-    protected int answerLetterBackground = R.drawable.background_plain_letter;
+    protected int targetLetterBackground = R.drawable.background_plain_letter;
+    protected int answerLetterBackground = R.drawable.background_cipher_letter;
+    private SubstitutionMessage cipherMessage;
 
 
     @Override
@@ -78,13 +81,20 @@ public class SubstitutionBaseLvlActivity extends AppCompatActivity {
             messageLayout.addView(letterView);
         }
 
-
-
-        // setup mappings
+        // setup random mappings
         String[] letters = new RandomMappingGenerator().getRandomMappings();
 
         SubstitutionMappings substitutionMappings = new SubstitutionMappings(letters);
         setupMappings(substitutionMappings.getLetterArray());
+
+        // setup answer text
+        cipherMessage = new SubstitutionMessage(targetWord, substitutionMappings);
+
+        // setup keyboard
+        setLetterButtons(new KeyboardLetterGenerator().getKeyboardLetters(cipherMessage.getCorrectAnswer()));
+
+        //
+        setupSolutionText(cipherMessage.getSelectedString());
     }
 
 
@@ -123,16 +133,16 @@ public class SubstitutionBaseLvlActivity extends AppCompatActivity {
 
     private void letterBtnClicked(Button btn) {
         if (letterBtnIsActive(btn)) {
-            //cipherMessage.addLetter(btn.getText().toString());
+            cipherMessage.addLetter(btn.getText().toString());
             deactivateLetterBtn(btn);
         } else {
-            //cipherMessage.removeLetter(btn.getText().toString());
+            cipherMessage.removeLetter(btn.getText().toString());
             activateLetterBtn(btn);
         }
-        //setupSolutionText(cipherMessage.cipherTextString());
-        //if (cipherMessage.isCorrect()) {
-        //    stageComplete();
-        //}
+        setupSolutionText(cipherMessage.getSelectedString());
+        if (cipherMessage.isCorrect()) {
+            stageComplete();
+        }
     }
 
     private void stageComplete() {

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
+import main_menu.MenuActivity;
 import unpackaged.ChallengeType;
 import unpackaged.LevelUnlocks;
 
@@ -130,6 +131,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.SubLvl1Btn:
                 if (isLevelUnlocked(ChallengeType.SUBSTITUTION, 1)) {
                     intent = new Intent(this, SubstitutionBaseLvlActivity.class);
+                } else {
+                    levelLocked = true;
+                }
+                break;
+            case R.id.VigenereLvl1Btn:
+                if (isLevelUnlocked(ChallengeType.VIGENERE, 1)) {
+                    intent = new Intent(this, MenuActivity.class);
                 } else {
                     levelLocked = true;
                 }

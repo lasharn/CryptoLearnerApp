@@ -1,0 +1,155 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="main_menu.MenuFragmentMain"
+    android:background="@color/lighterMain">
+
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="15dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/icon_key"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="Tools"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:id="@+id/tools_btn1">
+
+            <Space
+                android:id="@+id/space1"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:contentDescription="@string/caesar_btn"
+                android:id="@+id/caesar_lvl1_image"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:adjustViewBounds="true"
+                android:padding="15dp"
+                android:src="@drawable/icon_unlocked"
+                android:layout_toRightOf="@id/space1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="Caesar cracker"
+                android:textSize="20sp"
+                android:paddingLeft="5dp"
+                android:layout_toRightOf="@id/caesar_lvl1_image"
+                android:id="@+id/textView3" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:id="@+id/tools_btn2"
+            android:onClick="onClickChallenge">
+
+            <Space
+                android:id="@+id/space2"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:contentDescription="@string/caesar_btn"
+                android:id="@+id/caesar_lvl2_image"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:adjustViewBounds="true"
+                android:padding="15dp"
+                android:src="@drawable/icon_unlocked"
+                android:layout_toRightOf="@id/space2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="Substitution cracker"
+                android:textSize="20sp"
+                android:paddingLeft="5dp"
+                android:layout_toRightOf="@id/caesar_lvl2_image"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:id="@+id/tools_btn3"
+            android:onClick="onClickChallenge">
+
+            <Space
+                android:id="@+id/space3"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:contentDescription="@string/caesar_btn"
+                android:id="@+id/caesar_lvl3_image"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:adjustViewBounds="true"
+                android:padding="15dp"
+                android:src="@drawable/icon_unlocked"
+                android:layout_toRightOf="@id/space3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="Vigenere cracker"
+                android:textSize="20sp"
+                android:paddingLeft="5dp"
+                android:layout_toRightOf="@id/caesar_lvl3_image"/>
+
+        </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
