@@ -6,7 +6,7 @@
 
     <string name="caesar_btn">Caesar Cipher</string>
     <string name="substitution_btn">Substitution Cipher</string>
-    <string name="vigenere_btn">Vigenere Cipher</string>
+    <string name="vigenere_btn">Vigenére Cipher</string>
     <string name="about_btn">About</string>
 
     <string name="title_activity_caesar_lvl_1">Caesar Lvl 1</string>
