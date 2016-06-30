@@ -1,126 +1,43 @@
 package activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import ui_elements.CaesarCompleteDialogFragment;
-import caesar_encryption.CaesarMessage;
-import ui_elements.CipherWheelView;
-import caesar_encryption.KeyboardLetterGenerator;
 import com.cryptolearner.mobile.cryptolearner.R;
-import caesar_encryption.WordGenerator;
-import unpackaged.ChallengeType;
-import unpackaged.LevelUnlocks;
 
 import java.util.List;
-import java.util.Locale;
-import java.util.Random;
 
-public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
+import ui_elements.CaesarCompleteDialogFragment;
+import unpackaged.ChallengeType;
+import unpackaged.IMessage;
+import unpackaged.LevelUnlocks;
 
-    protected int challengeNo = 1;
-    protected int layoutId = R.layout.activity_caesar_lvl;
-    protected int instructionPart1 = R.string.caesar_lvl1_instr_part1;
-    protected int instructionPart2 = R.string.caesar_lvl1_instr_part2;
-    protected int targetLetterBackground = R.drawable.background_cipher_letter;
-    protected int answerLetterBackground = R.drawable.background_plain_letter;
 
-    private final ChallengeType challengeType = ChallengeType.CAESAR;
+public abstract class BaseLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
+
     private final int numberOfStages = 3;
-    private int stage = 1;
+    protected int stage = 1;
+    protected int answerLetterBackground;
+    protected int targetLetterBackground;
+    protected IMessage cipherMessage;
+    protected ChallengeType challengeType;
+    protected int challengeNo;
+    protected Class nextLevel;
 
 
-    private TextView keyText;
-    private CaesarMessage cipherMessage;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {super.onCreate(savedInstanceState);}
 
-        setupFields();
-
-        setContentView(layoutId);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        setupGame();
-
-        setKeyboardBtnListeners();
-
-        findViewById(R.id.CompleteButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setupGame();
-                TextView stageDisplay = (TextView) findViewById(R.id.stageDisplay);
-                stageDisplay.setText(getStageDisplayString());
-            }
-        });
-    }
-
-    abstract void setupFields();
-
-    private void setupGame() {
-        // display keyboard
-        findViewById(R.id.KeyboardTable).setVisibility(View.VISIBLE);
-        findViewById(R.id.SuccessMessage).setVisibility(View.GONE);
-
-        // set key
-        Random r = new Random();
-        int key = r.nextInt(21) + 3; // purposely doesn't allow keys close to 0
-
-        keyText = (TextView) findViewById(R.id.KeyText);
-        CipherWheelView cipherWheelView = (CipherWheelView) findViewById(R.id.cipher_wheel);
-        assert cipherWheelView != null;
-        cipherWheelView.addDialListener(new CipherWheelView.DialListener() {
-            public void onDial(int number) {
-                keyText.setText(String.format(Locale.ENGLISH, "Key:\n%d", number));
-            }
-        });
-
-        // Set word to solve
-        WordGenerator generator = new WordGenerator(getApplicationContext().getAssets());
-        String targetWord = generator.getWord();
-        cipherMessage = createCaesarMessage(targetWord, key);
-        targetWord = cipherMessage.plainTextString();
-
-        TextView task = (TextView) findViewById(R.id.InstructionText);
-        task.setText(getString(instructionPart1) + " " + targetWord + " " +
-                getString(instructionPart2) + " " + key);
-
-        LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
-        messageLayout.removeAllViews();
-        for (int i=0; i < targetWord.length(); i++) {
-            TextView letterView = new TextView(this);
-            letterView.setText(targetWord.charAt(i) + "");
-            letterView.setTextSize(20);
-            letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
-            letterView.setGravity(Gravity.CENTER);
-            letterView.setBackgroundResource(targetLetterBackground);
-
-            messageLayout.addView(letterView);
-        }
-
-
-        // set answer string
-        setupSolutionText(cipherMessage.getSelectedString());
-
-        // set keyboard letters
-        KeyboardLetterGenerator klg = new KeyboardLetterGenerator();
-        setLetterButtons(klg.getKeyboardLetters(cipherMessage.getCorrectAnswer()));
-    }
-
-    abstract protected CaesarMessage createCaesarMessage(String targetWord, int key);
-
-
-    private void setupSolutionText(String word) {
+    protected void setupSolutionText(String word) {
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.solution_layout);
         messageLayout.removeAllViews();
         for (int i=0; i < word.length(); i++) {
@@ -135,7 +52,9 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
         }
     }
 
-    private void setKeyboardBtnListeners() {
+
+
+    protected void setKeyboardBtnListeners() {
         View.OnClickListener listener = new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
@@ -196,7 +115,7 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
         return letterBtn.getCurrentTextColor() != Color.GRAY;
     }
 
-    private void setLetterButtons(List<String> letters) {
+    protected void setLetterButtons(List<String> letters) {
 
         int btnNo = R.id.LetterBtn1;
         Button btn;
@@ -227,9 +146,15 @@ public abstract class CaesarBaseLvlActivity extends AppCompatActivity implements
     }
 
 
-    abstract public void onDialogContinueClick(DialogFragment dialog);
+    public void onDialogContinueClick(DialogFragment dialog) {
+        if (nextLevel != null) {
+            Intent intent = new Intent(this, CaesarLvl2Activity.class);
+            startActivity(intent);
+        }
+        finish();
+    }
 
-    private String getStageDisplayString() {
+    protected String getStageDisplayString() {
         return stage + "/" + numberOfStages;
     }
 

@@ -4,8 +4,9 @@ package substitution_encryption;
 import java.util.Arrays;
 
 import caesar_encryption.CaesarMessage;
+import unpackaged.IMessage;
 
-public class SubstitutionMessage {
+public class SubstitutionMessage implements IMessage {
 
     private String targetWord;
     private String answerWord;

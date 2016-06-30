@@ -3,7 +3,9 @@ package caesar_encryption;
 
 import java.util.Arrays;
 
-public class CaesarMessage {
+import unpackaged.IMessage;
+
+public class CaesarMessage implements IMessage{
 
     public static final String emptyAnswerLetter = "_";
 
@@ -32,7 +34,7 @@ public class CaesarMessage {
         return b.toString();
     }
 
-    public String cipherTextString() {
+    public String getSelectedString() {
         StringBuilder b = new StringBuilder();
         for (String s : selectedCipherLetters) {
             b.append(s);
