@@ -3,14 +3,11 @@ package main_menu;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.cryptolearner.mobile.cryptolearner.R;
@@ -18,7 +15,7 @@ import com.cryptolearner.mobile.cryptolearner.R;
 import activities.CaesarLvl1Activity;
 import activities.CaesarLvl2Activity;
 import activities.MainActivity;
-import activities.SubstitutionBaseLvlActivity;
+import activities.SubstitutionLvl1Activity;
 import unpackaged.ChallengeType;
 import unpackaged.LevelUnlocks;
 
@@ -83,7 +80,7 @@ public class MenuActivity extends AppCompatActivity {
                 break;
             case R.id.SubstitutionLvl1Btn:
                 if (isLevelUnlocked(ChallengeType.SUBSTITUTION, 1)) {
-                    intent = new Intent(this, SubstitutionBaseLvlActivity.class);
+                    intent = new Intent(this, SubstitutionLvl1Activity.class);
                 } else {
                     levelLocked = true;
                 }

@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.SubLvl1Btn:
                 if (isLevelUnlocked(ChallengeType.SUBSTITUTION, 1)) {
-                    intent = new Intent(this, SubstitutionBaseLvlActivity.class);
+                    intent = new Intent(this, SubstitutionLvl1Activity.class);
                 } else {
                     levelLocked = true;
                 }

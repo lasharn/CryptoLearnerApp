@@ -7,4 +7,5 @@ public interface IMessage {
     String getSelectedString();
     boolean isCorrect();
     String getCorrectAnswer();
+    String plainTextString();
 }

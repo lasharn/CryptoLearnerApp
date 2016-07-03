@@ -54,11 +54,9 @@ public class SubstitutionMessage implements IMessage {
             return;
         }
 
-        //String plainTextLetter = targetTextLetters[positionOfLetter];
         char plainTextLetter = targetWord.charAt(positionOfLetter);
 
         for (int i = 0; i<selectedCipherLetters.length; i++) {
-            //if (targetTextLetters[i].equals(plainTextLetter)) {
             if (targetWord.charAt(i) == plainTextLetter) {
                 selectedCipherLetters[i] = letter;
             }
@@ -76,5 +74,9 @@ public class SubstitutionMessage implements IMessage {
 
     public boolean isCorrect() {
         return answerWord.equals(getSelectedString());
+    }
+
+    public String plainTextString() {
+        return targetWord;
     }
 }
