@@ -8,4 +8,5 @@ public interface IMessage {
     boolean isCorrect();
     String getCorrectAnswer();
     String plainTextString();
+    boolean isFull();
 }

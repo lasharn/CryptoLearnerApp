@@ -74,6 +74,9 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
 
     private void letterBtnClicked(Button btn) {
         if (letterBtnIsActive(btn)) {
+            if (cipherMessage.isFull()) {
+                return;
+            }
             cipherMessage.addLetter(btn.getText().toString());
             deactivateLetterBtn(btn);
         } else {
@@ -86,7 +89,7 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
         }
     }
 
-    private void stageComplete() {
+    protected void stageComplete() {
         stage++;
         if (stage > numberOfStages) {
             challengeComplete();

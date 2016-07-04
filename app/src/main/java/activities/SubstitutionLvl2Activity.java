@@ -12,6 +12,7 @@ import com.cryptolearner.mobile.cryptolearner.R;
 import caesar_encryption.KeyboardLetterGenerator;
 import caesar_encryption.WordGenerator;
 import substitution_encryption.RandomMappingGenerator;
+import substitution_encryption.SubstitutionFrequencyMessage;
 import substitution_encryption.SubstitutionMappings;
 import substitution_encryption.SubstitutionMessage;
 import ui_elements.CaesarCompleteDialogFragment;
@@ -65,10 +66,10 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
                     isSentenceDisplayed = true;
                 }
 
-                if (frequenciesSetup == false) {
-                    setupFrequencies(new FrequencyCounter().getCounts(encryptedSentence));
-                    frequenciesSetup = true;
-                }
+//                if (frequenciesSetup == false) {
+//
+//                    frequenciesSetup = true;
+//                }
             }
         });
     }
@@ -106,15 +107,19 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         // Set sentence to solve
         String targetSentence = "THE MARTIANS ARE COMING TO GET US";
         encryptedSentence = new SubstitutionMessage(targetSentence, substitutionMappings).getCorrectAnswer();
-        // TODO replace something with actual thing
-        setupSentences(encryptedSentence, "something");
-        
+
+
+        setupFrequencies(new FrequencyCounter().getCounts(encryptedSentence));
+
 
         // setup answer text
-        cipherMessage = new SubstitutionMessage(targetWord, substitutionMappings);
+        cipherMessage = new SubstitutionFrequencyMessage(targetSentence, substitutionMappings);
 
         // setup keyboard
         setLetterButtons(new KeyboardLetterGenerator().getKeyboardLetters(cipherMessage.getCorrectAnswer()));
+
+        // TODO replace something with actual thing
+        setupSentences(encryptedSentence, ((SubstitutionFrequencyMessage)cipherMessage).selectedSentence());
 
         //
         setupSolutionText(cipherMessage.getSelectedString());
@@ -126,6 +131,19 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         encryptedText.setText(encrypted);
         TextView selectedText = (TextView)findViewById(R.id.substitution_answer_text);
         selectedText.setText(selected);
+    }
+
+
+    @Override
+    protected void setupSolutionText(String text) {
+        super.setupSolutionText(text);
+        setupSentences(encryptedSentence, ((SubstitutionFrequencyMessage)cipherMessage).selectedSentence());
+    }
+
+    @Override
+    protected void stageComplete() {
+        super.stageComplete();
+        setupSentences(encryptedSentence, ((SubstitutionFrequencyMessage)cipherMessage).answerSentence());
     }
 
 

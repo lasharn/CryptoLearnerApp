@@ -74,6 +74,16 @@ public class CaesarMessage implements IMessage{
         }
     }
 
+
+    public boolean isFull() {
+        for (String s : selectedCipherLetters) {
+            if (s.equals(CaesarMessage.emptyAnswerLetter)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private String solveCipher() {
         StringBuilder b = new StringBuilder();
         for (String plainTextLetter : targetTextLetters) {

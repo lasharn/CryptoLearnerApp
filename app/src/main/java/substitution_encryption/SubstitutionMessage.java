@@ -72,6 +72,15 @@ public class SubstitutionMessage implements IMessage {
         }
     }
 
+    public boolean isFull() {
+        for (String s : selectedCipherLetters) {
+            if (s.equals(CaesarMessage.emptyAnswerLetter)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public boolean isCorrect() {
         return answerWord.equals(getSelectedString());
     }
