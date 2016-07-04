@@ -29,6 +29,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="activities.SubstitutionLvl2Activity"
+            android:label="@string/title_activity_substitution_lvl_2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="main_menu.MenuActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"

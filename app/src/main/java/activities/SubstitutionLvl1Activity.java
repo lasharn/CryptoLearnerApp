@@ -30,7 +30,7 @@ public class SubstitutionLvl1Activity extends BaseLvlActivity implements CaesarC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_substitution_lvl);
+        setContentView(R.layout.activity_substitution_lvl1);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

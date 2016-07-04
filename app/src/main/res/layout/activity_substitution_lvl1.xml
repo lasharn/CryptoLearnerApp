@@ -31,6 +31,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_substitution_lvl" />
+    <include layout="@layout/content_substitution_lvl1" />
 
 </android.support.design.widget.CoordinatorLayout>

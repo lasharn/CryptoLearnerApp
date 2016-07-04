@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="activities.SubstitutionLvl1Activity"
-    tools:showIn="@layout/activity_substitution_lvl"
+    tools:showIn="@layout/activity_substitution_lvl2"
     android:background="@color/colourMix"
     android:id="@+id/main">
 
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/substitution_instr"
+        android:text="@string/substitution_lvl2_instr"
         android:gravity="center_horizontal"/>
 
 
@@ -27,11 +27,11 @@
         android:layout_weight="1"
         android:padding="10dp"
         android:layout_gravity="center_horizontal">
-        <!--<include
-            layout="@layout/substitution_table"
+        <include
+            layout="@layout/substitution_sentence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>-->
+            android:layout_gravity="center"/>
     </LinearLayout>
 
 

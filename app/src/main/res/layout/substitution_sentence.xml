@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:id="@+id/swipe_btn"
+        android:src="@drawable/icon_swipe"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:id="@+id/sentences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/substitution_encrypted_text"
+            android:layout_above="@+id/anchor1"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/substitution_answer_text"
+            android:layout_below="@+id/anchor1"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/frequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English letter frequencies"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="E"
+                android:textSize="18sp"
+                android:id="@+id/tableLetterA" />
+
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="T"
+                android:textSize="18sp"
+                android:id="@+id/tableLetterB" />
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="A"
+                android:textSize="18sp"
+                android:id="@+id/tableLetterC" />
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="O"
+                android:textSize="18sp"
+                android:id="@+id/tableLetterD" />
+
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="I"
+                android:textSize="18sp"
+                android:id="@+id/tableLetterE" />
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="N"
+                android:textSize="18sp"
+                android:id="@+id/textView12" />
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="S"
+                android:textSize="18sp"
+                android:id="@+id/tableLetterG" />
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="H"
+                android:textSize="18sp"
+                android:id="@+id/tableLetterH" />
+            <TextView
+                android:background="@drawable/substitution_table_plain"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="R"
+                android:textSize="18sp"
+                android:id="@+id/tableLetterI" />
+        </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="13"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForA" />
+
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForB" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForC" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForD" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForE" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForF" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForG" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForH" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="18sp"
+                    android:id="@+id/substituteForI" />
+            </TableRow>
+        </TableLayout>
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cipher text letter frequencies"
+            android:paddingTop="10dp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="E"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter1" />
+
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="T"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter2" />
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter3" />
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="O"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter4" />
+
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="I"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter5" />
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="N"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter6" />
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter7" />
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="H"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter8" />
+                <TextView
+                    android:background="@drawable/substitution_table_plain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="R"
+                    android:textSize="18sp"
+                    android:id="@+id/CommonLetter9" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="13"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency1" />
+
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency2" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency3" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency4" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency5" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency6" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency7" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency8" />
+                <TextView
+                    android:background="@drawable/substitution_table_cipher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="18sp"
+                    android:id="@+id/LetterFrequency9" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -14,6 +14,9 @@ public class SubstitutionMappings {
         for (int i='A'; i<='Z'; i++) {
             mappings.put(Character.toString((char)i), letters[i-'A']);
         }
+
+        // handle sentences (might break something?)
+        mappings.put(" ", " ");
     }
 
     public String getLetter(String letter) {

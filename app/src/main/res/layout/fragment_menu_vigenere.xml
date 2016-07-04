@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="main_menu.MenuFragmentVigenere"
-    android:background="@color/colourMix">
+    android:background="@color/lighterSecondary">
 
 
 
@@ -30,7 +30,7 @@
             android:paddingBottom="10dp"
             android:text="@string/vigenere_btn"
             android:textSize="30sp"
-            android:textColor="@color/veryDarkGrey"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"/>
 
