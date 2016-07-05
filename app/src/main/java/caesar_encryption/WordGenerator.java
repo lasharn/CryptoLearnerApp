@@ -33,7 +33,6 @@ public class WordGenerator {
     }
 
     private void readInWords() {
-        //AssetManager am = context.getAssets();
         try {
             InputStream inputStream = assetManager.open("words.txt");
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);

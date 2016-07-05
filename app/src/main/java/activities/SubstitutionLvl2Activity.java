@@ -19,6 +19,7 @@ import ui_elements.CaesarCompleteDialogFragment;
 import unpackaged.ChallengeType;
 import unpackaged.FrequencyCounter;
 import unpackaged.KeyboardFrequencyLetterGenerator;
+import unpackaged.SentenceGenerator;
 import unpackaged.SnappyScrollView;
 
 public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
@@ -96,7 +97,7 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         SubstitutionMappings substitutionMappings = new SubstitutionMappings(letters);
 
         // Set sentence to solve
-        String targetSentence = "THE MARTIANS ARE COMING TO GET US";
+        String targetSentence = new SentenceGenerator(getAssets()).getSentence();
         encryptedSentence = new SubstitutionMessage(targetSentence, substitutionMappings).getCorrectAnswer();
 
 
