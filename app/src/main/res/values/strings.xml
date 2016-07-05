@@ -45,6 +45,9 @@
     <string name="substitution_lvl1_instr">Encrypt the message below with the given letter mappings</string>
     <string name="substitution_lvl2_instr">Decrypt the most common letters</string>
 
+    <string name="substitution_lvl2_hint1">Hint: the word \"</string>
+    <string name="substitution_lvl2_hint2">\" is in this sentence</string>
+
 
 
 </resources>

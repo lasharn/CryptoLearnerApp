@@ -2,16 +2,13 @@ package unpackaged;
 
 
 import android.content.res.AssetManager;
-import android.util.JsonReader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -49,19 +46,26 @@ public class SentenceGenerator {
     private void readInSentences() {
         sentences = new ArrayList<>();
         try {
-            JSONObject j = new JSONObject(loadJSONFromAsset());
+            JSONObject JSONContents = new JSONObject(loadJSONFromAsset());
 
-            JSONArray a = j.getJSONArray("sentences");
-            System.out.println(a.toString());
-            for (int i = 0; i < a.length(); i++) {
-                JSONObject jj = a.getJSONObject(i);
-                System.out.println(jj.toString());
-                String[] ssss = jj.getJSONArray("hints").toString().replace("},{", " ,").split(" ");;
-                sentences.add(new SentenceObject(jj.getString("sentence"), ssss));
+            JSONArray sentencesJSON = JSONContents.getJSONArray("sentences");
+            //System.out.println(sentencesJSON.toString());
+            for (int i = 0; i < sentencesJSON.length(); i++) {
+                JSONObject JSONSentence = sentencesJSON.getJSONObject(i);
+                //System.out.println(JSONSentence.toString());
+                JSONArray JSONHints = JSONSentence.getJSONArray("hints");
+                List<String> hints = new ArrayList<>();
+                for (int j = 0; j < JSONHints.length(); j++) {
+                    String jj = JSONHints.getString(j);
+                    hints.add(jj);
+                }
+                String[] theHints = (String[])hints.toArray(new String[hints.size()]);
+                //String[] hints = JSONSentence.getJSONArray("hints").toString().replace("},{", " ,").split(" ");;
+                sentences.add(new SentenceObject(JSONSentence.getString("sentence"), theHints));
 
             }
 
-            System.out.println(a.toString());
+            //System.out.println(a.toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -97,8 +97,13 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         SubstitutionMappings substitutionMappings = new SubstitutionMappings(letters);
 
         // Set sentence to solve
-        String targetSentence = new SentenceGenerator(getAssets()).getSentence();
+        SentenceGenerator sg = new SentenceGenerator(getAssets());
+        String targetSentence = sg.getSentence();
         encryptedSentence = new SubstitutionMessage(targetSentence, substitutionMappings).getCorrectAnswer();
+
+        // setup hint text
+        ((TextView)findViewById(R.id.hint_word)).setText(getString(R.string.substitution_lvl2_hint1)
+                + sg.getHint() + getString(R.string.substitution_lvl2_hint2));
 
 
         setupFrequencies(new FrequencyCounter().getCounts(encryptedSentence));
