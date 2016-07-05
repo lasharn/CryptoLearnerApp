@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+
+        <TextView
+            android:id="@+id/substitution_encrypted_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="New Text"
+            android:typeface="monospace"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/substitution_answer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="New Text"
+            android:typeface="monospace"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/hint_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Hint: the word &quot;get&quot; is in this sentence"
+            android:layout_gravity="center_horizontal"/>
+
+
+
+
+</LinearLayout>

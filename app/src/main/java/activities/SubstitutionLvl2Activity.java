@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
-import caesar_encryption.KeyboardLetterGenerator;
-import caesar_encryption.WordGenerator;
+import java.util.ArrayList;
+
 import substitution_encryption.RandomMappingGenerator;
 import substitution_encryption.SubstitutionFrequencyMessage;
 import substitution_encryption.SubstitutionMappings;
@@ -18,6 +18,8 @@ import substitution_encryption.SubstitutionMessage;
 import ui_elements.CaesarCompleteDialogFragment;
 import unpackaged.ChallengeType;
 import unpackaged.FrequencyCounter;
+import unpackaged.KeyboardFrequencyLetterGenerator;
+import unpackaged.SnappyScrollView;
 
 public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 
@@ -40,6 +42,13 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ArrayList<Integer> views = new ArrayList<>();
+        views.add(R.layout.substitution_sentence_1);
+        views.add(R.layout.substitution_sentence_2);
+//        views.add(getLayoutInflater().inflate(R.layout.substitution_sentence_1,null));
+//        views.add(getLayoutInflater().inflate(R.layout.substitution_sentence_2,null));
+        ((SnappyScrollView)findViewById(R.id.substitution_scroller)).setFeatureItems(this, views);
+
         setupGame();
 
         setKeyboardBtnListeners();
@@ -53,25 +62,7 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
             }
         });
 
-        findViewById(R.id.swipe_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isSentenceDisplayed) {
-                    findViewById(R.id.sentences).setVisibility(View.GONE);
-                    findViewById(R.id.frequency).setVisibility(View.VISIBLE);
-                    isSentenceDisplayed = false;
-                } else {
-                    findViewById(R.id.sentences).setVisibility(View.VISIBLE);
-                    findViewById(R.id.frequency).setVisibility(View.GONE);
-                    isSentenceDisplayed = true;
-                }
 
-//                if (frequenciesSetup == false) {
-//
-//                    frequenciesSetup = true;
-//                }
-            }
-        });
     }
 
 
@@ -116,9 +107,9 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         cipherMessage = new SubstitutionFrequencyMessage(targetSentence, substitutionMappings);
 
         // setup keyboard
-        setLetterButtons(new KeyboardLetterGenerator().getKeyboardLetters(cipherMessage.getCorrectAnswer()));
+        setLetterButtons(new KeyboardFrequencyLetterGenerator().getKeyboardLetters(new FrequencyCounter().getCounts(encryptedSentence)));
 
-        // TODO replace something with actual thing
+        //
         setupSentences(encryptedSentence, ((SubstitutionFrequencyMessage)cipherMessage).selectedSentence());
 
         //
@@ -143,7 +134,7 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
     @Override
     protected void stageComplete() {
         super.stageComplete();
-        setupSentences(encryptedSentence, ((SubstitutionFrequencyMessage)cipherMessage).answerSentence());
+        setupSentences(encryptedSentence, ((SubstitutionFrequencyMessage)cipherMessage).plainTextSentence());
     }
 
 

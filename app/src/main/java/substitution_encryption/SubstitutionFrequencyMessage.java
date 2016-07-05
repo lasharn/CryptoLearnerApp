@@ -140,7 +140,7 @@ public class SubstitutionFrequencyMessage implements IMessage {
         return b.toString();
     }
 
-    public String answerSentence() {
-        return answerSentence;
+    public String plainTextSentence() {
+        return targetSentence;
     }
 }
