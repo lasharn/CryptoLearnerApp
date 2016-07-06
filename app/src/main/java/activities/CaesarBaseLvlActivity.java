@@ -1,13 +1,10 @@
 package activities;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,10 +14,7 @@ import ui_elements.CipherWheelView;
 import caesar_encryption.KeyboardLetterGenerator;
 import com.cryptolearner.mobile.cryptolearner.R;
 import caesar_encryption.WordGenerator;
-import unpackaged.ChallengeType;
-import unpackaged.LevelUnlocks;
 
-import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -101,7 +95,7 @@ public abstract class CaesarBaseLvlActivity extends BaseLvlActivity implements C
 
 
         // set answer string
-        setupSolutionText(cipherMessage.getSelectedString());
+        setupSelectedText(cipherMessage.getSelectedString());
 
         // set keyboard letters
         KeyboardLetterGenerator klg = new KeyboardLetterGenerator();

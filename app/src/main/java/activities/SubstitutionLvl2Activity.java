@@ -24,7 +24,6 @@ import unpackaged.SnappyScrollView;
 
 public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 
-    private boolean frequenciesSetup = false;
     String encryptedSentence;
 
     public SubstitutionLvl2Activity() {
@@ -34,7 +33,6 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         answerLetterBackground = R.drawable.background_cipher_letter;
     }
 
-    private boolean isSentenceDisplayed = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +44,6 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         ArrayList<Integer> views = new ArrayList<>();
         views.add(R.layout.substitution_sentence_1);
         views.add(R.layout.substitution_sentence_2);
-//        views.add(getLayoutInflater().inflate(R.layout.substitution_sentence_1,null));
-//        views.add(getLayoutInflater().inflate(R.layout.substitution_sentence_2,null));
         ((SnappyScrollView)findViewById(R.id.substitution_scroller)).setFeatureItems(this, views);
 
         setupGame();
@@ -68,7 +64,6 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
 
 
     private void setupGame() {
-        frequenciesSetup = false;
 
         // display keyboard
         findViewById(R.id.KeyboardTable).setVisibility(View.VISIBLE);
@@ -119,7 +114,7 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         setupSentences(encryptedSentence, ((SubstitutionFrequencyMessage)cipherMessage).selectedSentence());
 
         //
-        setupSolutionText(cipherMessage.getSelectedString());
+        setupSelectedText(cipherMessage.getSelectedString());
     }
 
 
@@ -132,8 +127,8 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
 
 
     @Override
-    protected void setupSolutionText(String text) {
-        super.setupSolutionText(text);
+    protected void setupSelectedText(String text) {
+        super.setupSelectedText(text);
         setupSentences(encryptedSentence, ((SubstitutionFrequencyMessage)cipherMessage).selectedSentence());
     }
 
@@ -220,7 +215,6 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
                 positionOfMax = i;
             }
         }
-        //frequencies[positionOfMax] = -1;
         return positionOfMax;
     }
 

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="activities.VigenereLvl1Activity"
+    android:background="@color/colourMix"
+    android:id="@+id/main">
+
+    <TextView
+        android:id="@+id/InstructionText"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/vigenere_lvl1_instr" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cipher_circle_back"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cipher_text_label"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cipher_plain_text_label"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <ui_elements.CipherWheelView
+            android:id="@+id/cipher_wheel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+
+        <TextView
+            android:id="@+id/KeyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/zero_key"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/message_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/TargetText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_encryption_message"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:background="@drawable/background_cipher_letter"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyword_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:id="@+id/Keyword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="keykeyk"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/solution_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:id="@+id/AnswerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="_ _ _ _ _ _ _"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/SuccessMessage"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
+        android:layout_margin="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/SuccessText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stage_win_message"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/CompleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_word"/>
+
+    </LinearLayout>
+    <TableLayout
+        android:id="@+id/KeyboardTable"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight=".5">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
+                android:id="@+id/LetterBtn1"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp"
+                android:layout_gravity="center_vertical"/>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
+                android:text="T"
+                android:id="@+id/LetterBtn2"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp"
+                android:layout_gravity="center_vertical" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
+                android:text="H"
+                android:id="@+id/LetterBtn3"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp"
+                android:layout_gravity="center_vertical"/>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
+                android:text="L"
+                android:id="@+id/LetterBtn4"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp"
+                android:longClickable="true"
+                android:layout_gravity="center_vertical" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
+                android:text="Z"
+                android:id="@+id/LetterBtn5"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
+                android:text="P"
+                android:id="@+id/LetterBtn6"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
+                android:text="N"
+                android:id="@+id/LetterBtn7"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:maxHeight="60dp"
+                android:text="S"
+                android:id="@+id/LetterBtn8"
+                android:background="@drawable/keyboard_button"
+                android:layout_margin="3dp" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

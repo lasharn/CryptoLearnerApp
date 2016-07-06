@@ -32,12 +32,13 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
     protected int challengeNo;
     protected Class nextLevel;
 
+    private SelectedTextListener selectedTextListener = new SelectedTextListener();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {super.onCreate(savedInstanceState);}
 
-    protected void setupSolutionText(String word) {
+    protected void setupSelectedText(String word) {
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.solution_layout);
         messageLayout.removeAllViews();
         for (int i=0; i < word.length(); i++) {
@@ -47,8 +48,17 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
             letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
             letterView.setGravity(Gravity.CENTER);
             letterView.setBackgroundResource(answerLetterBackground);
+            letterView.setOnClickListener(selectedTextListener);
 
             messageLayout.addView(letterView);
+        }
+    }
+
+    public class SelectedTextListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            cipherMessage.removeLetter(((TextView)v).getText().toString());
+            setupSelectedText(cipherMessage.getSelectedString());
         }
     }
 
@@ -72,7 +82,7 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
         findViewById(R.id.LetterBtn8).setOnClickListener(listener);
     }
 
-    private void letterBtnClicked(Button btn) {
+    protected void letterBtnClicked(Button btn) {
         if (letterBtnIsActive(btn)) {
             if (cipherMessage.isFull()) {
                 return;
@@ -83,7 +93,7 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
             cipherMessage.removeLetter(btn.getText().toString());
             activateLetterBtn(btn);
         }
-        setupSolutionText(cipherMessage.getSelectedString());
+        setupSelectedText(cipherMessage.getSelectedString());
         if (cipherMessage.isCorrect()) {
             stageComplete();
         }

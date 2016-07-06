@@ -84,7 +84,7 @@ public class SubstitutionLvl1Activity extends BaseLvlActivity implements CaesarC
         setLetterButtons(new KeyboardLetterGenerator().getKeyboardLetters(cipherMessage.getCorrectAnswer()));
 
         //
-        setupSolutionText(cipherMessage.getSelectedString());
+        setupSelectedText(cipherMessage.getSelectedString());
     }
 
 

@@ -85,16 +85,16 @@ public class CaesarMessage implements IMessage{
     }
 
     private String solveCipher() {
-        StringBuilder b = new StringBuilder();
-        for (String plainTextLetter : targetTextLetters) {
-            char c = (char) (plainTextLetter.charAt(0) + key);
+        StringBuilder solution = new StringBuilder();
+        for (String targetTextLetter : targetTextLetters) {
+            char c = (char) (targetTextLetter.charAt(0) + key);
             if (c > 'Z') {
                 c -= 26;
             }
-            b.append(c);
+            solution.append(c);
         }
 
-        return b.toString();
+        return solution.toString();
     }
 
     public String getCorrectAnswer() {
