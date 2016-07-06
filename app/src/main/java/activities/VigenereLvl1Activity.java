@@ -58,10 +58,14 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
         findViewById(R.id.SuccessMessage).setVisibility(View.GONE);
 
 
-        // set letters to solve TODO change to actual word
+        // set letters to solve
         VigenereWordGenerator vwg = new VigenereWordGenerator(getAssets());
         String targetWord = vwg.getWord();
         String keyword = vwg.getKey();
+
+        // setup instructions
+        ((TextView)findViewById(R.id.InstructionText)).setText(getString(R.string.vigenere_lvl1_instr_part1) +
+            targetWord + getString(R.string.vigenere_lvl1_instr_part2) + " \"" + keyword + "\"");
 
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
         messageLayout.removeAllViews();
@@ -98,7 +102,6 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
 
         setupKeywordText(keyword);
 
-        //((TextView)findViewById(R.id.Keyword)).setText(cipherMessage.getCorrectAnswer() + " " + keyword);
     }
 
 
