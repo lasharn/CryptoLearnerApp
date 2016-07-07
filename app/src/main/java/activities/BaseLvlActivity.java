@@ -57,9 +57,13 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
     public class SelectedTextListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            cipherMessage.removeLetter(((TextView)v).getText().toString());
-            setupSelectedText(cipherMessage.getSelectedString());
+            removeLetter(v);
         }
+    }
+
+    protected void removeLetter(View v) {
+        cipherMessage.removeLetter(((TextView)v).getText().toString());
+        setupSelectedText(cipherMessage.getSelectedString());
     }
 
 

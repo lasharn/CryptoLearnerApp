@@ -12,6 +12,7 @@ public class VigenereMessage implements IMessage {
     private String answerWord;
     private String keyword;
     protected String[] selectedCipherLetters;
+    private int selectedPosition = 0;
 
     public VigenereMessage(String targetWord, String keyword) {
         this.targetWord = targetWord;
@@ -50,21 +51,33 @@ public class VigenereMessage implements IMessage {
     }
 
     public void addLetter(String letter) {
-        int positionOfLetter = -1;
+//        int positionOfLetter = -1;
+//        for (int i = 0; i<selectedCipherLetters.length; i++) {
+//            String s = selectedCipherLetters[i];
+//            if (s == null || s.isEmpty() || s.equals(CaesarMessage.emptyAnswerLetter)) {
+//                selectedCipherLetters[i] = letter;
+//                break;
+//            }
+//        }
+        selectedCipherLetters[selectedPosition] = letter;
+        // TODO probably need a check that it hasn't gone off the end of the word
+        //selectedPosition++;
         for (int i = 0; i<selectedCipherLetters.length; i++) {
             String s = selectedCipherLetters[i];
             if (s == null || s.isEmpty() || s.equals(CaesarMessage.emptyAnswerLetter)) {
-                selectedCipherLetters[i] = letter;
+                selectedPosition = i;
                 break;
             }
         }
     }
+
 
     public void removeLetter(String letter) {
         for (int i = 0; i<selectedCipherLetters.length; i++) {
             String s = selectedCipherLetters[i];
             if (s.equals(letter)) {
                 selectedCipherLetters[i] = CaesarMessage.emptyAnswerLetter;
+                selectedPosition = i;
             }
         }
     }
@@ -89,5 +102,12 @@ public class VigenereMessage implements IMessage {
 
     public String getKeyword() {
         return keyword;
+    }
+
+    public int getSelectedPosition() {
+        return selectedPosition;
+    }
+    public void setSelectedPosition(int position) {
+        selectedPosition = position;
     }
 }

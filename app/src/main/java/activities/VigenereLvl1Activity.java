@@ -13,6 +13,7 @@ import com.cryptolearner.mobile.cryptolearner.R;
 
 import java.util.Locale;
 
+import caesar_encryption.CaesarMessage;
 import caesar_encryption.KeyboardLetterGenerator;
 import ui_elements.CipherWheelView;
 import unpackaged.ChallengeType;
@@ -67,18 +68,8 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
         ((TextView)findViewById(R.id.InstructionText)).setText(getString(R.string.vigenere_lvl1_instr_part1) +
             targetWord + getString(R.string.vigenere_lvl1_instr_part2) + " \"" + keyword + "\"");
 
-        LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
-        messageLayout.removeAllViews();
-        for (int i=0; i < targetWord.length(); i++) {
-            TextView letterView = new TextView(this);
-            letterView.setText(targetWord.charAt(i) + "");
-            letterView.setTextSize(20);
-            letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
-            letterView.setGravity(Gravity.CENTER);
-            letterView.setBackgroundResource(targetLetterBackground);
-
-            messageLayout.addView(letterView);
-        }
+        // setup target word
+        setupTargetText(targetWord);
 
         // update key when cipher wheel spins
         keyText = (TextView) findViewById(R.id.KeyText);
@@ -102,6 +93,7 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
 
         setupKeywordText(keyword);
 
+        highlightSelectedPosition();
     }
 
 
@@ -121,6 +113,28 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
         }
     }
 
+    protected void setupTargetText(String targetWord) {
+        LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
+        if (targetWord == null) {
+            for (int i=0; i < cipherMessage.getCorrectAnswer().length(); i++) {
+                messageLayout.getChildAt(i).setBackgroundResource(R.drawable.background_plain_letter);
+            }
+            return;
+        }
+
+        messageLayout.removeAllViews();
+        for (int i=0; i < targetWord.length(); i++) {
+            TextView letterView = new TextView(this);
+            letterView.setText(targetWord.charAt(i) + "");
+            letterView.setTextSize(20);
+            letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
+            letterView.setGravity(Gravity.CENTER);
+            letterView.setBackgroundResource(targetLetterBackground);
+
+            messageLayout.addView(letterView);
+        }
+    }
+
     @Override
     protected void letterBtnClicked(Button btn) {
         if (cipherMessage.isFull()) {
@@ -132,5 +146,34 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
         if (cipherMessage.isCorrect()) {
             stageComplete();
         }
+        setupTargetText(null);
+        highlightSelectedPosition();
+
+    }
+
+    @Override
+    protected void removeLetter(View v) {
+        //setup position
+        LinearLayout ll = (LinearLayout)findViewById(R.id.solution_layout);
+        int position = ((LinearLayout)findViewById(R.id.solution_layout)).indexOfChild(v);
+        ((VigenereMessage)cipherMessage).setSelectedPosition(position);
+        if (!((TextView)v).getText().equals(CaesarMessage.emptyAnswerLetter)) {
+            super.removeLetter(v);
+
+        } else {
+            //setupSelectedText(cipherMessage.getSelectedString());
+        }
+
+        setupTargetText(null);
+        highlightSelectedPosition();
+
+
+    }
+
+    private void highlightSelectedPosition() {
+        int position = ((VigenereMessage)cipherMessage).getSelectedPosition();
+        ((LinearLayout)findViewById(R.id.message_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_key_letter);
+        ((LinearLayout)findViewById(R.id.keyword_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_key_letter);
+        ((LinearLayout)findViewById(R.id.solution_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_key_letter);
     }
 }
