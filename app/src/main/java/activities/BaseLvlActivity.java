@@ -63,6 +63,10 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
 
     protected void removeLetter(View v) {
         cipherMessage.removeLetter(((TextView)v).getText().toString());
+        Button b;
+        if ((b = getButtonOfLetter(((TextView)v).getText().toString())) != null) {
+            activateLetterBtn(b);
+        }
         setupSelectedText(cipherMessage.getSelectedString());
     }
 
@@ -174,5 +178,44 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
     protected String getStageDisplayString() {
         return stage + "/" + numberOfStages;
     }
+
+
+    private Button getButtonOfLetter(String letter) {
+        Button btn;
+        btn = (Button) findViewById(R.id.LetterBtn1);
+        if (btn.getText().equals(letter)) {
+            return btn;
+        }
+        btn = (Button) findViewById(R.id.LetterBtn2);
+        if (btn.getText().equals(letter)) {
+            return btn;
+        }
+        btn = (Button) findViewById(R.id.LetterBtn3);
+        if (btn.getText().equals(letter)) {
+            return btn;
+        }
+        btn = (Button) findViewById(R.id.LetterBtn4);
+        if (btn.getText().equals(letter)) {
+            return btn;
+        }
+        btn = (Button) findViewById(R.id.LetterBtn5);
+        if (btn.getText().equals(letter)) {
+            return btn;
+        }
+        btn = (Button) findViewById(R.id.LetterBtn6);
+        if (btn.getText().equals(letter)) {
+            return btn;
+        }
+        btn = (Button) findViewById(R.id.LetterBtn7);
+        if (btn.getText().equals(letter)) {
+            return btn;
+        }
+        btn = (Button) findViewById(R.id.LetterBtn8);
+        if (btn.getText().equals(letter)) {
+            return btn;
+        }
+        return null;
+    }
+
 
 }

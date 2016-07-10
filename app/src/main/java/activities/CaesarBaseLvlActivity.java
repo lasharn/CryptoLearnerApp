@@ -77,8 +77,7 @@ public abstract class CaesarBaseLvlActivity extends BaseLvlActivity implements C
         targetWord = cipherMessage.plainTextString();
 
         TextView task = (TextView) findViewById(R.id.InstructionText);
-        task.setText(getString(instructionPart1) + " " + targetWord + " " +
-                getString(instructionPart2) + " " + key);
+        task.setText(getInstructionText(targetWord, key));
 
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
         messageLayout.removeAllViews();
@@ -100,6 +99,11 @@ public abstract class CaesarBaseLvlActivity extends BaseLvlActivity implements C
         // set keyboard letters
         KeyboardLetterGenerator klg = new KeyboardLetterGenerator();
         setLetterButtons(klg.getKeyboardLetters(cipherMessage.getCorrectAnswer()));
+    }
+
+    protected String getInstructionText(String targetWord, int key) {
+        return getString(instructionPart1) + " " + targetWord + " " +
+                getString(instructionPart2) + " " + key;
     }
 
     abstract protected CaesarMessage createCaesarMessage(String targetWord, int key);
