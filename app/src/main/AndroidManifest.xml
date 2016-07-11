@@ -40,6 +40,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="activities.CaesarLvl4Activity"
+            android:label="@string/title_activity_caesar_lvl_4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="activities.SubstitutionLvl1Activity"
             android:label="@string/title_activity_substitution_lvl_1"
             android:screenOrientation="portrait"

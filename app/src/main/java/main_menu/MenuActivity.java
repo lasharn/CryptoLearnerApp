@@ -15,6 +15,7 @@ import com.cryptolearner.mobile.cryptolearner.R;
 import activities.CaesarLvl1Activity;
 import activities.CaesarLvl2Activity;
 import activities.CaesarLvl3Activity;
+import activities.CaesarLvl4Activity;
 import activities.MainActivity;
 import activities.SubstitutionLvl1Activity;
 import activities.SubstitutionLvl2Activity;
@@ -76,7 +77,7 @@ public class MenuActivity extends AppCompatActivity {
                 break;
             case R.id.CaesarLvl4Btn:
                 if (isLevelUnlocked(ChallengeType.CAESAR, 4)) {
-                    intent = new Intent(this, CaesarLvl2Activity.class);
+                    intent = new Intent(this, CaesarLvl4Activity.class);
                 } else {
                     levelLocked = true;
                 }

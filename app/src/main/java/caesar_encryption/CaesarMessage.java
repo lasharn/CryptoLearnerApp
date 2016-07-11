@@ -12,14 +12,12 @@ public class CaesarMessage implements IMessage{
     protected String[] targetTextLetters;
     protected String[] selectedCipherLetters;
     protected String[] solutionText;
-    private int key;
 
     public CaesarMessage(String plainTextMessage, int key) {
-        this.key = key;
         targetTextLetters = plainTextMessage.toUpperCase().split("(?!^)"); // regex for everything that is not start of string
         selectedCipherLetters = new String[targetTextLetters.length];
         Arrays.fill(selectedCipherLetters, emptyAnswerLetter);
-        solutionText = solveCipher().split("(?!^)");
+        solutionText = solveCipher(key).split("(?!^)");
     }
 
     public CaesarMessage() {
@@ -84,10 +82,13 @@ public class CaesarMessage implements IMessage{
         return true;
     }
 
-    private String solveCipher() {
+    protected String solveCipher(int key) {
         StringBuilder solution = new StringBuilder();
         for (String targetTextLetter : targetTextLetters) {
-            char c = (char) (targetTextLetter.charAt(0) + key);
+            char c = ' ';
+             if (targetTextLetter.charAt(0) != ' '){
+                c = (char) (targetTextLetter.charAt(0) + key);
+            }
             if (c > 'Z') {
                 c -= 26;
             }

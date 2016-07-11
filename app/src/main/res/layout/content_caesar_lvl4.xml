@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="activities.CaesarBaseLvlActivity"
+    tools:showIn="@layout/activity_caesar_lvl4"
+    android:background="@color/colourMix"
+    android:id="@+id/main">
+
+    <TextView
+        android:id="@+id/InstructionText"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/caesar_lvl1_instr_part1" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cipher_circle_back"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cipher_text_label"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cipher_plain_text_label"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <ui_elements.CipherWheelView
+            android:id="@+id/cipher_wheel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+
+        <TextView
+            android:id="@+id/KeyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/zero_key"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/SuccessMessage"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
+        android:layout_margin="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/SuccessText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stage_win_message"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/CompleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_word"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/Sentences"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/EncryptedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stage_win_message"
+            android:textSize="20sp"
+            android:typeface="monospace"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/PlainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stage_win_message"
+            android:textSize="20sp"
+            android:typeface="monospace"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/SomeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_word"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
