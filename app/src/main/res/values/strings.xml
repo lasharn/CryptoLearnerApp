@@ -22,7 +22,7 @@
     <string name="caesar_lvl1_btn">Intro</string>
     <string name="caesar_lvl2_btn">Encrypt</string>
     <string name="caesar_lvl3_btn">Decrypt</string>
-    <string name="caesar_lvl4_btn">Hard</string>
+    <string name="caesar_lvl4_btn">Brute Force</string>
 
     <string name="substitution_lvl1_btn">Intro</string>
     <string name="substitution_lvl2_btn">Encryption</string>

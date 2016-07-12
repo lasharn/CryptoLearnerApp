@@ -106,6 +106,7 @@
     <LinearLayout
         android:id="@+id/Sentences"
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".5"
@@ -125,7 +126,7 @@
             android:id="@+id/PlainText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stage_win_message"
+            android:text="This is a message"
             android:textSize="20sp"
             android:typeface="monospace"
             android:layout_gravity="center_horizontal"
@@ -135,7 +136,7 @@
             android:id="@+id/SomeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/continue_word"/>
+            android:text="Done"/>
 
     </LinearLayout>
 
