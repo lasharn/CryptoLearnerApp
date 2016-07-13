@@ -101,14 +101,14 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
 
         ((TextView) findViewById(R.id.EncryptedText)).setText(cipherMessage.getCorrectAnswer());
         PlainText = (TextView) findViewById(R.id.PlainText);
-        PlainText.setText(((CaesarBruteForceMessage)cipherMessage).encryptWithKey(0));
+        PlainText.setText(((CaesarBruteForceMessage)cipherMessage).encryptWithKey(cipherWheelView.getKey()));
 
         // set instruction text
         TextView task = (TextView) findViewById(R.id.InstructionText);
         task.setText("Work out the answer");
 
 
-        ((Button) findViewById(R.id.SomeButton)).setOnClickListener(new View.OnClickListener() {
+        (findViewById(R.id.SomeButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (cipherMessage.plainTextString().equals(cipherMessage.getSelectedString())) {

@@ -73,8 +73,8 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
 
         // update key when cipher wheel spins
         keyText = (TextView) findViewById(R.id.KeyText);
-        keyText.setText("Key:\nA");
         CipherWheelView cipherWheelView = (CipherWheelView) findViewById(R.id.cipher_wheel);
+        keyText.setText("Key:\n" + ((char)(cipherWheelView.getKey()+'A')));
         assert cipherWheelView != null;
         cipherWheelView.addDialListener(new CipherWheelView.DialListener() {
             public void onDial(int number) {

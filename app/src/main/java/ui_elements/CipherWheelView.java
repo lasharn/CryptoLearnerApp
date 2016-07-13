@@ -140,6 +140,17 @@ public class CipherWheelView extends View {
 
     private final List<DialListener> dialListeners = new ArrayList<DialListener>();
 
+    public int getKey() {
+        // some logic to get the key from the angle
+        int number = (int)Math.round(wheelAngle/13.8461538462);
+        // numbers give weird negative results so tidy it up
+        if (number <= 0) {
+            number = Math.abs(number);
+        } else {
+            number = Math.abs(number-26);
+        }
+        return number;
+    }
 
     public void addDialListener(DialListener listener) {
         dialListeners.add(listener);
