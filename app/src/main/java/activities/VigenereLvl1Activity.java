@@ -115,9 +115,11 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
 
     protected void setupTargetText(String targetWord) {
         LinearLayout messageLayout = (LinearLayout) findViewById(R.id.message_layout);
+        LinearLayout keywordLayout = (LinearLayout) findViewById(R.id.keyword_layout);
         if (targetWord == null) {
             for (int i=0; i < cipherMessage.getCorrectAnswer().length(); i++) {
                 messageLayout.getChildAt(i).setBackgroundResource(R.drawable.background_plain_letter);
+                keywordLayout.getChildAt(i).setBackgroundResource(R.drawable.background_key_letter);
             }
             return;
         }
@@ -161,7 +163,7 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
             super.removeLetter(v);
 
         } else {
-            //setupSelectedText(cipherMessage.getSelectedString());
+            setupSelectedText(cipherMessage.getSelectedString());
         }
 
         setupTargetText(null);
@@ -172,8 +174,8 @@ public class VigenereLvl1Activity extends BaseLvlActivity {
 
     private void highlightSelectedPosition() {
         int position = ((VigenereMessage)cipherMessage).getSelectedPosition();
-        ((LinearLayout)findViewById(R.id.message_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_key_letter);
-        ((LinearLayout)findViewById(R.id.keyword_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_key_letter);
-        ((LinearLayout)findViewById(R.id.solution_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_key_letter);
+        ((LinearLayout)findViewById(R.id.message_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_selected_cipher);
+        ((LinearLayout)findViewById(R.id.keyword_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_selected_key);
+        ((LinearLayout)findViewById(R.id.solution_layout)).getChildAt(position).setBackgroundResource(R.drawable.background_selected_plain);
     }
 }
