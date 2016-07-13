@@ -37,9 +37,6 @@ public class SubstitutionPartiallyCompleteMessage extends SubstitutionMessage {
 
     @Override
     public boolean isCorrect() {
-        if (Arrays.equals(selectedCipherLetters, plainTextString().split("(?!^)"))) {
-            return true;
-        }
-        return false;
+        return Arrays.equals(selectedCipherLetters, plainTextString().split("(?!^)"));
     }
 }
