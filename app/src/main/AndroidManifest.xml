@@ -55,6 +55,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="activities.SubstitutionLvl3Activity"
+            android:label="@string/title_activity_substitution_lvl_3"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="activities.VigenereLvl1Activity"
             android:label="@string/title_activity_vigenere_lvl_1"
             android:screenOrientation="portrait"

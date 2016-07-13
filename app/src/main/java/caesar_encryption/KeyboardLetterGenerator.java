@@ -12,7 +12,7 @@ public class KeyboardLetterGenerator {
         List<String> letters = new ArrayList<>();
         String[] lettersSplit = word.split("(?!^)");
         for (String s : lettersSplit) {
-            if (!letters.contains(s)) {
+            if (!letters.contains(s) && !s.equals(" ")) {
                 letters.add(s);
             }
         }

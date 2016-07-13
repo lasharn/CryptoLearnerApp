@@ -17,6 +17,7 @@ public class SubstitutionMessage implements IMessage {
         answerWord = calculateAnswer(targetWord, mappings);
         selectedCipherLetters = new String[targetWord.length()];
         Arrays.fill(selectedCipherLetters, CaesarMessage.emptyAnswerLetter);
+        selectedCipherLetters = restoreSpaces(selectedCipherLetters, answerWord);
     }
 
     private String calculateAnswer(String targetWord, SubstitutionMappings mappings) {
@@ -30,6 +31,16 @@ public class SubstitutionMessage implements IMessage {
 
     public String getCorrectAnswer() {
         return answerWord;
+    }
+
+    private String[] restoreSpaces(String[] selectedLetters, String answer) {
+        for (int i = 0; i<selectedLetters.length; i++) {
+            char s = answer.charAt(i);
+            if (s == ' ') {
+                selectedLetters[i] = " ";
+            }
+        }
+        return selectedLetters;
     }
 
     public String getSelectedString() {
