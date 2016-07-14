@@ -169,7 +169,7 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
 
     public void onDialogContinueClick(DialogFragment dialog) {
         if (nextLevel != null) {
-            Intent intent = new Intent(this, CaesarLvl2Activity.class);
+            Intent intent = new Intent(this, nextLevel);
             startActivity(intent);
         }
         finish();

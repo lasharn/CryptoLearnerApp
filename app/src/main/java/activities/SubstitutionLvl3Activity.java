@@ -33,6 +33,7 @@ public class SubstitutionLvl3Activity extends BaseLvlActivity implements CaesarC
         challengeNo = 3;
         targetLetterBackground = R.drawable.background_plain_letter;
         answerLetterBackground = R.drawable.background_cipher_letter;
+        nextLevel = null;
     }
 
 

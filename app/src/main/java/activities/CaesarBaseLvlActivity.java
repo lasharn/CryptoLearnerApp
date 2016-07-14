@@ -109,7 +109,7 @@ public abstract class CaesarBaseLvlActivity extends BaseLvlActivity implements C
     abstract protected CaesarMessage createCaesarMessage(String targetWord, int key);
 
 
-    abstract public void onDialogContinueClick(DialogFragment dialog);
+    //abstract public void onDialogContinueClick(DialogFragment dialog);
 
 
 }

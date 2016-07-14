@@ -40,11 +40,10 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
     protected ChallengeType challengeType;
     protected int challengeNo;
     protected int layoutId = R.layout.activity_caesar_lvl4;
-    protected Class nextLevel;
+    protected Class nextLevel = null;
 
     private TextView keyText;
     private TextView PlainText;
-    private int key;
 
     public CaesarLvl4Activity() {
         challengeType = ChallengeType.CAESAR;
@@ -82,7 +81,7 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
 
         // set key
         Random r = new Random();
-        key = r.nextInt(21) + 3; // purposely doesn't allow keys close to 0
+        int key = r.nextInt(21) + 3;
 
         keyText = (TextView) findViewById(R.id.KeyText);
         CipherWheelView cipherWheelView = (CipherWheelView) findViewById(R.id.cipher_wheel);
@@ -139,7 +138,7 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
 
     public void onDialogContinueClick(DialogFragment dialog) {
         if (nextLevel != null) {
-            Intent intent = new Intent(this, CaesarLvl2Activity.class);
+            Intent intent = new Intent(this, nextLevel);
             startActivity(intent);
         }
         finish();

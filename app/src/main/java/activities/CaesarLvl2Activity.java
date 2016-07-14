@@ -23,19 +23,12 @@ public class CaesarLvl2Activity extends CaesarBaseLvlActivity {
         instructionPart2 = R.string.caesar_lvl1_instr_part2;
         targetLetterBackground = R.drawable.background_plain_letter;
         answerLetterBackground = R.drawable.background_cipher_letter;
+        nextLevel = CaesarLvl3Activity.class;
     }
 
     @Override
     protected CaesarMessage createCaesarMessage(String targetWord, int key) {
         return new CaesarMessage(targetWord, key);
-    }
-
-    @Override
-    public void onDialogContinueClick(DialogFragment dialog) {
-
-        Intent intent = new Intent(this, CaesarLvl2Activity.class);
-        startActivity(intent);
-        finish();
     }
 
 }
