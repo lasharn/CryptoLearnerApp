@@ -1,6 +1,4 @@
-package unpackaged;
-
-import caesar_encryption.CaesarMessage;
+package caesar_encryption;
 
 
 public class CaesarBruteForceMessage extends CaesarMessage {
@@ -13,6 +11,7 @@ public class CaesarBruteForceMessage extends CaesarMessage {
             encryptedMessage = new CaesarBruteForceMessage(getCorrectAnswer(), 0, false);
         }
         System.arraycopy(targetTextLetters, 0, selectedCipherLetters, 0, selectedCipherLetters.length);
+        System.arraycopy(solutionText, 0, targetTextLetters, 0, selectedCipherLetters.length);
     }
 
     public String encryptWithKey(int key) {

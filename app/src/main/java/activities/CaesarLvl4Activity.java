@@ -7,7 +7,6 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
@@ -15,12 +14,9 @@ import com.cryptolearner.mobile.cryptolearner.R;
 import java.util.Locale;
 import java.util.Random;
 
-import caesar_encryption.CaesarGivenLetterMessage;
-import caesar_encryption.CaesarMessage;
-import caesar_encryption.WordGenerator;
 import ui_elements.CaesarCompleteDialogFragment;
 import ui_elements.CipherWheelView;
-import unpackaged.CaesarBruteForceMessage;
+import caesar_encryption.CaesarBruteForceMessage;
 import unpackaged.ChallengeType;
 import unpackaged.IMessage;
 import unpackaged.LevelUnlocks;
