@@ -17,7 +17,6 @@ import activities.CaesarLvl1Activity;
 import activities.CaesarLvl2Activity;
 import activities.CaesarLvl3Activity;
 import activities.CaesarLvl4Activity;
-import activities.MainActivity;
 import activities.SubstitutionLvl1Activity;
 import activities.SubstitutionLvl2Activity;
 import activities.SubstitutionLvl3Activity;
@@ -138,7 +137,7 @@ public class MenuActivity extends AppCompatActivity {
                 intent = new Intent(this, AboutActivity.class);
                 break;
             case R.id.something_else_btn:
-                intent = new Intent(this, MainActivity.class);
+                levelLocked = true;
                 break;
         }
 
