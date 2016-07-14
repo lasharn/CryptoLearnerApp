@@ -2,7 +2,6 @@ package substitution_encryption;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,8 +18,10 @@ public class RandomMappingGenerator {
             alphabet.add(i, Character.toString((char)(i+'A')));
             shuffledAlphabet.add(i, Character.toString((char)(i+'A')));
         }
+
         // shuffle the alphabet
         Collections.shuffle(shuffledAlphabet);
+
         // ensure no letter maps to itself
         for (int i=0; i<alphabet.size()-1; i++) {
             String currentLetter = shuffledAlphabet.get(i);
@@ -28,7 +29,7 @@ public class RandomMappingGenerator {
             if (alphabet.get(i).equals(currentLetter)) {
                 // take the next letter instead and move the current letter so it is included later
                 mappings[i] = shuffledAlphabet.get(i+1);
-                shuffledAlphabet.add(i+1, shuffledAlphabet.get(i));
+                shuffledAlphabet.set(i+1, shuffledAlphabet.get(i));
             } else {
                 // it is a different letter so add that letter
                 mappings[i] = currentLetter;
