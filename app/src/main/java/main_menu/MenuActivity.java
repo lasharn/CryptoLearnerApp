@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
+import com.cryptolearner.mobile.cryptolearner.AboutActivity;
 import com.cryptolearner.mobile.cryptolearner.R;
 
 import activities.CaesarLvl1Activity;
@@ -134,7 +135,7 @@ public class MenuActivity extends AppCompatActivity {
                 break;
 
             case R.id.about_btn:
-                levelLocked = true;
+                intent = new Intent(this, AboutActivity.class);
                 break;
             case R.id.something_else_btn:
                 intent = new Intent(this, MainActivity.class);

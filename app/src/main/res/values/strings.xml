@@ -54,5 +54,6 @@
 
     <string name="vigenere_lvl1_instr_part1">Encrypt \"</string>
     <string name="vigenere_lvl1_instr_part2">\" with keyword</string>
+    <string name="title_activity_about">AboutActivity</string>
 
 </resources>
