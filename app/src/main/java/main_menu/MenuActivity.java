@@ -21,6 +21,7 @@ import activities.SubstitutionLvl1Activity;
 import activities.SubstitutionLvl2Activity;
 import activities.SubstitutionLvl3Activity;
 import activities.VigenereLvl1Activity;
+import activities.VigenereLvl2Activity;
 import unpackaged.ChallengeType;
 import unpackaged.LevelUnlocks;
 
@@ -113,7 +114,7 @@ public class MenuActivity extends AppCompatActivity {
                 break;
             case R.id.VigenereLvl2Btn:
                 if (isLevelUnlocked(ChallengeType.VIGENERE, 2)) {
-                    //intent = new Intent(this, CaesarLvl2Activity.class);
+                    intent = new Intent(this, VigenereLvl2Activity.class);
                 } else {
                     levelLocked = true;
                 }

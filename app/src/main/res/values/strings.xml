@@ -17,6 +17,9 @@
     <string name="title_activity_substitution_lvl_2">Substitution Lvl 2</string>
     <string name="title_activity_substitution_lvl_3">Substitution Lvl 3</string>
     <string name="title_activity_vigenere_lvl_1">Vigenére Lvl 1</string>
+    <string name="title_activity_vigenere_lvl_2">Vigenére Lvl 2</string>
+
+    <string name="title_activity_about">AboutActivity</string>
 
     <string name="dummy_encryption_message">MESSAGE</string>
 
@@ -54,6 +57,7 @@
 
     <string name="vigenere_lvl1_instr_part1">Encrypt \"</string>
     <string name="vigenere_lvl1_instr_part2">\" with keyword</string>
-    <string name="title_activity_about">AboutActivity</string>
+    <string name="vigenere_lvl2_instr">Work out the key</string>
+
 
 </resources>

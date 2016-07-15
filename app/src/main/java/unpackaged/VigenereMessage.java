@@ -51,17 +51,7 @@ public class VigenereMessage implements IMessage {
     }
 
     public void addLetter(String letter) {
-//        int positionOfLetter = -1;
-//        for (int i = 0; i<selectedCipherLetters.length; i++) {
-//            String s = selectedCipherLetters[i];
-//            if (s == null || s.isEmpty() || s.equals(CaesarMessage.emptyAnswerLetter)) {
-//                selectedCipherLetters[i] = letter;
-//                break;
-//            }
-//        }
         selectedCipherLetters[selectedPosition] = letter;
-        // TODO probably need a check that it hasn't gone off the end of the word
-        //selectedPosition++;
         for (int i = 0; i<selectedCipherLetters.length; i++) {
             String s = selectedCipherLetters[i];
             if (s == null || s.isEmpty() || s.equals(CaesarMessage.emptyAnswerLetter)) {
