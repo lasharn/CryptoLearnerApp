@@ -20,12 +20,16 @@
     <string name="title_activity_vigenere_lvl_2">Vigenére Lvl 2</string>
 
     <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_tool_caesar_encryption">Caesar Encryption</string>
+    <string name="title_activity_tool_caesar_decryption">Caesar Decryption</string>
+    <string name="title_activity_tool_substitution">Substitution Tools</string>
+    <string name="title_activity_tool_vigenere">Vigenére Tools</string>
 
     <string name="dummy_encryption_message">MESSAGE</string>
 
     <string name="caesar_lvl1_btn">Intro</string>
     <string name="caesar_lvl2_btn">Encrypt</string>
-    <string name="caesar_lvl3_btn">Decrypt</string>
+    <string name="caesar_lvl3_btn">Unknown Key</string>
     <string name="caesar_lvl4_btn">Brute Force</string>
 
     <string name="substitution_lvl1_btn">Intro</string>
@@ -33,8 +37,7 @@
     <string name="substitution_lvl3_btn">Word Guessing</string>
 
     <string name="vigenere_lvl1_btn">Intro</string>
-    <string name="vigenere_lvl2_btn">Easy</string>
-    <string name="vigenere_lvl3_btn">Hard</string>
+    <string name="vigenere_lvl2_btn">Determine Key</string>
 
 
     <string name="cipher_text">Cipher Text</string>
@@ -48,8 +51,10 @@
     <string name="caesar_lvl1_instr_part2">with a key of</string>
     <string name="caesar_lvl2_instr_part1">Encrypt</string>
     <string name="caesar_lvl3_instr_part2">without knowing the key</string>
+    <string name="caesar_lvl4_instr">Guess the key to reveal the message</string>
 
-    <string name="substitution_lvl1_instr">Encrypt the message below with the given letter mappings</string>
+    <string name="substitution_lvl1_instr_part1">Encrypt</string>
+    <string name="substitution_lvl1_instr_part2">with the given letter mappings</string>
     <string name="substitution_lvl2_instr">Decrypt the most common letters</string>
     <string name="substitution_lvl2_hint1">Hint: the word \"</string>
     <string name="substitution_lvl2_hint2">\" is in this sentence</string>
@@ -57,7 +62,7 @@
 
     <string name="vigenere_lvl1_instr_part1">Encrypt \"</string>
     <string name="vigenere_lvl1_instr_part2">\" with keyword</string>
-    <string name="vigenere_lvl2_instr">Work out the key</string>
+    <string name="vigenere_lvl2_instr">Use the plain and cipher text to work out the key</string>
 
 
 </resources>

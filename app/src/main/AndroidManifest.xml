@@ -65,9 +65,17 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AboutActivity"
+            android:name="activities.AboutActivity"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="activities.ToolCaesarEncryptionActivity"
+            android:label="@string/title_activity_tool_caesar_encryption"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="activities.ToolCaesarDecryptionActivity"
+            android:label="@string/title_activity_tool_caesar_decryption"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

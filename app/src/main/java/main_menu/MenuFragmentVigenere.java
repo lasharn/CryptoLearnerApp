@@ -51,16 +51,6 @@ public class MenuFragmentVigenere extends Fragment {
         } else {
             unlockLevel(view.findViewById(R.id.VigenereLvl2Btn));
         }
-        if (!levelUnlocks.isUnlocked(ChallengeType.VIGENERE, 3)) {
-            lockLevel(view.findViewById(R.id.VigenereLvl3Btn));
-        } else {
-            unlockLevel(view.findViewById(R.id.VigenereLvl3Btn));
-        }
-        if (!levelUnlocks.isUnlocked(ChallengeType.VIGENERE, 4)) {
-            lockLevel(view.findViewById(R.id.VigenereLvl4Btn));
-        } else {
-            unlockLevel(view.findViewById(R.id.VigenereLvl4Btn));
-        }
     }
 
     private void lockLevel(View view) {

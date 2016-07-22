@@ -100,7 +100,7 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
 
         // set instruction text
         TextView task = (TextView) findViewById(R.id.InstructionText);
-        task.setText("Work out the answer");
+        task.setText(getString(R.string.caesar_lvl4_instr));
 
 
         (findViewById(R.id.SomeButton)).setOnClickListener(new View.OnClickListener() {

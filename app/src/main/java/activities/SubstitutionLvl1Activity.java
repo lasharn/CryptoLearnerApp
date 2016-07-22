@@ -72,6 +72,10 @@ public class SubstitutionLvl1Activity extends BaseLvlActivity implements CaesarC
             messageLayout.addView(letterView);
         }
 
+        // setup instructions
+        TextView task = (TextView) findViewById(R.id.InstructionText);
+        task.setText(getString(R.string.substitution_lvl1_instr_part1) + " \"" + targetWord + "\" " + getString(R.string.substitution_lvl1_instr_part2));
+
         // setup random mappings
         String[] letters = new RandomMappingGenerator().getRandomMappings();
 

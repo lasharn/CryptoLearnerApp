@@ -10,8 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-import com.cryptolearner.mobile.cryptolearner.AboutActivity;
+import activities.AboutActivity;
 import com.cryptolearner.mobile.cryptolearner.R;
+import activities.ToolCaesarDecryptionActivity;
 
 import activities.CaesarLvl1Activity;
 import activities.CaesarLvl2Activity;
@@ -20,6 +21,7 @@ import activities.CaesarLvl4Activity;
 import activities.SubstitutionLvl1Activity;
 import activities.SubstitutionLvl2Activity;
 import activities.SubstitutionLvl3Activity;
+import activities.ToolCaesarEncryptionActivity;
 import activities.VigenereLvl1Activity;
 import activities.VigenereLvl2Activity;
 import unpackaged.ChallengeType;
@@ -119,19 +121,20 @@ public class MenuActivity extends AppCompatActivity {
                     levelLocked = true;
                 }
                 break;
-            case R.id.VigenereLvl3Btn:
-                if (isLevelUnlocked(ChallengeType.VIGENERE, 3)) {
-                    //intent = new Intent(this, CaesarLvl2Activity.class);
-                } else {
-                    levelLocked = true;
-                }
+
+            case R.id.tools_btn1:
+                intent = new Intent(this, ToolCaesarEncryptionActivity.class);
                 break;
-            case R.id.VigenereLvl4Btn:
-                if (isLevelUnlocked(ChallengeType.VIGENERE, 4)) {
-                    //intent = new Intent(this, CaesarLvl2Activity.class);
-                } else {
-                    levelLocked = true;
-                }
+            case R.id.tools_btn2:
+                intent = new Intent(this, ToolCaesarDecryptionActivity.class);
+                break;
+            case R.id.tools_btn3:
+                levelLocked = true;
+                // intent = new Intent(this, ToolCaesarEncryptionActivity.class);
+                break;
+            case R.id.tools_btn4:
+                levelLocked = true;
+                // intent = new Intent(this, ToolCaesarEncryptionActivity.class);
                 break;
 
             case R.id.about_btn:

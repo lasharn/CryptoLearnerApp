@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical"
-                android:text="@string/caesar_lvl1_btn"
+                android:text="@string/vigenere_lvl1_btn"
                 android:textSize="20sp"
                 android:paddingLeft="5dp"
                 android:layout_toRightOf="@id/caesar_lvl1_image"/>
@@ -108,78 +108,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical"
-                android:text="@string/caesar_lvl2_btn"
+                android:text="@string/vigenere_lvl2_btn"
                 android:textSize="20sp"
                 android:paddingLeft="5dp"
                 android:layout_toRightOf="@id/caesar_lvl2_image"/>
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="65dp"
-            android:id="@+id/VigenereLvl3Btn"
-            android:onClick="onClickChallenge">
 
-            <Space
-                android:id="@+id/space3"
-                android:layout_width="30dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true" />
-
-            <ImageView
-                android:contentDescription="@string/caesar_btn"
-                android:id="@+id/caesar_lvl3_image"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:adjustViewBounds="true"
-                android:padding="15dp"
-                android:src="@drawable/icon_key"
-                android:layout_toRightOf="@id/space3"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:gravity="center_vertical"
-                android:text="@string/caesar_lvl3_btn"
-                android:textSize="20sp"
-                android:paddingLeft="5dp"
-                android:layout_toRightOf="@id/caesar_lvl3_image"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="65dp"
-            android:id="@+id/VigenereLvl4Btn"
-            android:onClick="onClickChallenge">
-
-            <Space
-                android:id="@+id/space4"
-                android:layout_width="30dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true" />
-
-            <ImageView
-                android:contentDescription="@string/caesar_btn"
-                android:id="@+id/caesar_lvl4_image"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:adjustViewBounds="true"
-                android:padding="15dp"
-                android:src="@drawable/icon_key"
-                android:layout_toRightOf="@id/space4"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:gravity="center_vertical"
-                android:text="@string/caesar_lvl4_btn"
-                android:textSize="20sp"
-                android:paddingLeft="5dp"
-                android:layout_toRightOf="@id/caesar_lvl4_image"/>
-
-        </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
