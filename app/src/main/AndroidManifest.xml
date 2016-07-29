@@ -77,9 +77,13 @@
             android:label="@string/title_activity_tool_caesar_decryption"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ToolSubstitutionActivity"
+            android:name="activities.ToolSubstitutionActivity"
             android:label="@string/title_activity_tool_substitution"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name="activities.ToolVigenereActivity"
+            android:label="@string/title_activity_tool_vigenere"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

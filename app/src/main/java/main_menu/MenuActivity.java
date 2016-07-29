@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import activities.AboutActivity;
 import com.cryptolearner.mobile.cryptolearner.R;
-import com.cryptolearner.mobile.cryptolearner.ToolSubstitutionActivity;
+import activities.ToolSubstitutionActivity;
 
 import activities.ToolCaesarDecryptionActivity;
 
@@ -24,6 +24,7 @@ import activities.SubstitutionLvl1Activity;
 import activities.SubstitutionLvl2Activity;
 import activities.SubstitutionLvl3Activity;
 import activities.ToolCaesarEncryptionActivity;
+import activities.ToolVigenereActivity;
 import activities.VigenereLvl1Activity;
 import activities.VigenereLvl2Activity;
 import unpackaged.ChallengeType;
@@ -134,8 +135,7 @@ public class MenuActivity extends AppCompatActivity {
                 intent = new Intent(this, ToolSubstitutionActivity.class);
                 break;
             case R.id.tools_btn4:
-                levelLocked = true;
-                // intent = new Intent(this, ToolCaesarEncryptionActivity.class);
+                intent = new Intent(this, ToolVigenereActivity.class);
                 break;
 
             case R.id.about_btn:

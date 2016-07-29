@@ -22,11 +22,14 @@ public class VigenereMessage implements IMessage {
         Arrays.fill(selectedCipherLetters, CaesarMessage.emptyAnswerLetter);
     }
 
-    private String calculateAnswer(String targetWord, String keyword) {
+    protected String calculateAnswer(String targetWord, String keyword) {
         StringBuilder answer = new StringBuilder();
         char[] targetLetters = targetWord.toCharArray();
         for (int i = 0; i<targetLetters.length; i++) {
-
+            if (targetLetters[i] == ' ') {
+                answer.append(targetLetters[i]);
+                continue;
+            }
             int key = keyword.toCharArray()[i%keyword.length()] - 'A';
             char c = (char) (targetLetters[i] + key);
             if (c > 'Z') {
