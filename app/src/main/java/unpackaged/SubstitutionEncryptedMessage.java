@@ -25,7 +25,6 @@ public class SubstitutionEncryptedMessage extends SubstitutionMessage{
                     break;
                 }
             }
-            //answer.append(mappings.getLetter(Character.toString(c)));
         }
 
         return answer.toString();

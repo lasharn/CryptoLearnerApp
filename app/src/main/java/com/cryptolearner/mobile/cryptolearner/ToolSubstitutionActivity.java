@@ -51,7 +51,7 @@ public class ToolSubstitutionActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.encryptedMessage)).setText(cipherMessage.getCorrectAnswer());
     }
 
-    private void randomizeMappings() {
+    public void randomizeMappings(View view) {
         // setup random mappings
         String[] letters = new RandomMappingGenerator().getRandomMappings();
         SubstitutionMappings substitutionMappings = new SubstitutionMappings(letters);

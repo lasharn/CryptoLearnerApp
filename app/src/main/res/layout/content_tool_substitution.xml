@@ -12,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:layout_gravity="center_horizontal">
 
         <unpackaged.SnappyScrollView
@@ -32,39 +32,16 @@
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Encrypt"
-            android:id="@+id/encryptBtn"
-            android:onClick="encrypt"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Decrypt"
-            android:id="@+id/decryptBtn"
-            android:onClick="decrypt"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-    </RelativeLayout>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:inputType="textNoSuggestions"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:inputType="textMultiLine|textNoSuggestions"
         android:focusable="false"
         android:clickable="true"
         android:textIsSelectable="true"

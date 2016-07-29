@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:layout_gravity="center_horizontal"
         android:stretchColumns="*">
 
@@ -574,4 +578,21 @@
                 android:id="@+id/substituteForZ" />
         </TableRow>
     </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Randomize"
+        android:id="@+id/randomizeBtn"
+        android:onClick="randomizeMappings"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    </RelativeLayout>
 </LinearLayout>
