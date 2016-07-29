@@ -20,7 +20,7 @@ public class SubstitutionMessage implements IMessage {
         selectedCipherLetters = restoreSpaces(selectedCipherLetters, answerWord);
     }
 
-    private String calculateAnswer(String targetWord, SubstitutionMappings mappings) {
+    protected String calculateAnswer(String targetWord, SubstitutionMappings mappings) {
         StringBuilder answer = new StringBuilder();
         for (char c : targetWord.toCharArray()) {
             answer.append(mappings.getLetter(Character.toString(c)));
