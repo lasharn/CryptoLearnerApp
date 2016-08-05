@@ -8,7 +8,7 @@ import unpackaged.IMessage;
 
 public class SubstitutionMessage implements IMessage {
 
-    private String targetWord;
+    protected String targetWord;
     private String answerWord;
     protected String[] selectedCipherLetters;
 

@@ -50,6 +50,47 @@
             android:typeface="monospace"
             android:textSize="18sp"/>
 
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/message_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/TargetText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_encryption_message"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:background="@drawable/background_cipher_letter"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/solution_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:id="@+id/AnswerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="_ _ _ _ _ _ _"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 
 
@@ -79,46 +120,8 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/message_layout"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/TargetText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dummy_encryption_message"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
-            android:background="@drawable/background_cipher_letter"/>
-
-    </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/solution_layout"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:layout_marginTop="2dp"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/AnswerText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="_ _ _ _ _ _ _"
-            android:textSize="20sp"
-            android:layout_gravity="center_horizontal" />
-
-    </LinearLayout>
 
 
     <TableLayout
