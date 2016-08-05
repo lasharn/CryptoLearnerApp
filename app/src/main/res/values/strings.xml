@@ -19,7 +19,7 @@
     <string name="title_activity_vigenere_lvl_1">Vigenére Lvl 1</string>
     <string name="title_activity_vigenere_lvl_2">Vigenére Lvl 2</string>
 
-    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_about">About CryptoLearner</string>
     <string name="title_activity_tool_caesar_encryption">Caesar Encryption</string>
     <string name="title_activity_tool_caesar_decryption">Caesar Decryption</string>
     <string name="title_activity_tool_substitution">Substitution Tools</string>
