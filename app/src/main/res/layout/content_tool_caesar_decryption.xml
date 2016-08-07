@@ -18,7 +18,7 @@
         android:layout_height="0dp"
         android:layout_weight="3"
         android:inputType="textMultiLine|textCapCharacters|textNoSuggestions"
-        android:textAllCaps="true"
+        android:hint="Enter message to decrypt"
         android:ems="10"
         android:id="@+id/userEnteredMessage" />
 
