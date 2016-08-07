@@ -3,10 +3,12 @@ package activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
@@ -28,6 +30,9 @@ public class ToolVigenereActivity extends AppCompatActivity {
 
 
     public void encrypt(View view) {
+        if (keywordIsNull()) {
+            return;
+        }
         TextView tv = (EditText) findViewById(R.id.userEnteredMessage);
         String message = tv.getText().toString();
 
@@ -39,6 +44,9 @@ public class ToolVigenereActivity extends AppCompatActivity {
     }
 
     public void decrypt(View view) {
+        if (keywordIsNull()) {
+            return;
+        }
         TextView tv = (EditText) findViewById(R.id.userEnteredMessage);
         String message = tv.getText().toString();
 
@@ -47,6 +55,15 @@ public class ToolVigenereActivity extends AppCompatActivity {
 
         TextView tv3 = (EditText) findViewById(R.id.encryptedMessage);
         tv3.setText(new VigenereEncryptedMessage(message, keyword).getCorrectAnswer());
+    }
+
+    private boolean keywordIsNull() {
+        Editable keyword = ((EditText) findViewById(R.id.userEnteredKeyword)).getText();
+        if (keyword.toString().equals("")) {
+            Toast.makeText(this, "Please enter the keyword first",
+                    Toast.LENGTH_SHORT).show();
+        }
+        return (keyword.toString().equals(""));
     }
 
 }
