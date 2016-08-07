@@ -14,7 +14,7 @@ public class SubstitutionEncryptedMessage extends SubstitutionMessage{
     protected String calculateAnswer(String targetWord, SubstitutionMappings mappings) {
         StringBuilder answer = new StringBuilder();
         for (char c : targetWord.toCharArray()) {
-            if (c == ' ') {
+            if (c == ' ' || (c>'Z' || c<'A')) {
                 answer.append(Character.toString((char)c));
                 continue;
             }

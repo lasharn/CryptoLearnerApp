@@ -86,8 +86,11 @@ public class CaesarMessage implements IMessage{
         StringBuilder solution = new StringBuilder();
         for (String targetTextLetter : targetTextLetters) {
             char c = ' ';
-             if (targetTextLetter.charAt(0) != ' '){
+            if (targetTextLetter.charAt(0) != ' ' && !(targetTextLetter.charAt(0)>'Z' || targetTextLetter.charAt(0)<'A')){
                 c = (char) (targetTextLetter.charAt(0) + key);
+            } else {
+                solution.append(targetTextLetter.charAt(0));
+                continue;
             }
             if (c > 'Z') {
                 c -= 26;

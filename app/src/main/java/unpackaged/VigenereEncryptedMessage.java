@@ -12,7 +12,7 @@ public class VigenereEncryptedMessage extends VigenereMessage {
         StringBuilder answer = new StringBuilder();
         char[] targetLetters = targetWord.toCharArray();
         for (int i = 0; i<targetLetters.length; i++) {
-            if (targetLetters[i] == ' ') {
+            if (targetLetters[i] == ' ' || (targetLetters[i]>'Z' || targetLetters[i]<'A')) {
                 answer.append(targetLetters[i]);
                 continue;
             }

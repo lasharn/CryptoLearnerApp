@@ -23,6 +23,10 @@ public class SubstitutionMessage implements IMessage {
     protected String calculateAnswer(String targetWord, SubstitutionMappings mappings) {
         StringBuilder answer = new StringBuilder();
         for (char c : targetWord.toCharArray()) {
+            if ((c>'Z' || c<'A') && c!=' ') {
+                answer.append(c);
+                continue;
+            }
             answer.append(mappings.getLetter(Character.toString(c)));
         }
 
