@@ -1,12 +1,14 @@
 package main_menu;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
@@ -61,11 +63,15 @@ public class MenuFragmentSubstitution extends Fragment {
     private void lockLevel(View view) {
         ImageView iv = (ImageView) ((ViewGroup)view).getChildAt(1);
         iv.setImageDrawable(getActivity().getApplicationContext().getResources().getDrawable(R.drawable.icon_locked));
+        TextView tv = (TextView) ((ViewGroup)view).getChildAt(2);
+        tv.setTextColor(Color.LTGRAY);
     }
 
     private void unlockLevel(View view) {
         ImageView iv = (ImageView) ((ViewGroup)view).getChildAt(1);
         iv.setImageDrawable(getActivity().getApplicationContext().getResources().getDrawable(R.drawable.icon_key));
+        TextView tv = (TextView) ((ViewGroup)view).getChildAt(2);
+        tv.setTextColor(Color.GRAY);
     }
 
 }
