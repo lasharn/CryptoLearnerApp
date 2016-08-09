@@ -8,6 +8,7 @@ import com.cryptolearner.mobile.cryptolearner.R;
 
 import caesar_encryption.CaesarMessage;
 import caesar_encryption.CaesarPartiallyCompleteMessage;
+import unpackaged.ChallengeType;
 
 /**
  * The activity for level 1 of the caesar challenges
@@ -18,6 +19,7 @@ public class CaesarLvl1Activity extends CaesarBaseLvlActivity {
 
     @Override
     void setupFields() {
+        challengeType = ChallengeType.CAESAR;
         challengeNo = 1;
         layoutId = R.layout.activity_caesar_lvl;
         instructionPart1 = R.string.caesar_lvl1_instr_part1;
