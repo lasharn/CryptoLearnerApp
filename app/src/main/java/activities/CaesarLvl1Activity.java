@@ -19,7 +19,6 @@ public class CaesarLvl1Activity extends CaesarBaseLvlActivity {
 
     @Override
     void setupFields() {
-        challengeType = ChallengeType.CAESAR;
         challengeNo = 1;
         layoutId = R.layout.activity_caesar_lvl;
         instructionPart1 = R.string.caesar_lvl1_instr_part1;

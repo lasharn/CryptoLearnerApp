@@ -14,6 +14,7 @@ import ui_elements.CipherWheelView;
 import caesar_encryption.KeyboardLetterGenerator;
 import com.cryptolearner.mobile.cryptolearner.R;
 import caesar_encryption.WordGenerator;
+import unpackaged.ChallengeType;
 
 import java.util.Locale;
 import java.util.Random;
@@ -29,6 +30,8 @@ public abstract class CaesarBaseLvlActivity extends BaseLvlActivity implements C
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        challengeType = ChallengeType.CAESAR;
 
         setupFields();
 
