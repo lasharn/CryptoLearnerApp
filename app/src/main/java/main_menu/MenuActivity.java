@@ -141,9 +141,7 @@ public class MenuActivity extends AppCompatActivity {
             case R.id.about_btn:
                 intent = new Intent(this, AboutActivity.class);
                 break;
-            case R.id.something_else_btn:
-                levelLocked = true;
-                break;
+
         }
 
         if (levelLocked) {
