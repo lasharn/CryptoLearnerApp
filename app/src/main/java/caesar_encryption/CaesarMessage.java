@@ -3,7 +3,7 @@ package caesar_encryption;
 
 import java.util.Arrays;
 
-import unpackaged.IMessage;
+import general.IMessage;
 
 public class CaesarMessage implements IMessage{
 

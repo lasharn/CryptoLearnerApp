@@ -14,11 +14,11 @@ import com.cryptolearner.mobile.cryptolearner.R;
 import java.util.Locale;
 
 import caesar_encryption.CaesarMessage;
-import caesar_encryption.KeyboardLetterGenerator;
+import general.KeyboardLetterGenerator;
 import ui_elements.CipherWheelView;
-import unpackaged.ChallengeType;
-import unpackaged.VigenereMessage;
-import unpackaged.VigenereWordGenerator;
+import general.ChallengeType;
+import vigenere_encryption.VigenereMessage;
+import vigenere_encryption.VigenereWordGenerator;
 
 public class VigenereLvl1Activity extends BaseLvlActivity {
 

@@ -16,9 +16,9 @@ import com.cryptolearner.mobile.cryptolearner.R;
 import java.util.List;
 
 import ui_elements.CaesarCompleteDialogFragment;
-import unpackaged.ChallengeType;
-import unpackaged.IMessage;
-import unpackaged.LevelUnlocks;
+import general.ChallengeType;
+import general.IMessage;
+import general.LevelUnlocks;
 
 
 public abstract class BaseLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {

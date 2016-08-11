@@ -27,8 +27,8 @@ import activities.ToolCaesarEncryptionActivity;
 import activities.ToolVigenereActivity;
 import activities.VigenereLvl1Activity;
 import activities.VigenereLvl2Activity;
-import unpackaged.ChallengeType;
-import unpackaged.LevelUnlocks;
+import general.ChallengeType;
+import general.LevelUnlocks;
 
 public class MenuActivity extends AppCompatActivity {
 

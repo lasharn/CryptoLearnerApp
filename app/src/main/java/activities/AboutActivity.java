@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
-import unpackaged.LevelUnlocks;
+import general.LevelUnlocks;
 
 public class AboutActivity extends AppCompatActivity {
 

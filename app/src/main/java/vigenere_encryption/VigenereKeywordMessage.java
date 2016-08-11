@@ -1,5 +1,7 @@
-package unpackaged;
+package vigenere_encryption;
 
+
+import vigenere_encryption.VigenereMessage;
 
 public class VigenereKeywordMessage extends VigenereMessage {
 

@@ -1,4 +1,4 @@
-package unpackaged;
+package substitution_encryption;
 
 
 import substitution_encryption.SubstitutionMappings;

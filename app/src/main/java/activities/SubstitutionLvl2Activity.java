@@ -16,11 +16,11 @@ import substitution_encryption.SubstitutionFrequencyMessage;
 import substitution_encryption.SubstitutionMappings;
 import substitution_encryption.SubstitutionMessage;
 import ui_elements.CaesarCompleteDialogFragment;
-import unpackaged.ChallengeType;
-import unpackaged.FrequencyCounter;
-import unpackaged.KeyboardFrequencyLetterGenerator;
-import unpackaged.SentenceGenerator;
-import unpackaged.SnappyScrollView;
+import general.ChallengeType;
+import general.FrequencyCounter;
+import general.KeyboardFrequencyLetterGenerator;
+import general.SentenceGenerator;
+import ui_elements.SnappyScrollView;
 
 public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 

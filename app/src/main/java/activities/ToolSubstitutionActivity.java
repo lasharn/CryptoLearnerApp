@@ -1,8 +1,6 @@
 package activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,9 +13,9 @@ import java.util.ArrayList;
 import substitution_encryption.RandomMappingGenerator;
 import substitution_encryption.SubstitutionMappings;
 import substitution_encryption.SubstitutionMessage;
-import unpackaged.IMessage;
-import unpackaged.SnappyScrollView;
-import unpackaged.SubstitutionEncryptedMessage;
+import general.IMessage;
+import ui_elements.SnappyScrollView;
+import substitution_encryption.SubstitutionEncryptedMessage;
 
 public class ToolSubstitutionActivity extends AppCompatActivity {
 

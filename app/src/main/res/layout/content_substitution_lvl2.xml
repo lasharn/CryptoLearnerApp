@@ -36,11 +36,11 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
-        <unpackaged.SnappyScrollView
+        <ui_elements.SnappyScrollView
             android:id="@+id/substitution_scroller"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </unpackaged.SnappyScrollView>
+        </ui_elements.SnappyScrollView>
     </RelativeLayout>
 
 

@@ -1,4 +1,4 @@
-package unpackaged;
+package general;
 
 
 import android.content.res.AssetManager;
@@ -11,13 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class VigenereWordGenerator {
+public class WordGenerator {
 
     private List<String> words;
-    private List<String> keywords;
     private AssetManager assetManager;
 
-    public VigenereWordGenerator(AssetManager assetManager) {
+    public WordGenerator(AssetManager assetManager) {
         this.assetManager = assetManager;
     }
 
@@ -33,35 +32,17 @@ public class VigenereWordGenerator {
         return word;
     }
 
-    public String getKey() {
-        // random number
-        Random random = new Random();
-        int number = random.nextInt(getKeysList().size());
-        // use random number to get from list
-        String keyword = getKeysList().get(number);
-        // format word
-        keyword = formatWord(keyword);
-        // return word
-        return keyword;
-    }
-
     private void readInWords() {
         try {
             InputStream inputStream = assetManager.open("words.txt");
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             List<String> lines = new ArrayList<>();
-            List<String> keys = new ArrayList<>();
             String line = null;
             while ((line = bufferedReader.readLine()) != null) {
-                if (line.length() <= 3) {
-                    keys.add(line);
-                } else {
-                    lines.add(line);
-                }
+                lines.add(line);
             }
             words = lines;
-            keywords = keys;
             bufferedReader.close();
             inputStreamReader.close();
         } catch (IOException e) {
@@ -75,15 +56,6 @@ public class VigenereWordGenerator {
         } else {
             readInWords();
             return words;
-        }
-    }
-
-    private List<String> getKeysList() {
-        if (keywords != null) {
-            return keywords;
-        } else {
-            readInWords();
-            return keywords;
         }
     }
 

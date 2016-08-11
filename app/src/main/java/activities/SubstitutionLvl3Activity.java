@@ -10,24 +10,17 @@ import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 import caesar_encryption.CaesarMessage;
-import caesar_encryption.KeyboardLetterGenerator;
+import general.KeyboardLetterGenerator;
 import substitution_encryption.RandomMappingGenerator;
-import substitution_encryption.SubstitutionFrequencyMessage;
 import substitution_encryption.SubstitutionMappings;
-import substitution_encryption.SubstitutionMessage;
 import substitution_encryption.SubstitutionPartiallyCompleteMessage;
 import ui_elements.CaesarCompleteDialogFragment;
-import unpackaged.ChallengeType;
-import unpackaged.FrequencyCounter;
-import unpackaged.KeyboardFrequencyLetterGenerator;
-import unpackaged.SentenceGenerator;
-import unpackaged.SnappyScrollView;
-import unpackaged.VigenereMessage;
+import general.ChallengeType;
+import general.SentenceGenerator;
 
 public class SubstitutionLvl3Activity extends BaseLvlActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 

@@ -1,8 +1,6 @@
 package activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,10 +11,9 @@ import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-import unpackaged.CaesarToolMessage;
+import caesar_encryption.CaesarToolMessage;
 
 public class ToolCaesarDecryptionActivity extends AppCompatActivity {
 

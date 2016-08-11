@@ -9,13 +9,13 @@ import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
-import caesar_encryption.KeyboardLetterGenerator;
-import caesar_encryption.WordGenerator;
+import general.KeyboardLetterGenerator;
+import general.WordGenerator;
 import substitution_encryption.RandomMappingGenerator;
 import substitution_encryption.SubstitutionMappings;
 import substitution_encryption.SubstitutionMessage;
 import ui_elements.CaesarCompleteDialogFragment;
-import unpackaged.ChallengeType;
+import general.ChallengeType;
 
 public class SubstitutionLvl1Activity extends BaseLvlActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
 

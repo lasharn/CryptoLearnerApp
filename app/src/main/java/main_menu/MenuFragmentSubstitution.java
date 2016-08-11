@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
-import unpackaged.ChallengeType;
-import unpackaged.LevelUnlocks;
+import general.ChallengeType;
+import general.LevelUnlocks;
 
 
 public class MenuFragmentSubstitution extends Fragment {

@@ -15,11 +15,11 @@
         android:layout_weight="4"
         android:layout_gravity="center_horizontal">
 
-        <unpackaged.SnappyScrollView
+        <ui_elements.SnappyScrollView
             android:id="@+id/substitution_scroller"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </unpackaged.SnappyScrollView>
+        </ui_elements.SnappyScrollView>
 
         <ImageView
             android:layout_width="40dp"

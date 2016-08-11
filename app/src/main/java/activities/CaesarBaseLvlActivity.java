@@ -1,7 +1,6 @@
 package activities;
 
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
@@ -11,10 +10,10 @@ import android.widget.TextView;
 import ui_elements.CaesarCompleteDialogFragment;
 import caesar_encryption.CaesarMessage;
 import ui_elements.CipherWheelView;
-import caesar_encryption.KeyboardLetterGenerator;
+import general.KeyboardLetterGenerator;
 import com.cryptolearner.mobile.cryptolearner.R;
-import caesar_encryption.WordGenerator;
-import unpackaged.ChallengeType;
+import general.WordGenerator;
+import general.ChallengeType;
 
 import java.util.Locale;
 import java.util.Random;

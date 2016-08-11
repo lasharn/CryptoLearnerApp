@@ -1,4 +1,4 @@
-package unpackaged;
+package caesar_encryption;
 
 
 import caesar_encryption.CaesarMessage;

@@ -1,10 +1,10 @@
-package unpackaged;
+package vigenere_encryption;
 
 
 import java.util.Arrays;
 
 import caesar_encryption.CaesarMessage;
-import substitution_encryption.SubstitutionMappings;
+import general.IMessage;
 
 public class VigenereMessage implements IMessage {
 

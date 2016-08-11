@@ -1,14 +1,10 @@
 package activities;
 
 
-import android.content.Intent;
-import android.support.v4.app.DialogFragment;
-
 import com.cryptolearner.mobile.cryptolearner.R;
 
 import caesar_encryption.CaesarMessage;
 import caesar_encryption.CaesarPartiallyCompleteMessage;
-import unpackaged.ChallengeType;
 
 /**
  * The activity for level 1 of the caesar challenges

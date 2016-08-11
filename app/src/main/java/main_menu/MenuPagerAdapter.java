@@ -16,7 +16,7 @@ public class MenuPagerAdapter extends FragmentPagerAdapter {
         if (position == 0) {
             return new MenuFragmentMain();
         } else if (position == 1) {
-            return new CaesarMenu();
+            return new MenuFragmentCaesar();
         } else if (position == 2) {
             return new MenuFragmentSubstitution();
         } else if (position == 3) {
@@ -24,7 +24,7 @@ public class MenuPagerAdapter extends FragmentPagerAdapter {
         } else if (position == 4) {
             return new MenuFragmentTools();
         }
-        return new CaesarMenu();
+        return new MenuFragmentCaesar();
     }
 
     @Override

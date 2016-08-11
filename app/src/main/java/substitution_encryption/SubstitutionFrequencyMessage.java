@@ -3,7 +3,7 @@ package substitution_encryption;
 import java.util.Arrays;
 
 import caesar_encryption.CaesarMessage;
-import unpackaged.IMessage;
+import general.IMessage;
 
 
 public class SubstitutionFrequencyMessage implements IMessage {

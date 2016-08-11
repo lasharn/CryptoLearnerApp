@@ -17,10 +17,10 @@ import java.util.Random;
 import ui_elements.CaesarCompleteDialogFragment;
 import ui_elements.CipherWheelView;
 import caesar_encryption.CaesarBruteForceMessage;
-import unpackaged.ChallengeType;
-import unpackaged.IMessage;
-import unpackaged.LevelUnlocks;
-import unpackaged.SentenceGenerator;
+import general.ChallengeType;
+import general.IMessage;
+import general.LevelUnlocks;
+import general.SentenceGenerator;
 
 /**
  * The activity for level 4 of the caesar challenges

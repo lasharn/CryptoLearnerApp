@@ -1,4 +1,4 @@
-package unpackaged;
+package general;
 
 
 public class FrequencyCounter {

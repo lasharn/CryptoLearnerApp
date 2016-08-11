@@ -12,15 +12,15 @@ import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
-import unpackaged.ChallengeType;
-import unpackaged.LevelUnlocks;
+import general.ChallengeType;
+import general.LevelUnlocks;
 
 
-public class CaesarMenu extends Fragment {
+public class MenuFragmentCaesar extends Fragment {
 
 
 
-    public CaesarMenu() {
+    public MenuFragmentCaesar() {
         // Required empty public constructor
     }
 

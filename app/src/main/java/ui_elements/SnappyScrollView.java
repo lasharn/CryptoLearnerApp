@@ -1,4 +1,4 @@
-package unpackaged;
+package ui_elements;
 
 
 import android.app.Activity;

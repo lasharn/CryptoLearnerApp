@@ -6,15 +6,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
-import caesar_encryption.CaesarMessage;
-import unpackaged.VigenereEncryptedMessage;
-import unpackaged.VigenereMessage;
+import vigenere_encryption.VigenereEncryptedMessage;
+import vigenere_encryption.VigenereMessage;
 
 public class ToolVigenereActivity extends AppCompatActivity {
 
