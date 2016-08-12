@@ -23,4 +23,6 @@
 
     <color name="orangeTint">#F7ECE4</color>
     <color name="blueTint">#E6F6F7</color>
+
+    <color name="universityBlue">#00467F</color>
 </resources>

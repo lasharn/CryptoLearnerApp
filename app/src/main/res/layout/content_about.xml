@@ -17,8 +17,10 @@
         android:layout_height="wrap_content"
         android:text="Unlock All"
         android:id="@+id/unlock_all"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView4"
+        android:layout_alignRight="@+id/do_nothing"
+        android:layout_alignEnd="@+id/do_nothing"
+        android:layout_marginTop="73dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -41,10 +43,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="App developed as a part 4 project at the University of Auckland by Software Engineering students Mathew and Lasharn"
+        android:text="CryptoLearner was developed as a fourth year project at the University of Auckland by Software Engineering students Mathew and Lasharn"
         android:id="@+id/textView4"
         android:layout_marginTop="41dp"
         android:gravity="center_horizontal"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:onClick="hacks"
+        android:id="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/university_of_auckland_logo"/>
 </RelativeLayout>

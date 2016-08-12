@@ -13,6 +13,7 @@ import general.LevelUnlocks;
 public class AboutActivity extends AppCompatActivity {
 
     AboutActivity _this;
+    int clicks = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,10 @@ public class AboutActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         _this = this;
+
+        findViewById(R.id.unlock_all).setVisibility(View.GONE);
+        findViewById(R.id.reset_progress).setVisibility(View.GONE);
+        findViewById(R.id.do_nothing).setVisibility(View.GONE);
 
         findViewById(R.id.unlock_all).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +53,16 @@ public class AboutActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+
+    public void hacks(View view) {
+        clicks++;
+        if (clicks > 7) {
+            findViewById(R.id.unlock_all).setVisibility(View.VISIBLE);
+            findViewById(R.id.reset_progress).setVisibility(View.VISIBLE);
+            findViewById(R.id.do_nothing).setVisibility(View.VISIBLE);
+        }
     }
 
 }
