@@ -21,6 +21,8 @@
     <color name="darkerSecondary">#49B1C6</color>
     <color name="lighterSecondary">#AAD9F7</color>
 
+    <color name="darkerKey">#9AC9E7</color>
+
     <color name="orangeTint">#F7ECE4</color>
     <color name="blueTint">#E6F6F7</color>
 
