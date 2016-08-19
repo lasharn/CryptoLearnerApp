@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.cryptolearner.mobile.cryptolearner.R;
 
+import org.w3c.dom.Text;
+
 import java.util.Locale;
 
 import caesar_encryption.CaesarMessage;
@@ -113,6 +115,7 @@ public class VigenereLvl2Activity extends BaseLvlActivity {
             letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
             letterView.setGravity(Gravity.CENTER);
             letterView.setBackgroundResource(R.drawable.background_cipher_letter);
+            letterView.setOnClickListener(selectedTextListener);
 
             messageLayout.addView(letterView);
         }
@@ -139,6 +142,7 @@ public class VigenereLvl2Activity extends BaseLvlActivity {
             letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
             letterView.setGravity(Gravity.CENTER);
             letterView.setBackgroundResource(targetLetterBackground);
+            letterView.setOnClickListener(selectedTextListener);
 
             messageLayout.addView(letterView);
         }
@@ -168,10 +172,11 @@ public class VigenereLvl2Activity extends BaseLvlActivity {
     @Override
     protected void removeLetter(View v) {
         //setup position
-        int position = ((LinearLayout)findViewById(R.id.solution_layout)).indexOfChild(v);
+        int position = ((LinearLayout)v.getParent()).indexOfChild(v);
+        TextView selectedLetter = ((TextView) ((LinearLayout)findViewById(R.id.solution_layout)).getChildAt(position));
         ((VigenereMessage)cipherMessage).setSelectedPosition(position);
-        if (!((TextView)v).getText().equals(CaesarMessage.emptyAnswerLetter)) {
-            super.removeLetter(v);
+        if (!selectedLetter.getText().equals(CaesarMessage.emptyAnswerLetter)) {
+            super.removeLetter(selectedLetter);
 
         }
             String repeatedSelectedText = new String(

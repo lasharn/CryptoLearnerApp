@@ -148,6 +148,7 @@ public class SubstitutionLvl3Activity extends BaseLvlActivity implements CaesarC
             letterView.setWidth((int)getResources().getDimension(R.dimen.letterWidth));
             letterView.setGravity(Gravity.CENTER);
             letterView.setBackgroundResource(R.drawable.background_key_letter);
+            letterView.setOnClickListener(selectedTextListener);
 
             messageLayout.addView(letterView);
         }
@@ -190,25 +191,22 @@ public class SubstitutionLvl3Activity extends BaseLvlActivity implements CaesarC
 
     @Override
     protected void removeLetter(View v) {
-
-        if (!((TextView)v).getText().equals(CaesarMessage.emptyAnswerLetter)) {
-            super.removeLetter(v);
+        int selectedPosition = ((LinearLayout)v.getParent()).indexOfChild(v);
+        TextView selectedLetter = ((TextView) ((LinearLayout)findViewById(R.id.solution_layout)).getChildAt(selectedPosition));
+        if (!selectedLetter.getText().equals(CaesarMessage.emptyAnswerLetter)) {
+            super.removeLetter(selectedLetter);
         } else {
-            System.out.println("not really removing letter");
-            int position = ((LinearLayout)findViewById(R.id.solution_layout)).indexOfChild(v);
-            String letter = ((TextView)((LinearLayout)findViewById(R.id.message_layout)).getChildAt(position)).getText().toString();
+            //int position = ((LinearLayout)findViewById(R.id.solution_layout)).indexOfChild(v);
+            String letter = ((TextView)((LinearLayout)findViewById(R.id.message_layout)).getChildAt(selectedPosition)).getText().toString();
             char[] messageChars = cipherMessage.getCorrectAnswer().toCharArray();
-            char[] idk = initialTargetLetters.toCharArray();
-                for (int i = 0; i < messageChars.length; i++) {
-                    if (letter.charAt(0) == messageChars[i]) {
-                        position = i;
-                        break;
-                    }
+            for (int i = 0; i < messageChars.length; i++) {
+                if (letter.charAt(0) == messageChars[i]) {
+                    selectedPosition = i;
+                    break;
                 }
+            }
 
-
-            System.out.println(position + letter);
-            ((SubstitutionPartiallyCompleteMessage)cipherMessage).setSelectedPosition(position);
+            ((SubstitutionPartiallyCompleteMessage)cipherMessage).setSelectedPosition(selectedPosition);
             setupSelectedText(getSelectedLetters());
         }
         setupTargetText(initialTargetLetters);
@@ -219,7 +217,6 @@ public class SubstitutionLvl3Activity extends BaseLvlActivity implements CaesarC
     private void highlightSelectedPosition() {
         int position = ((SubstitutionPartiallyCompleteMessage)cipherMessage).getSelectedPosition();
         char c = cipherMessage.getCorrectAnswer().charAt(position);
-        System.out.println(position + "" + c + "");
         int usablePosition = 0;
         for (int i=0; i<initialTargetLetters.length(); i++) {
             char ch = initialTargetLetters.charAt(i);

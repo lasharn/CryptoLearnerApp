@@ -32,7 +32,7 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
     protected int challengeNo;
     protected Class nextLevel;
 
-    private SelectedTextListener selectedTextListener = new SelectedTextListener();
+    protected SelectedTextListener selectedTextListener = new SelectedTextListener();
 
 
     @Override
