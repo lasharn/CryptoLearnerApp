@@ -106,7 +106,7 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
         (findViewById(R.id.SomeButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (cipherMessage.plainTextString().equals(cipherMessage.getSelectedString())) {
+                if (PlainText.getText().equals(cipherMessage.getSelectedString())) {
                     stageComplete();
                 }
             }
