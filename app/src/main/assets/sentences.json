@@ -3,6 +3,7 @@
     {"sentence":"the hunters tracked the animals", "hints": ["animals","hunters","tracked"]},
     {"sentence":"the hacker got access to the encrypted data", "hints": ["hacker","access"]},
     {"sentence":"the enemy team attacked the base", "hints":["team", "base"]},
+    {"sentence":"the fierce dragon always escapes the knights torture", "hints":["fierce", "dragon", "escapes", "knights", "torture", "always"]},
     {"sentence":"things arent always as you would expect", "hints":["things", "always", "expect"]},
     {"sentence":"everyone enjoys driving a toyota at the track", "hints":["enjoys", "toyota"]},
     {"sentence":"the martians are coming to get us", "hints":["are", "get"]},
