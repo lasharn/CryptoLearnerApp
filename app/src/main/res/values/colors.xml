@@ -27,4 +27,6 @@
     <color name="blueTint">#E6F6F7</color>
 
     <color name="universityBlue">#00467F</color>
+
+    <color name="grayTransparent">#aa444444</color>
 </resources>

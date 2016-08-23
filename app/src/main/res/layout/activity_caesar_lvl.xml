@@ -19,6 +19,15 @@
             android:background="@color/mainColour"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:src="@drawable/question_mark"
+                android:layout_gravity="right"
+                android:padding="8dp"/>
+
             <TextView
                 android:id="@+id/stageDisplay"
                 android:layout_width="wrap_content"
@@ -27,6 +36,9 @@
                 android:padding="15dp"
                 android:textSize="20sp"
                 android:layout_gravity="right"/>
+
+
+
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>

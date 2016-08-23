@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:background="@color/grayTransparent">
     <ImageView
         android:src="@drawable/icon_key"
         android:layout_width="match_parent"
@@ -30,8 +32,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:text="you completed this challenge"
-        android:gravity="center_horizontal"/>
+        android:text="The Caesar cipher is one of the earliest known and simplest ciphers. Each letter in the plaintext is shifted a certain number of places down the alphabet.\n\nFor example, with a shift of 1, A would be replaced by B, B would become C, and so on. The method is named after Julius Caesar, who used it to communicate with his army.\n\nTip: Rotate the cipher wheel to get the mappings for a key\n\n\nSomething\n\nreally\n\nlong\n\nhere"/>
 
 
     <Button
@@ -43,5 +44,5 @@
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
         android:text="Continue"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal|bottom" />
 </LinearLayout>

@@ -21,7 +21,7 @@ public class CaesarCompleteDialogFragment extends DialogFragment {
 
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.fragment_caesar_complete, null);
+        View view = inflater.inflate(R.layout.fragment_level_complete, null);
         builder.setView(view);
 
         view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
