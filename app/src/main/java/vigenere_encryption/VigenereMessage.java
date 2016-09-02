@@ -30,7 +30,7 @@ public class VigenereMessage implements IMessage {
                 answer.append(targetLetters[i]);
                 continue;
             }
-            int key = keyword.toCharArray()[i%keyword.length()] - 'A';
+            int key = keyword.toCharArray()[calculatePositionIgnoreSpace(targetWord,i)%keyword.length()] - 'A';
             char c = (char) (targetLetters[i] + key);
             if (c > 'Z') {
                 c -= 26;
@@ -39,6 +39,17 @@ public class VigenereMessage implements IMessage {
         }
 
         return answer.toString();
+    }
+
+    private int calculatePositionIgnoreSpace(String sentence, int position) {
+        int returnValue = position;
+
+        for (int i=0; i<position; i++) {
+            if (sentence.charAt(i)>'Z' || sentence.charAt(i)<'A') {
+                returnValue--;
+            }
+        }
+        return returnValue;
     }
 
     public String getCorrectAnswer() {
