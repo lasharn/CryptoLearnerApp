@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp"
             android:paddingBottom="15dp"
             android:id="@+id/imageView"
-            android:src="@drawable/icon_locked"
+            android:src="@drawable/cryptolearner_icon"
             android:adjustViewBounds="true"
             android:layout_gravity="center_horizontal" />
 
