@@ -24,6 +24,7 @@ public class CaesarLvl2Activity extends CaesarBaseLvlActivity {
         targetLetterBackground = R.drawable.background_plain_letter;
         answerLetterBackground = R.drawable.background_cipher_letter;
         nextLevel = CaesarLvl3Activity.class;
+        helpMessage = getResources().getString(R.string.help_caesar_lvl_1);
     }
 
     @Override

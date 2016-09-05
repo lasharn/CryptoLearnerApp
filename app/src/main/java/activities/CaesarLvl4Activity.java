@@ -21,6 +21,7 @@ import general.ChallengeType;
 import general.IMessage;
 import general.LevelUnlocks;
 import general.SentenceGenerator;
+import ui_elements.HelpDialogFragment;
 
 /**
  * The activity for level 4 of the caesar challenges
@@ -37,6 +38,7 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
     protected int challengeNo;
     protected int layoutId = R.layout.activity_caesar_lvl4;
     protected Class nextLevel = null;
+    protected String helpMessage;
 
     private TextView keyText;
     private TextView PlainText;
@@ -71,6 +73,9 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
     }
 
     private void setupGame() {
+
+        helpMessage = getResources().getString(R.string.help_caesar_lvl_1);
+
         // display keyboard
         findViewById(R.id.Sentences).setVisibility(View.VISIBLE);
         findViewById(R.id.SuccessMessage).setVisibility(View.GONE);
@@ -138,6 +143,11 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
             startActivity(intent);
         }
         finish();
+    }
+
+    public void help(View view) {
+        DialogFragment newFragment = HelpDialogFragment.newInstance(helpMessage);
+        newFragment.show(getSupportFragmentManager(), "help");
     }
 
     protected String getStageDisplayString() {

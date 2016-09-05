@@ -32,6 +32,7 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
         targetLetterBackground = R.drawable.background_plain_letter;
         answerLetterBackground = R.drawable.background_cipher_letter;
         nextLevel = SubstitutionLvl3Activity.class;
+
     }
 
 
@@ -65,6 +66,7 @@ public class SubstitutionLvl2Activity extends BaseLvlActivity implements CaesarC
 
 
     private void setupGame() {
+        helpMessage = getResources().getString(R.string.help_substitution_lvl_2);
 
         // display keyboard
         findViewById(R.id.KeyboardTable).setVisibility(View.VISIBLE);

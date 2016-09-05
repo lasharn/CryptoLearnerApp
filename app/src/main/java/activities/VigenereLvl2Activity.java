@@ -58,6 +58,8 @@ public class VigenereLvl2Activity extends BaseLvlActivity {
     }
 
     private void setupGame() {
+        helpMessage = getResources().getString(R.string.help_vigenere_lvl_2);
+
         // display keyboard
         findViewById(R.id.KeyboardTable).setVisibility(View.VISIBLE);
         findViewById(R.id.SuccessMessage).setVisibility(View.GONE);

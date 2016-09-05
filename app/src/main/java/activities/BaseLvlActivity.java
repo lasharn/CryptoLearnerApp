@@ -19,6 +19,7 @@ import ui_elements.CaesarCompleteDialogFragment;
 import general.ChallengeType;
 import general.IMessage;
 import general.LevelUnlocks;
+import ui_elements.HelpDialogFragment;
 
 
 public abstract class BaseLvlActivity extends AppCompatActivity implements CaesarCompleteDialogFragment.Caesar1DialogListener {
@@ -31,6 +32,7 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
     protected ChallengeType challengeType;
     protected int challengeNo;
     protected Class nextLevel;
+    protected String helpMessage;
 
     protected SelectedTextListener selectedTextListener = new SelectedTextListener();
 
@@ -173,6 +175,11 @@ public abstract class BaseLvlActivity extends AppCompatActivity implements Caesa
             startActivity(intent);
         }
         finish();
+    }
+
+    public void help(View view) {
+        DialogFragment newFragment = HelpDialogFragment.newInstance(helpMessage);
+        newFragment.show(getSupportFragmentManager(), "help");
     }
 
     protected String getStageDisplayString() {

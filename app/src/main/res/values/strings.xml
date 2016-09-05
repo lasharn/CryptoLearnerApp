@@ -6,24 +6,24 @@
 
     <string name="caesar_btn">Caesar Cipher</string>
     <string name="substitution_btn">Substitution Cipher</string>
-    <string name="vigenere_btn">Vigenére Cipher</string>
+    <string name="vigenere_btn">Vigenère Cipher</string>
     <string name="about_btn">About</string>
 
-    <string name="title_activity_caesar_lvl_1">Caesar Lvl 1</string>
-    <string name="title_activity_caesar_lvl_2">Caesar Lvl 2</string>
-    <string name="title_activity_caesar_lvl_3">Caesar Lvl 3</string>
-    <string name="title_activity_caesar_lvl_4">Caesar Lvl 4</string>
-    <string name="title_activity_substitution_lvl_1">Substitution Lvl 1</string>
-    <string name="title_activity_substitution_lvl_2">Substitution Lvl 2</string>
-    <string name="title_activity_substitution_lvl_3">Substitution Lvl 3</string>
-    <string name="title_activity_vigenere_lvl_1">Vigenére Lvl 1</string>
-    <string name="title_activity_vigenere_lvl_2">Vigenére Lvl 2</string>
+    <string name="title_activity_caesar_lvl_1">Caesar Level 1</string>
+    <string name="title_activity_caesar_lvl_2">Caesar Level 2</string>
+    <string name="title_activity_caesar_lvl_3">Caesar Level 3</string>
+    <string name="title_activity_caesar_lvl_4">Caesar Level 4</string>
+    <string name="title_activity_substitution_lvl_1">Substitution Level 1</string>
+    <string name="title_activity_substitution_lvl_2">Substitution Level 2</string>
+    <string name="title_activity_substitution_lvl_3">Substitution Level 3</string>
+    <string name="title_activity_vigenere_lvl_1">Vigenère Level 1</string>
+    <string name="title_activity_vigenere_lvl_2">Vigenère Level 2</string>
 
     <string name="title_activity_about">About CryptoLearner</string>
     <string name="title_activity_tool_caesar_encryption">Caesar Encryption</string>
     <string name="title_activity_tool_caesar_decryption">Caesar Decryption</string>
     <string name="title_activity_tool_substitution">Substitution Tools</string>
-    <string name="title_activity_tool_vigenere">Vigenére Tools</string>
+    <string name="title_activity_tool_vigenere">Vigenère Tools</string>
 
     <string name="dummy_encryption_message">MESSAGE</string>
 
@@ -63,6 +63,12 @@
     <string name="vigenere_lvl1_instr_part1">Encrypt \"</string>
     <string name="vigenere_lvl1_instr_part2">\" with keyword</string>
     <string name="vigenere_lvl2_instr">Use the plain and cipher text to work out the key</string>
+
+    <string name="help_caesar_lvl_1">The Caesar cipher is one of the earliest known and simplest ciphers. Each letter in the plaintext is shifted a certain number of places down the alphabet.\nFor example, with a shift of 1, A would be replaced by B, B would become C, and so on. The method is named after Julius Caesar, who used it to communicate with his army.\n\nTip: Rotate the cipher wheel to get the mappings for a key</string>
+    <string name="help_substitution_lvl_1">In the simple substitution cipher, the letters of the alphabet are shuffled such that no letter is mapped to itself. Plaintext characters are substituted for their respective letter in the cipher alphabet.\nThe cipher alphabet acts as the key for this cipher where each key is 26 letters long. The number of possible keys is large but it is still not a strong cipher. This cipher can still be cracked using frequency analysis, word guesses and knowledge of the underlying structure of the English language.</string>
+    <string name="help_substitution_lvl_2">In the simple substitution cipher, the letters of the alphabet are shuffled such that no letter is mapped to itself. Plaintext characters are substituted for their respective letter in the cipher alphabet.\nThe cipher alphabet acts as the key for this cipher where each key is 26 letters long. The number of possible keys is large but it is still not a strong cipher. This cipher can still be cracked using frequency analysis, word guesses and knowledge of the underlying structure of the English language.\n\nTip: Your selection automatically updates the encrypted sentence. Use the hint word to figure out which letters you\'ve guessed are correct</string>
+    <string name="help_vigenere_lvl_1">The Vigenère cipher consists of several Caesar ciphers in sequence with different shift values. In this cipher the keyword is repeated to the end of the plaintext. Each letter in the plaintext uses its corresponding keyword letter to determine the cipher text letter.\nThe example below uses the keyword SECRET to encrypt a message:\nPlaintext: HELLO WORLD\nKeyword: SECRE TSECR\nCiphertext: ZINCS PGVNU\nBecause the key repeats, this cipher can be cracked if an adversary guesses the keys length. The Kasiski test is one method used to break this cipher.\n\nTip: Use the cipher wheel to determine the mapping of each letter</string>
+    <string name="help_vigenere_lvl_2">The Vigenère cipher consists of several Caesar ciphers in sequence with different shift values. In this cipher the keyword is repeated to the end of the plaintext. Each letter in the plaintext uses its corresponding keyword letter to determine the cipher text letter.\nThe example below uses the keyword SECRET to encrypt a message:\nPlaintext: HELLO WORLD\nKeyword: SECRE TSECR\nCiphertext: ZINCS PGVNU\nBecause the key repeats, this cipher can be cracked if an adversary guesses the keys length. The Kasiski test is one method used to break this cipher.\n\nTip: Use the cipher wheel to get the keyword letters from the mappings given to you</string>
 
 
 </resources>

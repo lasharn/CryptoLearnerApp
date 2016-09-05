@@ -1,10 +1,15 @@
 package activities;
 
 
+import android.support.v4.app.DialogFragment;
+import android.view.View;
+
 import com.cryptolearner.mobile.cryptolearner.R;
 
 import caesar_encryption.CaesarMessage;
 import caesar_encryption.CaesarPartiallyCompleteMessage;
+import ui_elements.CaesarCompleteDialogFragment;
+import ui_elements.HelpDialogFragment;
 
 /**
  * The activity for level 1 of the caesar challenges
@@ -22,11 +27,14 @@ public class CaesarLvl1Activity extends CaesarBaseLvlActivity {
         targetLetterBackground = R.drawable.background_cipher_letter;
         answerLetterBackground = R.drawable.background_plain_letter;
         nextLevel = CaesarLvl2Activity.class;
+        helpMessage = getResources().getString(R.string.help_caesar_lvl_1);
     }
 
     @Override
     protected CaesarMessage createCaesarMessage(String targetWord, int key) {
         return new CaesarPartiallyCompleteMessage(targetWord, key, 2);
     }
+
+
 
 }

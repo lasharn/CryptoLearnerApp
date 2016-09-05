@@ -26,7 +26,8 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/question_mark"
                 android:layout_gravity="right"
-                android:padding="8dp"/>
+                android:padding="8dp"
+                android:onClick="help"/>
 
             <TextView
                 android:id="@+id/stageDisplay"
