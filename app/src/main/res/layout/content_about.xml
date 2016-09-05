@@ -43,7 +43,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CryptoLearner was developed as a fourth year project at the University of Auckland by Software Engineering students Mathew and Lasharn"
+        android:text="CryptoLearner was developed as a fourth year project at the University of Auckland by Software Engineering students Mathew Smith and Lasharn Weerasinghe"
         android:id="@+id/textView4"
         android:layout_marginTop="41dp"
         android:gravity="center_horizontal"
