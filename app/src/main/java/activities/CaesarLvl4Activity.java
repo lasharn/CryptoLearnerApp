@@ -89,7 +89,7 @@ public class CaesarLvl4Activity extends AppCompatActivity implements CaesarCompl
         assert cipherWheelView != null;
         cipherWheelView.addDialListener(new CipherWheelView.DialListener() {
             public void onDial(int number) {
-                keyText.setText(String.format(Locale.ENGLISH, "Key:\n%d", number));
+                keyText.setText(String.format(Locale.ENGLISH, "Key:\n%s", Character.toString((char)(number + 'A'))));
                 PlainText.setText(((CaesarBruteForceMessage)cipherMessage).encryptWithKey(number));
             }
         });

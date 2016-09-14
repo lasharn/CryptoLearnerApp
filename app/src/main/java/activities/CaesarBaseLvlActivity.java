@@ -68,7 +68,7 @@ public abstract class CaesarBaseLvlActivity extends BaseLvlActivity implements C
         assert cipherWheelView != null;
         cipherWheelView.addDialListener(new CipherWheelView.DialListener() {
             public void onDial(int number) {
-                keyText.setText(String.format(Locale.ENGLISH, "Key:\n%d", number));
+                keyText.setText(String.format(Locale.ENGLISH, "Key:\n%s", Character.toString((char)(number + 'A'))));
             }
         });
 
@@ -105,7 +105,7 @@ public abstract class CaesarBaseLvlActivity extends BaseLvlActivity implements C
 
     protected String getInstructionText(String targetWord, int key) {
         return getString(instructionPart1) + " " + targetWord + " " +
-                getString(instructionPart2) + " " + key;
+                getString(instructionPart2) + " " + Character.toString((char)(key + 'A'));
     }
 
     abstract protected CaesarMessage createCaesarMessage(String targetWord, int key);

@@ -24,9 +24,11 @@ public class ToolCaesarEncryptionActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         NumberPicker np = (NumberPicker) findViewById(R.id.keyPicker);
+        String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
         np.setMaxValue(25);
         np.setMinValue(0);
         np.setValue(0);
+        np.setDisplayedValues(alphabet);
 
     }
 

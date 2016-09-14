@@ -44,7 +44,7 @@ public class ToolCaesarDecryptionActivity extends AppCompatActivity {
 
         for (int i=0; i<26; i++) {
             int j = 26-i;
-            decryptions[i] = i + ". " + caesarMessage.solveWithKey(j);
+            decryptions[i] = Character.toString((char)(i + 'A')) + ". " + caesarMessage.solveWithKey(j);
         }
         adapter.notifyDataSetChanged();
     }

@@ -42,7 +42,7 @@
 
     <string name="cipher_text">Cipher Text</string>
     <string name="plain_text">Plain Text</string>
-    <string name="zero_key">Key:\n0</string>
+    <string name="zero_key">Key:\nA</string>
     <string name="continue_word">continue</string>
     <string name="stage_win_message">Congratulations you completed the stage</string>
 
