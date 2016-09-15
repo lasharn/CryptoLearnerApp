@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,6 +25,21 @@ public class ToolVigenereActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        ((EditText)findViewById(R.id.userEnteredKeyword)).setFilters(new InputFilter[] {
+                new InputFilter() {
+                    public CharSequence filter(CharSequence src, int start,
+                                               int end, Spanned dst, int dstart, int dend) {
+                        if(src.equals("")){ // for backspace
+                            return src;
+                        }
+                        if(src.toString().matches("[A-Z]+")){
+                            return src;
+                        }
+                        return "";
+                    }
+                }
+        });
 
     }
 
