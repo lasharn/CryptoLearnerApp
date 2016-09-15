@@ -15,6 +15,6 @@ public class CaesarBruteForceMessage extends CaesarMessage {
     }
 
     public String encryptWithKey(int key) {
-        return encryptedMessage.solveCipher(key);
+        return encryptedMessage.solveCipher(26-key);
     }
 }
